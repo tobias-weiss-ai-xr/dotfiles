@@ -1,0 +1,28 @@
+"" Python specific VIM settings
+set ts=4 sw=4 sta et sts=4 ai
+"set tw=78 "no more automatic line breaks
+" More syntax highlighting.
+let python_highlight_all = 1
+
+" Smart indenting
+set smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
+" set proper indentation for comments
+inoremap # X<c-h>#<space>
+
+highlight WhitespaceEOL ctermbg=red guibg=red
+match WhitespaceEOL /\s\+$/
+
+""" python/supertab
+let g:SuperTabDefaultCompletionType = "context"
+set completeopt=menuone,longest,preview
+
+""" python/rope
+"map <leader>j :RopeGotoDefinition<CR>
+"map <leader>r :RopeRename<CR>
+
+let g:jedi#popup_on_dot = 0
+"let g:jedi#use_tabs_not_buffers = 1
+
+"Map execution of actual file
+map <F5> :! clear & python % &
+
