@@ -40,8 +40,9 @@
 	set listchars=tab:\|\ 
 	nnoremap <leader><tab> :set list!<cr>
 	set pastetoggle=<F2>
-	set mouse=i
 	set incsearch
+	" Mouse behaviour a/i/.../""
+	set mouse=""
 
 " Language Specific
 	" General
@@ -97,10 +98,15 @@
 			\ endif
 	augroup END
 
-" Future stuff
 
-"""" Templates / Language specifics
-""autocmd BufRead,BufNewFile,FileReadPost *.py source ~/.vimrc.python
+"" Templates / Language specifics
+autocmd BufRead,BufNewFile,FileReadPost *.py source ~/dotfiles/.vimrc.python
+
+"" Enable Pathogen plugin bundle manager
+execute pathogen#infect()
+filetype plugin indent on 
+
+" Future stuff
 """remove trailing whitespaces
 ""autocmd BufWritePre *.py :%s/\s\+$//e
 """ load templates
@@ -127,10 +133,6 @@
 " "  %    :  saves and restores the buffer list
 " "  n... :  where to save the viminfo files
 "" set viminfo='10,\"100,:20,%,n~/.viminfo
-
-"" Enable Pathogen plugin bundle manager
-"" execute pathogen#infect()
-"" filetype plugin indent on 
 
 "" NerdTree 
 "" let NERDTreeIgnore=['\.pyc']
