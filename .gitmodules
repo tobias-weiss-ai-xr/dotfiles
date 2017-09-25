@@ -19,3 +19,6 @@
 [submodule "dotvim/bundle/vim-node"]
 	path = dotvim/bundle/vim-node
 	url = https://github.com/moll/vim-node.git
+[submodule "dotvim/bundle/supertab"]
+	path = dotvim/bundle/supertab
+	url = https://github.com/ervandew/supertab.git
