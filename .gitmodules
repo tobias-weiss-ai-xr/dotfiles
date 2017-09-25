@@ -22,3 +22,6 @@
 [submodule "dotvim/bundle/supertab"]
 	path = dotvim/bundle/supertab
 	url = https://github.com/ervandew/supertab.git
+[submodule "dotvim/bundle/tlib_vim"]
+	path = dotvim/bundle/tlib_vim
+	url = https://github.com/tomtom/tlib_vim.git
