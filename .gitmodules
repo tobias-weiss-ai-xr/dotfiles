@@ -16,3 +16,6 @@
 [submodule "nerdtree"]
 	path = nerdtree
 	url = https://github.com/scrooloose/nerdtree
+[submodule "dotvim/bundle/vim-node"]
+	path = dotvim/bundle/vim-node
+	url = https://github.com/moll/vim-node.git
