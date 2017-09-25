@@ -13,3 +13,6 @@
 [submodule "dotvim/bundle/jedi"]
 	path = dotvim/bundle/jedi
 	url = https://github.com/davidhalter/jedi.git
+[submodule "nerdtree"]
+	path = nerdtree
+	url = https://github.com/scrooloose/nerdtree
