@@ -28,3 +28,6 @@
 [submodule "dotvim/bundle/vim-addon-mw-utils"]
 	path = dotvim/bundle/vim-addon-mw-utils
 	url = https://github.com/MarcWeber/vim-addon-mw-utils.git
+[submodule "dotvim/bundle/vim-latex"]
+	path = dotvim/bundle/vim-latex
+	url = https://github.com/vim-latex/vim-latex
