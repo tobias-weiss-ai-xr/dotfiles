@@ -31,3 +31,6 @@
 [submodule "dotvim/bundle/vim-latex"]
 	path = dotvim/bundle/vim-latex
 	url = https://github.com/vim-latex/vim-latex
+[submodule "dotvim/bundle/vim-powerline"]
+	path = dotvim/bundle/vim-powerline
+	url = https://github.com/Lokaltog/vim-powerline.git
