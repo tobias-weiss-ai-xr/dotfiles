@@ -1,6 +1,10 @@
 # Awesome Dotfiles
 
-Simple, but extensive customization of ZSH, TMUX, and Vim. 
+Big THANK YOU to the original writer of this suite.
+
+I keep this repo for my own likes - everybody likes to do things a bit different. But just a bit - the basic idea is really AWESOME!
+
+Simple, but extensive customization of ZSH, TMUX, and Vim.
 
 [![VideoWalkthrough](https://img.youtube.com/vi/UgDz_9i2nwc/0.jpg)](https://www.youtube.com/watch?v=UgDz_9i2nwc)
 
