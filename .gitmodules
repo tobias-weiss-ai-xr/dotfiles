@@ -40,3 +40,6 @@
 [submodule "dotvim/bundle/YouCompleteMe"]
 	path = dotvim/bundle/YouCompleteMe
 	url = https://github.com/Valloric/YouCompleteMe.git
+[submodule "dotvim/bundle/vim-latex"]
+	path = dotvim/bundle/vim-latex
+	url = https://github.com/vim-latex/vim-latex.git
