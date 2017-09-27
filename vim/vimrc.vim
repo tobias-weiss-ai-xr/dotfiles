@@ -106,25 +106,25 @@ autocmd BufRead,BufNewFile,FileReadPost *.py source ~/dotfiles/vim/vimrc.python
 execute pathogen#infect()
 filetype plugin indent on 
 
-" Future stuff
-"""remove trailing whitespaces
-""autocmd BufWritePre *.py :%s/\s\+$//e
 """ load templates
-""autocmd BufNewFile *.py 0r ~/git/repo/01_coden/python/dummy.py|3
-""autocmd BufNewFile *.c 0r ~/git/repo/01_coden/c/dummy.c
-""autocmd BufNewFile *.h 0r ~/git/repo/01_coden/c/dummy.h
-""autocmd BufNewFile,BufWritePre,FileWritePre *.[ch] ks|exe "1," . 5 . "g/file:.*/s//file: " .expand("%")|'s
+autocmd BufNewFile *.py 0r ~/git/repo/01_coden/python/dummy.py|3
+autocmd BufNewFile *.c 0r ~/git/repo/01_coden/c/dummy.c
+autocmd BufNewFile *.h 0r ~/git/repo/01_coden/c/dummy.h
+autocmd BufNewFile,BufWritePre,FileWritePre *.[ch] ks|exe "1," . 5 . "g/file:.*/s//file: " .expand("%")|'s
+"
+"""remove trailing whitespaces
+autocmd BufWritePre *.py :%s/\s\+$//e
 
 """" Replace modify date on writing file
-"autocmd BufWritePre,FileWritePre *.[ch]   ks|call LastMod()|'s
-"fun LastMod()
-"  if line("$") > 20
-"    let l = 20
-"  else
-"    let l = line("$")
-"  endif
-"  exe "1," . l . "g/Last modified: /s/Last modified: .*/Last modified: " strftime("%Y %b %d %X")
-"endfun
+autocmd BufWritePre,FileWritePre *.[ch]   ks|call LastMod()|'s
+fun LastMod()
+  if line("$") > 20
+    let l = 20
+  else
+    let l = line("$")
+  endif
+  exe "1," . l . "g/Last modified: /s/Last modified: .*/Last modified: " strftime("%Y %b %d %X")
+endfun
 
 " Tell vim to remember certain things when we exit
 " "  '10  :  marks will be remembered for up to 10 previously edited files
@@ -132,15 +132,25 @@ filetype plugin indent on
 " "  :20  :  up to 20 lines of command-line history will be remembered
 " "  %    :  saves and restores the buffer list
 " "  n... :  where to save the viminfo files
-"" set viminfo='10,\"100,:20,%,n~/.viminfo
+set viminfo='10,\"100,:20,%,n~/.viminfo
 
 "" NerdTree 
-"" let NERDTreeIgnore=['\.pyc']
+let NERDTreeIgnore=['\.pyc']
 "autostart if no file given
-"" autocmd VimEnter * if !argc() | NERDTree | endif
+autocmd VimEnter * if !argc() | NERDTree | endif
 
 "" Tex Hax
-"" let g:tex_flavor='latex'
+let g:tex_flavor='latex'
 
 ""close quotes automatically (delimitMate)
-"" let delimitMate_expand_cr = 1
+let delimitMate_expand_cr = 1
+
+" make YCM compatible with UltiSnips (using supertab)
+let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+let g:SuperTabDefaultCompletionType = '<C-n>'
+  
+" better key bindings for UltiSnipsExpandTrigger
+let g:UltiSnipsExpandTrigger="<cr>"
+let g:UltiSnipsJumpForwardTrigger="<c-j>"
+let g:UltiSnipsJumpBackwardTrigger="<c-k>""
