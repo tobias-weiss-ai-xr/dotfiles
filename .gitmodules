@@ -11,7 +11,7 @@
 	path = dotvim/bundle/delimitMate
 	url = https://github.com/Raimondi/delimitMate.git
 [submodule "dotvim/bundle/nerdtree"]
-	path = nerdtree
+	path = dotvim/bundle/nerdtree
 	url = https://github.com/scrooloose/nerdtree
 [submodule "dotvim/bundle/vim-node"]
 	path = dotvim/bundle/vim-node
@@ -37,6 +37,6 @@
 [submodule "dotvim/bundle/ultisnips"]
 	path = dotvim/bundle/ultisnips
 	url = https://github.com/SirVer/ultisnips.git
-[submodule "YouCompleteMe"]
-	path = YouCompleteMe
+[submodule "dotvim/bundle/YouCompleteMe"]
+	path = dotvim/bundle/YouCompleteMe
 	url = https://github.com/Valloric/YouCompleteMe.git
