@@ -100,7 +100,7 @@
 
 
 "" Templates / Language specifics
-autocmd BufRead,BufNewFile,FileReadPost *.py source ~/dotfiles/.vimrc.python
+autocmd BufRead,BufNewFile,FileReadPost *.py source ~/dotfiles/vim/vimrc.python
 
 "" Enable Pathogen plugin bundle manager
 execute pathogen#infect()

@@ -10,10 +10,7 @@
 [submodule "dotvim/bundle/delimitMate"]
 	path = dotvim/bundle/delimitMate
 	url = https://github.com/Raimondi/delimitMate.git
-[submodule "dotvim/bundle/jedi"]
-	path = dotvim/bundle/jedi
-	url = https://github.com/davidhalter/jedi.git
-[submodule "nerdtree"]
+[submodule "dotvim/bundle/nerdtree"]
 	path = nerdtree
 	url = https://github.com/scrooloose/nerdtree
 [submodule "dotvim/bundle/vim-node"]
@@ -28,12 +25,18 @@
 [submodule "dotvim/bundle/vim-addon-mw-utils"]
 	path = dotvim/bundle/vim-addon-mw-utils
 	url = https://github.com/MarcWeber/vim-addon-mw-utils.git
-[submodule "dotvim/bundle/vim-latex"]
-	path = dotvim/bundle/vim-latex
-	url = https://github.com/vim-latex/vim-latex
 [submodule "dotvim/bundle/vim-powerline"]
 	path = dotvim/bundle/vim-powerline
 	url = https://github.com/Lokaltog/vim-powerline.git
-[submodule "dotvim/bundle/vim-snipmate"]
-	path = dotvim/bundle/vim-snipmate
-	url = https://github.com/garbas/vim-snipmate.git
+[submodule "dotvim/bundle/vim-snippets"]
+	path = dotvim/bundle/vim-snippets
+	url = https://github.com/honza/vim-snippets.git
+[submodule "dotvim/bundle/vimtex"]
+	path = dotvim/bundle/vimtex
+	url = https://github.com/lervag/vimtex.git
+[submodule "dotvim/bundle/ultisnips"]
+	path = dotvim/bundle/ultisnips
+	url = https://github.com/SirVer/ultisnips.git
+[submodule "YouCompleteMe"]
+	path = YouCompleteMe
+	url = https://github.com/Valloric/YouCompleteMe.git
