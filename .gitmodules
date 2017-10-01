@@ -40,3 +40,21 @@
 [submodule "dotvim/bundle/vim-latex"]
 	path = dotvim/bundle/vim-latex
 	url = https://github.com/vim-latex/vim-latex.git
+[submodule "dotvim/bundle/supertab"]
+	path = dotvim/bundle/supertab
+	url = https://github.com/ervandew/supertab.git
+[submodule "dotvim/bundle/minibufexpl.vim"]
+	path = dotvim/bundle/minibufexpl.vim
+	url = https://github.com/fholgado/minibufexpl.vim
+[submodule "dotvim/bundle/tagbar"]
+	path = dotvim/bundle/tagbar
+	url = https://github.com/majutsushi/tagbar
+[submodule "dotvim/bundle/vim-sensible"]
+	path = dotvim/bundle/vim-sensible
+	url = https://github.com/tpope/vim-sensible
+[submodule "dotvim/bundle/syntastic"]
+	path = dotvim/bundle/syntastic
+	url = https://github.com/scrooloose/syntastic
+[submodule "dotvim/bundle/vim-polyglot"]
+	path = dotvim/bundle/vim-polyglot
+	url = https://github.com/sheerun/vim-polyglot

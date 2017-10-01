@@ -1,5 +1,5 @@
 " General Vim settings
-	color desert
+	colorscheme elflord
 	let mapleader=","
 	syntax on
 	set autoindent
@@ -37,42 +37,12 @@
 
 	nnoremap vv 0v$
 
-	set listchars=tab:\|\ 
+	set listchars=tab:▸\ ,eol:¬
 	nnoremap <leader><tab> :set list!<cr>
 	set pastetoggle=<F2>
 	set incsearch
 	" Mouse behaviour a/i/.../""
 	set mouse=""
-
-" Language Specific
-	" General
-		inoremap <leader>for <esc>Ifor (int i = 0; i < <esc>A; i++) {<enter>}<esc>O<tab>
-		inoremap <leader>if <esc>Iif (<esc>A) {<enter>}<esc>O<tab>
-		
-
-	" Java
-		inoremap <leader>sys <esc>ISystem.out.println(<esc>A);
-		vnoremap <leader>sys yOSystem.out.println(<esc>pA);
-
-	" Java
-		inoremap <leader>con <esc>Iconsole.log(<esc>A);
-		vnoremap <leader>con yOconsole.log(<esc>pA);
-
-	" C++
-		inoremap <leader>cout <esc>Istd::cout << <esc>A << std::endl;
-		vnoremap <leader>cout yOstd::cout << <esc>pA << std:endl;
-
-	" C
-		inoremap <leader>out <esc>Iprintf(<esc>A);<esc>2hi
-		vnoremap <leader>out yOprintf(, <esc>pA);<esc>h%a
-
-	" Typescript
-		autocmd BufNewFile,BufRead *.ts set syntax=javascript
-		autocmd BufNewFile,BufRead *.tsx set syntax=javascript
-
-	" Markup
-		inoremap <leader>< <esc>I<<esc>A><esc>yypa/<esc>O<tab>
-
 
 " File and Window Management 
 	inoremap <leader>w <Esc>:w<CR>
@@ -145,12 +115,40 @@ let g:tex_flavor='latex'
 ""close quotes automatically (delimitMate)
 let delimitMate_expand_cr = 1
 
-" make YCM compatible with UltiSnips (using supertab)
-let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
-let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
-let g:SuperTabDefaultCompletionType = '<C-n>'
-  
-" better key bindings for UltiSnipsExpandTrigger
-let g:UltiSnipsExpandTrigger="<cr>"
-let g:UltiSnipsJumpForwardTrigger="<c-j>"
-let g:UltiSnipsJumpBackwardTrigger="<c-k>""
+" ---------------------------------- "
+" Configure MiniBufExpl
+" ---------------------------------- "
+
+" Open MiniBufExpl with Ctrl-m
+map <C-m> :MBEToggle<CR>
+
+" ---------------------------------- "
+" Configure Tagbar
+" ---------------------------------- "
+
+" Open Tagbar with F8
+map <F8> :TagbarToggle<CR>
+
+" ---------------------------------- "
+" Configure Ultisnip and YouCompleteMe
+" ---------------------------------- "
+
+let g:UltiSnipsExpandTrigger="<tab>"
+"let g:UltiSnipsJumpForwardTrigger="<tab>"
+"let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+
+" ---------------------------------- "
+" Configure YouCompleteMe
+" ---------------------------------- "
+
+let g:ycm_collect_identifiers_from_tags_files = 1 " Let YCM read tags from Ctags file
+let g:ycm_use_ultisnips_completer = 1 " Default 1, just ensure
+let g:ycm_seed_identifiers_with_syntax = 1 " Completion for programming language's keyword
+let g:ycm_complete_in_comments = 1 " Completion in comments
+let g:ycm_complete_in_strings = 1 " Completion in string
+
+let g:ycm_key_list_select_completion = ['<C-j>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-k>', '<Up>']
+
+" Goto definition with F3
+map <F3> :YcmCompleter GoTo<CR>
