@@ -28,7 +28,7 @@
 	nnoremap J G
 	nnoremap K gg
 
-	map <tab> %
+	"map <tab> %
 
 	set backspace=indent,eol,start
 
