@@ -80,6 +80,7 @@ execute pathogen#infect()
 filetype plugin indent on 
 
 " just for my laptop
+let hostname = substitute(system('hostname'), '\n', '', '')
 if hostname == "ThinkPad.local.tobias-weiss.org" 
 	" load templates
 	autocmd BufNewFile *.py 0r ~/git/repo/01_coden/python/dummy.py|3
