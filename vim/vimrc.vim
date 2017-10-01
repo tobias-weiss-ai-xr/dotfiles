@@ -1,7 +1,10 @@
 " General Vim settings
-	colorscheme elflord
 	let mapleader=","
+
 	syntax on
+	set background=dark
+	colorscheme elflord
+
 	set autoindent
 	set tabstop=4
 	set shiftwidth=4
