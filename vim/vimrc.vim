@@ -69,32 +69,35 @@
 	augroup END
 
 
-"" Templates / Language specifics
+" Templates / Language specifics
 autocmd BufRead,BufNewFile,FileReadPost *.py source ~/dotfiles/vim/vimrc.python
 
-"" Enable Pathogen plugin bundle manager
+"remove trailing whitespaces
+autocmd BufWritePre *.py :%s/\s\+$//e
+
+" Enable Pathogen plugin bundle manager
 execute pathogen#infect()
 filetype plugin indent on 
 
-""" load templates
-autocmd BufNewFile *.py 0r ~/git/repo/01_coden/python/dummy.py|3
-autocmd BufNewFile *.c 0r ~/git/repo/01_coden/c/dummy.c
-autocmd BufNewFile *.h 0r ~/git/repo/01_coden/c/dummy.h
-autocmd BufNewFile,BufWritePre,FileWritePre *.[ch] ks|exe "1," . 5 . "g/file:.*/s//file: " .expand("%")|'s
-"
-"""remove trailing whitespaces
-autocmd BufWritePre *.py :%s/\s\+$//e
+" just for my laptop
+if hostname == "ThinkPad.local.tobias-weiss.org" 
+	" load templates
+	autocmd BufNewFile *.py 0r ~/git/repo/01_coden/python/dummy.py|3
+	autocmd BufNewFile *.c 0r ~/git/repo/01_coden/c/dummy.c
+	autocmd BufNewFile *.h 0r ~/git/repo/01_coden/c/dummy.h
+	autocmd BufNewFile,BufWritePre,FileWritePre *.[ch] ks|exe "1," . 5 . "g/file:.*/s//file: " .expand("%")|'s
 
-"""" Replace modify date on writing file
-autocmd BufWritePre,FileWritePre *.[ch]   ks|call LastMod()|'s
-fun LastMod()
-  if line("$") > 20
-    let l = 20
-  else
-    let l = line("$")
-  endif
-  exe "1," . l . "g/Last modified: /s/Last modified: .*/Last modified: " strftime("%Y %b %d %X")
-endfun
+	"""" Replace modify date on writing file
+	autocmd BufWritePre,FileWritePre *.[ch]   ks|call LastMod()|'s
+	fun LastMod()
+	  if line("$") > 20
+		let l = 20
+	  else
+		let l = line("$")
+	  endif
+	  exe "1," . l . "g/Last modified: /s/Last modified: .*/Last modified: " strftime("%Y %b %d %X")
+	endfun
+endif
 
 " Tell vim to remember certain things when we exit
 " "  '10  :  marks will be remembered for up to 10 previously edited files
