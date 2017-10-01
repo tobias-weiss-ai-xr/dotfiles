@@ -3,7 +3,7 @@
 
 	syntax on
 	set background=dark
-	colorscheme elflord
+	colorscheme solarized
 
 	set autoindent
 	set tabstop=4
