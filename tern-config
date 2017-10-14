@@ -1,0 +1,13 @@
+ {
+   "libs": [
+     "browser",
+     "jquery",
+	 "p5.js",
+     "react"
+   ],
+   "plugins": {
+       "doc_comment": null,
+       "angular": {},
+       "node": {}
+   }
+ }
