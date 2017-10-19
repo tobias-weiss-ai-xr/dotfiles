@@ -28,9 +28,6 @@
 [submodule "dotvim/bundle/vim-snippets"]
 	path = dotvim/bundle/vim-snippets
 	url = https://github.com/honza/vim-snippets.git
-[submodule "dotvim/bundle/vimtex"]
-	path = dotvim/bundle/vimtex
-	url = https://github.com/lervag/vimtex.git
 [submodule "dotvim/bundle/ultisnips"]
 	path = dotvim/bundle/ultisnips
 	url = https://github.com/SirVer/ultisnips.git

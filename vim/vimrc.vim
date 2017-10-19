@@ -71,7 +71,6 @@
 			\ endif
 	augroup END
 
-
 " Templates / Language specifics
 autocmd BufRead,BufNewFile,FileReadPost *.py source ~/dotfiles/vim/vimrc.python
 
@@ -82,26 +81,6 @@ autocmd BufWritePre *.py :%s/\s\+$//e
 execute pathogen#infect()
 filetype plugin indent on 
 
-" just for my laptop
-let hostname = substitute(system('hostname'), '\n', '', '')
-if hostname == "ThinkPad.local.tobias-weiss.org" 
-	" load templates
-	autocmd BufNewFile *.py 0r ~/git/repo/01_coden/python/dummy.py|3
-	autocmd BufNewFile *.c 0r ~/git/repo/01_coden/c/dummy.c
-	autocmd BufNewFile *.h 0r ~/git/repo/01_coden/c/dummy.h
-	autocmd BufNewFile,BufWritePre,FileWritePre *.[ch] ks|exe "1," . 5 . "g/file:.*/s//file: " .expand("%")|'s
-
-	"""" Replace modify date on writing file
-	autocmd BufWritePre,FileWritePre *.[ch]   ks|call LastMod()|'s
-	fun LastMod()
-	  if line("$") > 20
-		let l = 20
-	  else
-		let l = line("$")
-	  endif
-	  exe "1," . l . "g/Last modified: /s/Last modified: .*/Last modified: " strftime("%Y %b %d %X")
-	endfun
-endif
 
 " Tell vim to remember certain things when we exit
 " "  '10  :  marks will be remembered for up to 10 previously edited files
@@ -141,8 +120,8 @@ map <F8> :TagbarToggle<CR>
 " ---------------------------------- "
 
 let g:UltiSnipsExpandTrigger="<tab>"
-"let g:UltiSnipsJumpForwardTrigger="<tab>"
-"let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
 " ---------------------------------- "
 " Configure YouCompleteMe
@@ -162,3 +141,26 @@ map <F3> :YcmCompleter GoTo<CR>
 " Tern settings
 let g:tern_show_argument_hints='on_hold'
 let g:tern_map_keys=1
+ 
+" ---------------------------------- "
+" config for my laptop only
+" ---------------------------------- "
+let hostname = substitute(system('hostname'), '\n', '', '')
+if hostname == "ThinkPad.local.tobias-weiss.org" 
+	" load templates
+	autocmd BufNewFile *.py 0r ~/git/repo/01_coden/python/dummy.py|3
+	autocmd BufNewFile *.c 0r ~/git/repo/01_coden/c/dummy.c
+	autocmd BufNewFile *.h 0r ~/git/repo/01_coden/c/dummy.h
+	autocmd BufNewFile,BufWritePre,FileWritePre *.[ch] ks|exe "1," . 5 . "g/file:.*/s//file: " .expand("%")|'s
+
+	"""" Replace modify date on writing file
+	autocmd BufWritePre,FileWritePre *.[ch]   ks|call LastMod()|'s
+	fun LastMod()
+	  if line("$") > 20
+		let l = 20
+	  else
+		let l = line("$")
+	  endif
+	  exe "1," . l . "g/Last modified: /s/Last modified: .*/Last modified: " strftime("%Y %b %d %X")
+	endfun
+endif
