@@ -49,3 +49,6 @@ if [[ "${terminfo[kcud1]}" != "" ]]; then
 fi
 
 source ~/dotfiles/zsh/prompt.sh
+
+# source cpufreq functions
+source ~/dotfiles/zsh/cpufreq.sh

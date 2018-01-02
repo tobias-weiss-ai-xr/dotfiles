@@ -74,7 +74,7 @@
 " Templates / Language specifics
 autocmd BufRead,BufNewFile,FileReadPost *.py source ~/dotfiles/vim/vimrc.python
 
-"remove trailing whitespaces
+" Remove trailing whitespaces for python
 autocmd BufWritePre *.py :%s/\s\+$//e
 
 " Enable Pathogen plugin bundle manager
