@@ -164,3 +164,8 @@ if hostname == "ThinkPad.local.tobias-weiss.org"
 	  exe "1," . l . "g/Last modified: /s/Last modified: .*/Last modified: " strftime("%Y %b %d %X")
 	endfun
 endif
+
+""" Sop folding for vim-latex
+ let Tex_FoldedSections=""
+ let Tex_FoldedEnvironments=""
+ let Tex_FoldedMisc=""
