@@ -52,3 +52,15 @@ source ~/dotfiles/zsh/prompt.sh
 
 # source cpufreq functions
 source ~/dotfiles/zsh/cpufreq.sh
+
+# load plugins
+plugins=(
+  git
+  bundler
+  dotenv
+  osx
+  rake
+  rbenv
+  ruby
+  ssh-agent
+)
