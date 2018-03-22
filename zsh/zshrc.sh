@@ -6,6 +6,7 @@
 
 # Aliases
 	alias v="vim -p"
+	alias labor="ssh-add ~/.ssh/id_uni && ssh labor"
 	
 	# This is currently causing problems (fails when you run it anywhere that isn't a git project's root directory)
 	# alias vs="v `git status --porcelain | sed -ne 's/^ M //p'`"
@@ -58,13 +59,10 @@ plugins=(
   git
   bundler
   dotenv
-  osx
-  rake
-  rbenv
-  ruby
   ssh-agent
 )
 
 #ssh-agent settings
 zstyle :omz:plugins:ssh-agent agent-forwarding on
-zstyle :omz:plugins:ssh-agent identities id_uni id_github
+zstyle :omz:plugins:ssh-agent identities ~/.ssh/id_github
+zstyle :omz:plugins:ssh-agent lifetime 4h
