@@ -3,7 +3,7 @@
 
 	syntax on
 	set background=dark
-	colorscheme solarized
+	colorscheme desert
 
 	set autoindent
 	set tabstop=4
