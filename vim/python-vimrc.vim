@@ -19,12 +19,16 @@ highlight WhitespaceEOL ctermbg=red guibg=red
 match WhitespaceEOL /\s\+$/
 
 """ python/supertab
-let g:SuperTabDefaultCompletionType = "context"
-set completeopt=menuone,longest,preview
+" let g:SuperTabDefaultCompletionType = "context"
+" set completeopt=menuone,longest,preview
 
-let g:jedi#popup_on_dot = 0
-"let g:jedi#use_tabs_not_buffers = 1
+" let g:jedi#popup_on_dot = 0
+" let g:jedi#use_tabs_not_buffers = 1
 
-"Map execution of actual file
+" Map execution of actual file
 map <F5> :! clear & python % &
+map <F6> :! clear & python3 % &
 
+" set python mode to python3 for python-mode
+let g:pymode_python = 'python3'
+     

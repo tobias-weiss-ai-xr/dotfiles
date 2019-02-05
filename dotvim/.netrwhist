@@ -1,7 +1,11 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =5
+let g:netrw_dirhist_cnt =9
 let g:netrw_dirhist_1='/home/homaar/git/tobiasweede.github.io/_layouts'
 let g:netrw_dirhist_2='/home/homaar/git/tobiasweede.github.io'
 let g:netrw_dirhist_3='/home/homaar/git/tobiasweede.github.io/_sass'
 let g:netrw_dirhist_4='/home/homaar/git/tobiasweede.github.io/_sass/minimal-mistakes'
 let g:netrw_dirhist_5='/home/homaar/git/tobiasweede.github.io/_sass/minimal-mistakes/skins'
+let g:netrw_dirhist_6='/home/homaar/git/repo/01_coden/python'
+let g:netrw_dirhist_7='/home/homaar/git/repo/01_coden/vim'
+let g:netrw_dirhist_8='/home/homaar/git/repo/01_coden/vim/code'
+let g:netrw_dirhist_9='/home/homaar/git/repo/01_coden/vim'

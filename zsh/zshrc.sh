@@ -3,9 +3,10 @@
 	SAVEHIST=1000 
 	setopt inc_append_history # To save every command before it is executed 
 	setopt share_history # setopt inc_append_history
+	export KEYTIMEOUT=1 # set timeout for esc key to 0.1
 
 # Aliases
-	alias v="vim -p"
+	alias vi="vim -p"
 	alias labor="ssh-add ~/.ssh/id_uni && ssh labor"
 	
 	# This is currently causing problems (fails when you run it anywhere that isn't a git project's root directory)
@@ -60,6 +61,7 @@ plugins=(
   bundler
   dotenv
   ssh-agent
+  vi-mode
 )
 
 #ssh-agent settings

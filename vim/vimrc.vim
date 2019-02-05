@@ -62,6 +62,14 @@
 	nnoremap <leader>v :vsplit<CR>:w<CR>:Ex<CR>
 	nnoremap <leader>s :split<CR>:w<CR>:Ex<CR>
 
+" Help navigation
+"	nnoremap <buffer> <CR> <C-]>
+"	nnoremap <buffer> <BS> <C-T>
+"	nnoremap <buffer> o /'\l\{2,\}'<CR>
+"	nnoremap <buffer> O ?'\l\{2,\}'<CR>
+"	nnoremap <buffer> s /\|\zs\S\+\ze\|<CR>
+"	nnoremap <buffer> S ?\|\zs\S\+\ze\|<CR>
+
 " Return to the same line you left off at
 	augroup line_return
 		au!
@@ -72,7 +80,7 @@
 	augroup END
 
 " Templates / Language specifics
-autocmd BufRead,BufNewFile,FileReadPost *.py source ~/dotfiles/vim/vimrc.python
+autocmd BufRead,BufNewFile,FileReadPost *.py source ~/dotfiles/vim/python-vimrc.vim
 
 " Remove trailing whitespaces for python
 autocmd BufWritePre *.py :%s/\s\+$//e
@@ -91,29 +99,29 @@ filetype plugin indent on
 set viminfo='10,\"100,:20,%,n~/.viminfo
 
 "" NerdTree 
-let NERDTreeIgnore=['\.pyc']
+" let NERDTreeIgnore=['\.pyc']
 "autostart if no file given
-autocmd VimEnter * if !argc() | NERDTree | endif
+" autocmd VimEnter * if !argc() | NERDTree | endif
 
 "" Tex Hax
-let g:tex_flavor='latex'
+" let g:tex_flavor='latex'
 
 ""close quotes automatically (delimitMate)
-let delimitMate_expand_cr = 1
+" let delimitMate_expand_cr = 1
 
 " ---------------------------------- "
 " Configure MiniBufExpl
 " ---------------------------------- "
 
 " Open MiniBufExpl with Ctrl-m
-map <C-m> :MBEToggle<CR>
+" map <C-m> :MBEToggle<CR>
 
 " ---------------------------------- "
 " Configure Tagbar
 " ---------------------------------- "
 
 " Open Tagbar with F8
-map <F8> :TagbarToggle<CR>
+" map <F8> :TagbarToggle<CR>
 
 " ---------------------------------- "
 " Configure Ultisnip and YouCompleteMe
@@ -136,11 +144,11 @@ let g:ycm_key_list_select_completion = ['<C-j>', '<Down>']
 let g:ycm_key_list_previous_completion = ['<C-k>', '<Up>']
 
 " Goto definition with F3
-map <F3> :YcmCompleter GoTo<CR>
+" map <F3> :YcmCompleter GoTo<CR>
 
 " Tern settings
-let g:tern_show_argument_hints='on_hold'
-let g:tern_map_keys=1
+" let g:tern_show_argument_hints='on_hold'
+" let g:tern_map_keys=1
  
 " ---------------------------------- "
 " config for my laptop only
@@ -166,6 +174,6 @@ if hostname == "ThinkPad.local.tobias-weiss.org"
 endif
 
 """ Sop folding for vim-latex
- let Tex_FoldedSections=""
- let Tex_FoldedEnvironments=""
- let Tex_FoldedMisc=""
+" let Tex_FoldedSections=""
+" let Tex_FoldedEnvironments=""
+" let Tex_FoldedMisc=""
