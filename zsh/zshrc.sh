@@ -6,7 +6,9 @@
 	export KEYTIMEOUT=1 # set timeout for esc key to 0.1
 
 # Aliases
-	alias vi="vim -p"
+	#alias vi="vim -p"
+	alias vi="nvim"
+	alias vim="nvim"
 	alias labor="ssh-add ~/.ssh/id_uni && ssh labor"
 	
 	# This is currently causing problems (fails when you run it anywhere that isn't a git project's root directory)
@@ -60,11 +62,11 @@ plugins=(
   git
   bundler
   dotenv
-  ssh-agent
+  #ssh-agent
   vi-mode
 )
 
 #ssh-agent settings
-zstyle :omz:plugins:ssh-agent agent-forwarding on
-zstyle :omz:plugins:ssh-agent identities ~/.ssh/id_github
-zstyle :omz:plugins:ssh-agent lifetime 4h
+#zstyle :omz:plugins:ssh-agent agent-forwarding on
+#zstyle :omz:plugins:ssh-agent identities ~/.ssh/id_github
+#zstyle :omz:plugins:ssh-agent lifetime 4h
