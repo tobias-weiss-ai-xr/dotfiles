@@ -1,4 +1,6 @@
 """"""" init.vim """""""
+" encoding
+set enc =utf-8
 set nocompatible
 filetype off
 syntax on
@@ -11,8 +13,6 @@ set dir=/tmp/
 set relativenumber 
 set number
 set nofoldenable
-" encoding
-set enc =utf-8
 set cursorline
 hi Cursor ctermfg=White ctermbg=Yellow cterm=bold guifg=white guibg=yellow gui=bold
 set hlsearch
@@ -67,9 +67,18 @@ Plugin 'Valloric/YouCompleteMe'
 
 " Python mode
 Plugin 'python-mode/python-mode'
-"
+
 " Plugin 'vimlatex'
 Plugin 'lervag/vimtex'
+
+" Plugin signify
+Plugin 'mhinz/vim-signify'
+
+" Plugin DeliMate
+Plugin 'Raimondi/delimitMate'
+
+" Plugin Syntastic
+Plugin 'vim-syntastic/syntastic'
 
 " After all plugins...
 call vundle#end()
@@ -79,7 +88,13 @@ filetype plugin indent on
 " Python specifics
 autocmd BufRead,BufNewFile,FileReadPost *.py source ~/dotfiles/nvim/python-vimrc.vim
 " Latex specifics
-autocmd BufRead,BufNewFile,FileReadPost *.py source ~/dotfiles/nvim/tex-vimrc.vim
+autocmd BufRead,BufNewFile,FileReadPost *.tex source ~/dotfiles/nvim/tex-vimrc.vim
+let g:tex_flavor = 'latex'
+let g:vimtex_view_method = 'zathura'
+let g:vimtex_compiler_progname = 'nvr'
+
+""""""" signify settings """""""
+let g:signify_vcs_list = [ 'git' ]
 
 """"""" Neomake """""""
 " Neomake and other build commands (ctrl-b)
