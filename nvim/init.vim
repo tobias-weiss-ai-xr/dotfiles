@@ -107,7 +107,7 @@ let g:neomake_python_enabled_makers = ['pep8', 'flake8']
 let g:jedi#show_call_signatures = "0"
 let g:jedi#use_tabs_not_buffers = 1
 let g:jedi#use_splits_not_buffers = "left"
-let g:jedi#popup_on_dot = 0
+let g:jedi#popup_on_dot = 1
 
 """"""" SuperTab configuration """""""
 let g:SuperTabDefaultCompletionType = "<c-x><c-u>"
@@ -126,9 +126,9 @@ let g:SuperTabDefaultCompletionType = '<C-n>'
 let g:UltiSnipsEditSplit="vertical"
 
 " better key bindings for UltiSnipsExpandTrigger
-let g:UltiSnipsExpandTrigger = "<tab>"
+let g:UltiSnipsExpandTrigger = "<M-e>"
 let g:UltiSnipsJumpForwardTrigger = "<tab>"
-let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
+" let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 
 """"""" General coding stuff """""""
 " Highlight 80th column

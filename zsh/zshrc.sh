@@ -64,6 +64,7 @@ plugins=(
   dotenv
   #ssh-agent
   vi-mode
+  tmuxinator
 )
 
 #ssh-agent settings
