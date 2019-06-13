@@ -80,6 +80,12 @@ Plugin 'Raimondi/delimitMate'
 " Plugin Syntastic
 Plugin 'vim-syntastic/syntastic'
 
+" Plugin Rust.vim
+Plugin 'rust-lang/rust.vim'
+
+" Plugin Rust race (completion)
+Plugin 'racer-rust/vim-racer'
+
 " After all plugins...
 call vundle#end()
 filetype plugin indent on
@@ -221,3 +227,15 @@ if hostname == "ThinkPad.local.tobias-weiss.org"
 	  exe "1," . l . "g/Last modified: /s/Last modified: .*/Last modified: " strftime("%Y %b %d %X")
 	endfun
 endif
+
+" ---------------------------------- "
+" Rust stuff
+" ---------------------------------- "
+let g:rustfmt_autosave = 1
+set hidden
+let g:racer_cmd = "/home/user/.cargo/bin/racer"
+
+" ---------------------------------- "
+" C++ stuff
+" ---------------------------------- "
+let g:ycm_global_ycm_extra_conf = '~/.config/nvim/.ycm_extra_conf.py'

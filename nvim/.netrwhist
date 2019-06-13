@@ -1,3 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =1
+let g:netrw_dirhist_cnt =4
 let g:netrw_dirhist_1='/home/homaar/git/studsweden/02_CommunicationCulture_EN1106/Seminar7/presentation'
+let g:netrw_dirhist_2='/home/homaar/.cargo'
+let g:netrw_dirhist_3='/home/homaar/git/newScraper/newScraper'
+let g:netrw_dirhist_4='/home/homaar/git/repo/01_coden/cpp'
