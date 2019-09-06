@@ -1,6 +1,11 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_cnt =9
 let g:netrw_dirhist_1='/home/homaar/git/studsweden/02_CommunicationCulture_EN1106/Seminar7/presentation'
 let g:netrw_dirhist_2='/home/homaar/.cargo'
 let g:netrw_dirhist_3='/home/homaar/git/newScraper/newScraper'
 let g:netrw_dirhist_4='/home/homaar/git/repo/01_coden/cpp'
+let g:netrw_dirhist_5='/home/homaar/.cat_installer'
+let g:netrw_dirhist_6='/etc/bluetooth'
+let g:netrw_dirhist_7='/home/homaar/git/repo/01_coden/cpp'
+let g:netrw_dirhist_8='/home/homaar/dotfiles/nvim'
+let g:netrw_dirhist_9='/home/homaar/git/BA/proposal'

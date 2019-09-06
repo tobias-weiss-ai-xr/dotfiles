@@ -1,6 +1,10 @@
 """"""" Python specific VIM settings """""""
 let g:pymode_python = 'python3'
 
+" Highlight column 80 for PEP-8
+set colorcolumn=80
+highlight ColorColumn ctermbg=lightgrey guibg=lightgrey
+
 " Python host prog 
 let g:python_host_prog = '/usr/bin/python2.7'
 let g:python3_host_prog = '/usr/bin/python3.5'
@@ -13,10 +17,6 @@ set ts=4 sw=4 sta et sts=4 ai
 
 " More syntax highlighting.
 let python_highlight_all = 1
-
-" Highlight column 80 for PEP-8
-set colorcolumn=80
-highlight ColorColumn ctermbg=lightgrey guibg=lightgrey
 
 " Smart indenting
 set smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
@@ -41,6 +41,6 @@ let g:pymode_doc = 1
 let g:pymode_syntax_all = 1
 
 """ python/supertab
-let g:SuperTabDefaultCompletionType = "context"
-set completeopt=menuone,longest,preview
+"let g:SuperTabDefaultCompletionType = "context"
+"set completeopt=menuone,longest,preview
 

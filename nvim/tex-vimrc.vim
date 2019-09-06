@@ -1,5 +1,7 @@
 """"""" Latex specific VIM settings """""""
 
+let g:tex_flavor = 'latex'
+
 "autocmd BufNewFil,BufRead *.tex,*.bib noremap <buffer> <C-b> :w<cr>:new<bar>r
  \ !make<cr>:setlocal buftype=nofile<cr>:setlocal
  \bufhidden=hide<cr>:setlocal noswapfile<cr>

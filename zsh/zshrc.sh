@@ -5,12 +5,26 @@
 	setopt share_history # setopt inc_append_history
 	export KEYTIMEOUT=1 # set timeout for esc key to 0.1
 
+
+#gurobi optimizer
+if [[ $HOST = "ThinkPad.local.tobias-weiss.org" ]]; then
+	source ~/dotfiles/zsh/gurobi.sh
+fi
+
+#ssh-agent settings
+if [[ $HOST = "ThinkPad.local.tobias-weiss.org" ]]; then
+	zstyle :omz:plugins:ssh-agent agent-forwarding on
+	zstyle :omz:plugins:ssh-agent identities id_github id_uni id_rsa
+	zstyle :omz:plugins:ssh-agent lifetime 4h
+fi
+
 # Aliases
 	#alias vi="vim -p"
 	if [[ $HOST = "ThinkPad.local.tobias-weiss.org" ]]; then
 		alias vi="nvim"
 		alias vim="nvim"
 		alias labor="ssh-add ~/.ssh/id_uni && ssh labor"
+		alias speakers="rfkill unblock bluetooth && bluetoothctl power on && a2dp.py CC:98:8B:D1:BD:D2 -t 4 -w 1 -p hsp"
 	fi
 	
 	# This is currently causing problems (fails when you run it anywhere that isn't a git project's root directory)
@@ -64,12 +78,9 @@ plugins=(
   git
   bundler
   dotenv
-  #ssh-agent
   vi-mode
   tmuxinator
 )
 
-#ssh-agent settings
-#zstyle :omz:plugins:ssh-agent agent-forwarding on
-#zstyle :omz:plugins:ssh-agent identities ~/.ssh/id_github
-#zstyle :omz:plugins:ssh-agent lifetime 4h
+# key chain config
+eval `keychain --quiet --eval id_uni id_rsa id_github`
