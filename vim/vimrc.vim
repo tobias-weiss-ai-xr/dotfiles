@@ -14,6 +14,8 @@
 
 	" encoding
 	set enc =utf-8
+	autocmd Filetype html setlocal sw=2 expandtab
+	autocmd Filetype javascript setlocal sw=4 expandtab
 
 	set cursorline
 	hi Cursor ctermfg=White ctermbg=Yellow cterm=bold guifg=white guibg=yellow gui=bold
@@ -46,6 +48,18 @@
 	set incsearch
 	" Mouse behaviour a/i/.../""
 	set mouse=""
+
+" Language Specific
+	" Tabs
+		so ~/dotfiles/vim/tabs.vim
+
+	" Typescript
+		autocmd BufNewFile,BufRead *.ts set syntax=javascript
+		autocmd BufNewFile,BufRead *.tsx set syntax=javascript
+
+	" Markup
+		inoremap <leader>< <esc>I<<esc>A><esc>yypa/<esc>O<tab>
+
 
 " File and Window Management 
 	inoremap <leader>w <Esc>:w<CR>
@@ -177,3 +191,21 @@ endif
 " let Tex_FoldedSections=""
 " let Tex_FoldedEnvironments=""
 " let Tex_FoldedMisc=""
+" Auto load
+	" Triger `autoread` when files changes on disk
+	" https://unix.stackexchange.com/questions/149209/refresh-changed-content-of-file-opened-in-vim/383044#383044
+	" https://vi.stackexchange.com/questions/13692/prevent-focusgained-autocmd-running-in-command-line-editing-mode
+	autocmd FocusGained,BufEnter,CursorHold,CursorHoldI * if mode() != 'c' | checktime | endif
+	set autoread 
+	" Notification after file change
+	" https://vi.stackexchange.com/questions/13091/autocmd-event-for-autoread
+	autocmd FileChangedShellPost *
+	  \ echohl WarningMsg | echo "File changed on disk. Buffer reloaded." | echohl None
+
+" Future stuff
+	"Swap line
+	"Insert blank below and above
+
+" Fix for: https://github.com/fatih/vim-go/issues/1509
+
+filetype plugin indent on
