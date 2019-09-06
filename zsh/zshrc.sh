@@ -113,6 +113,10 @@ plugins=(
 )
 
 # key chain config
-eval `keychain --quiet --eval id_uni id_rsa id_github`
+if [[ $HOST = "ThinkPad.local.tobias-weiss.org" ]]; then
+	eval `keychain --quiet --eval id_uni id_rsa id_github`
+else
+    eval `keychain --quiet --noask`
+fi
 
 export PATH=$PATH:$HOME/dotfiles/utils
