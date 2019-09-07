@@ -12,11 +12,11 @@ if [[ $HOST = "ThinkPad.local.tobias-weiss.org" ]]; then
 fi
 
 #ssh-agent settings
-if [[ $HOST = "ThinkPad.local.tobias-weiss.org" ]]; then
-	zstyle :omz:plugins:ssh-agent agent-forwarding on
-	zstyle :omz:plugins:ssh-agent identities id_github id_uni id_rsa
-	zstyle :omz:plugins:ssh-agent lifetime 4h
-fi
+#if [[ $HOST = "ThinkPad.local.tobias-weiss.org" ]]; then
+#	zstyle :omz:plugins:ssh-agent agent-forwarding on
+#	zstyle :omz:plugins:ssh-agent identities id_github id_uni id_rsa
+#	zstyle :omz:plugins:ssh-agent lifetime 4h
+#fi
 
 	git config --global push.default current
 
