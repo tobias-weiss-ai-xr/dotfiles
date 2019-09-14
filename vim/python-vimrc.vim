@@ -18,13 +18,6 @@ inoremap # X<c-h>#<space>
 highlight WhitespaceEOL ctermbg=red guibg=red
 match WhitespaceEOL /\s\+$/
 
-""" python/supertab
-" let g:SuperTabDefaultCompletionType = "context"
-" set completeopt=menuone,longest,preview
-
-" let g:jedi#popup_on_dot = 0
-" let g:jedi#use_tabs_not_buffers = 1
-
 " Map execution of actual file
 map <F5> :! clear & python % &
 map <F6> :! clear & python3 % &

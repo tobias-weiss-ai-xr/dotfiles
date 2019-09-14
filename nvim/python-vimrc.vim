@@ -1,13 +1,14 @@
 """"""" Python specific VIM settings """""""
-let g:pymode_python = 'python3'
-
 " Highlight column 80 for PEP-8
 set colorcolumn=80
 highlight ColorColumn ctermbg=lightgrey guibg=lightgrey
 
 " Python host prog 
-let g:python_host_prog = '/usr/bin/python2.7'
-let g:python3_host_prog = '/usr/bin/python3.5'
+"let hostname = substitute(system('hostname'), '\n', '', '')
+"if hostname == "ThinkPad.local.tobias-weiss.org" 
+"  let g:python_host_prog = '/usr/bin/python2.7'
+"  let g:python3_host_prog = '/usr/bin/python3.5'
+"endif
 
 " Remove trailing whitespaces for python
 autocmd BufWritePre *.py :%s/\s\+$//e

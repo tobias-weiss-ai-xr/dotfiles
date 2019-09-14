@@ -21,7 +21,7 @@ fi
 	git config --global push.default current
 
 # Aliases
-	if [[ $HOST = "ThinkPad.local.tobias-weiss.org" ]]; then
+	if [[ $HOST = "ThinkPad.local.tobias-weiss.org" || $HOST = "tobi-yoga" ]]; then
 		alias vi="nvim"
 		alias vim="nvim"
 		#alias labor="ssh-add ~/.ssh/id_uni && ssh labor"
@@ -119,4 +119,4 @@ plugins=(
 #    eval `keychain --quiet --noask`
 #fi
 
-export PATH=$PATH:$HOME/dotfiles/utils
+export PATH=$PATH:$HOME/dotfiles/utils:/home/weiss/.gem/ruby/2.6.0/bin

@@ -25,14 +25,14 @@ Plug 'benekastah/neomake'
 Plug 'davidhalter/jedi-vim'
 Plug 'bling/vim-airline'
 Plug 'airblade/vim-gitgutter'
-"Plug 'sbdchd/neoformat'
+Plug 'sbdchd/neoformat'
 Plug 'mhinz/vim-signify' "show changes on left col
 Plug 'Raimondi/delimitMate' "autoclose brackets etc
 Plug 'vim-syntastic/syntastic' "syntax checking
 Plug 'benmills/vimux'
 Plug 'scrooloose/nerdtree'
 Plug 'lervag/vimtex'
-"Plug 'rust-lang/rust.vim'
+Plug 'rust-lang/rust.vim'
 "Plug 'racer-rust/vim-racer'
 "Plug 'kien/ctrlp.vim'
 
@@ -94,7 +94,11 @@ set viminfo='10,\"100,:20,%,n~/.config/nvim/.viminfo
 """""" Deoplete settings
 let g:deoplete#enable_at_startup = 1
 let g:neopairs#enable = 1
-let g:python3_host_prog = '/usr/local/bin/python3.7'
+" Python host prog 
+let hostname = substitute(system('hostname'), '\n', '', '')
+if hostname == "ThinkPad.local.tobias-weiss.org" 
+  let g:python3_host_prog = '/usr/local/bin/python3.7'
+endif
 "
 " Change clang binary path
 call deoplete#custom#var('clangx', 'clang_binary', '/usr/bin/clang')
@@ -182,7 +186,7 @@ let g:jedi#use_splits_not_buffers = "right"
 """"""" source other dotfiles
 " Python specifics
 autocmd BufRead,BufNewFile,FileReadPost *.py source ~/dotfiles/nvim/python-vimrc.vim
-" c++ specifics
+" C++ specifics
 autocmd BufRead,BufNewFile,FileReadPost *.cpp source ~/dotfiles/nvim/cpp-vimrc.vim
 " Latex specifics
 autocmd BufRead,BufNewFile,FileReadPost *.tex source ~/dotfiles/nvim/tex-vimrc.vim
@@ -225,7 +229,7 @@ let g:neomake_python_enabled_makers = ['pep8', 'flake8']
 "    "let g:SuperTabCompletionContexts = ['g:ContextText2']
 "
 
-""""""" YCM settings
+""""""" YCMsettings
 "let g:ycm_server_python_interpreter = "/usr/bin/python3"
 "let g:ycm_global_ycm_extra_conf = '~/.config/nvim/.ycm_extra_conf.py'
 
@@ -278,7 +282,7 @@ nnoremap <leader>e :Ex<CR>
 nnoremap <leader>t :tabnew<CR>:Ex<CR>
 nnoremap <leader>v :vsplit<CR>:w<CR>:Ex<CR>
 "nnoremap <leader>s :split<CR>:w<CR>:Ex<CR>
-nnoremap <leader>s :so /home/weiss/dotfiles/nvim/init.vim<cr>
+nnoremap <leader>r :so /home/weiss/dotfiles/nvim/init.vim<cr>
 
 nnoremap <leader>n :NERDTreeToggle<CR>
 

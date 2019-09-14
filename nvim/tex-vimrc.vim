@@ -7,8 +7,9 @@ let g:tex_flavor = 'latex'
  \bufhidden=hide<cr>:setlocal noswapfile<cr>
 "autocmd BufNewFile,BufRead *.tex,*.bib imap <buffer> <C-b> <Esc><C-b>
 
-map <F5> :VimtexClean<cr>:VimtexCompile<cr>
+map <F5> VimtexCompile<cr>
 map <F6> :VimtexView<cr>
+map <F7> :VimtexClean<cr>
 
 " Spell checking
 let g:spellfile_URL = 'http://ftp.vim.org/vim/runtime/spell'
