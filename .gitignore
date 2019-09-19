@@ -1,4 +1,4 @@
 .DS_Store
 *.swp
 nvim/.viminfo
-dotvim/plugged/*
+dotvim/plugged/

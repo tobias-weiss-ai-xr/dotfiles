@@ -33,6 +33,7 @@ Plug 'benmills/vimux'
 Plug 'scrooloose/nerdtree'
 Plug 'lervag/vimtex'
 Plug 'rust-lang/rust.vim'
+Plug 'fholgado/minibufexpl.vim'
 "Plug 'racer-rust/vim-racer'
 "Plug 'kien/ctrlp.vim'
 
@@ -72,7 +73,6 @@ filetype plugin indent on
 """""" gitgutter settings
 " Let vim-gitgutter do its thing on large files
 let g:gitgutter_max_signs=10000
-
 
 " Return to the same line you left off at
 augroup line_return
@@ -132,7 +132,8 @@ inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>""
 inoremap <expr><C-h> deoplete#smart_close_popup()."\<C-h>"
 inoremap <expr><BS> deoplete#smart_close_popup()."\<C-h>"
 " Close popup by <Space>.
-"inoremap <expr><Space> pumvisible() ? "\<C-y>" : "\<Space>"
+" maybe weired behavior with normal spaces
+" inoremap <expr><Space> pumvisible() ? "\<C-y>" : "\<Space>"
 
 " Enable omni completion.
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
@@ -201,7 +202,7 @@ let g:signify_vcs_list = [ 'git' ]
 " Neomake and other build commands (ctrl-b)
 nnoremap <C-b> :w<cr>:Neomake<cr>
 call neomake#configure#automake('w')
-let g:neomake_python_enabled_makers = ['pep8', 'flake8']
+" let g:neomake_python_enabled_makers = ['pep8', 'flake8']
 
 """""" neoformat settings
 " Enable alignment
