@@ -34,7 +34,10 @@ fi
 	# alias vs="v `git status --porcelain | sed -ne 's/^ M //p'`"
 
 # Settings
-	export VISUAL=vim
+	if [[ $HOST = "ThinkPad.local.tobias-weiss.org" || $HOST = "tobi-yoga" ]]; then
+		export VISUAL=/usr/bin/nvim
+		export EDITOR=/usr/bin/nvim
+	fi
 
 source ~/dotfiles/zsh/plugins/fixls.zsh
 
