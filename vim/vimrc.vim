@@ -100,7 +100,7 @@ autocmd BufRead,BufNewFile,FileReadPost *.py source ~/dotfiles/vim/python-vimrc.
 autocmd BufWritePre *.py :%s/\s\+$//e
 
 " Enable Pathogen plugin bundle manager
-execute pathogen#infect()
+" execute pathogen#infect()
 filetype plugin indent on 
 
 
