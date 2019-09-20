@@ -51,7 +51,7 @@
 
 " Language Specific
 	" Tabs
-		so ~/dotfiles/vim/tabs.vim
+	" so ~/dotfiles/vim/tabs.vim
 
 	" Typescript
 		autocmd BufNewFile,BufRead *.ts set syntax=javascript

@@ -2,3 +2,4 @@
 *.swp
 nvim/.viminfo
 dotvim/plugged/
+dotvim/bundle/
