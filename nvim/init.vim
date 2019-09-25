@@ -41,16 +41,11 @@ Plug 'fholgado/minibufexpl.vim'
 call plug#end()
 
 """"""" General coding stuff 
-" Always show status bar
-set laststatus=2
-" Let plugins show effects after 100ms, not 4s
-set updatetime=100
-" Disable mouse click to go to position
-set mouse-=a
-" Don't let autocomplete affect usual typing habits
-set completeopt=menuone,preview,noinsert
-" encoding
-set enc =utf-8
+set laststatus=2 " Always show status bar
+set updatetime=100 " Let plugins show effects after 100ms, not 4s
+set mouse-=a " Disable mouse click to go to position
+set completeopt=menuone,preview,noinsert " Don't let autocomplete affect usual typing habits
+set enc =utf-8 " encoding
 set nocompatible
 filetype off
 syntax on
@@ -59,10 +54,11 @@ colorscheme desert
 set autoindent
 set tabstop=4
 set shiftwidth=4
+set expandtab
 set dir=/tmp/
 set relativenumber 
 set number
-set nofoldenable
+" set nofoldenable
 set cursorline
 hi Cursor ctermfg=White ctermbg=Yellow cterm=bold guifg=white guibg=yellow gui=bold
 set hlsearch
@@ -131,9 +127,24 @@ inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>""
 " <C-h>, <BS>: close popup and delete backword char.
 inoremap <expr><C-h> deoplete#smart_close_popup()."\<C-h>"
 inoremap <expr><BS> deoplete#smart_close_popup()."\<C-h>"
+
 " Close popup by <Space>.
 " maybe weired behavior with normal spaces
 " inoremap <expr><Space> pumvisible() ? "\<C-y>" : "\<Space>"
+ 
+" Option menu to choose completion candidate
+call deoplete#custom#option('candidate_marks',
+	\ ['A', 'S', 'D', 'F', 'G'])          
+inoremap <expr>A       pumvisible() ?                        
+\ deoplete#insert_candidate(0) : 'A'                                                                                                          
+inoremap <expr>S       pumvisible() ?
+\ deoplete#insert_candidate(1) : 'S'
+inoremap <expr>D       pumvisible() ?
+\ deoplete#insert_candidate(2) : 'D'
+inoremap <expr>F       pumvisible() ?                     
+\ deoplete#insert_candidate(3) : 'F'
+inoremap <expr>G       pumvisible() ?                    
+\ deoplete#insert_candidate(4) : 'G'
 
 " Enable omni completion.
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
@@ -206,33 +217,11 @@ call neomake#configure#automake('w')
 
 """""" neoformat settings
 " Enable alignment
-" let g:neoformat_basic_format_align = 1
+let g:neoformat_basic_format_align = 1
 " Enable tab to spaces conversion
-" let g:neoformat_basic_format_retab = 1
+let g:neoformat_basic_format_retab = 1
 " Enable trimmming of trailing whitespace
-" let g:neoformat_basic_format_trim = 1
-
-"""""" UltiSnip settings
-" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
-"let g:UltiSnipsExpandTrigger="<tab>"
-"let g:UltiSnipsJumpForwardTrigger="<c-p>"
-"let g:UltiSnipsJumpBackwardTrigger="<c-n>"
-
-" If you want :UltiSnipsEdit to split your window.
-"let g:UltiSnipsEditSplit="vertical"
-
-""""""" SuperTab settings 
-"let g:SuperTabDefaultCompletionType = "<c-x><c-u>"
-"function! Completefunc(findstart, base)
-"    return "\<c-x>\<c-p>"
-"endfunction
-"    "call SuperTabChain(Completefunc, '<c-n>')
-"    "let g:SuperTabCompletionContexts = ['g:ContextText2']
-"
-
-""""""" YCMsettings
-"let g:ycm_server_python_interpreter = "/usr/bin/python3"
-"let g:ycm_global_ycm_extra_conf = '~/.config/nvim/.ycm_extra_conf.py'
+let g:neoformat_basic_format_trim = 1
 
 """"""" Keybindings
 " Set up leaders
@@ -286,6 +275,12 @@ nnoremap <leader>v :vsplit<CR>:w<CR>:Ex<CR>
 nnoremap <leader>r :so /home/weiss/dotfiles/nvim/init.vim<cr>
 
 nnoremap <leader>n :NERDTreeToggle<CR>
+
+" MiniBufExpl
+let g:miniBufExplorerAutoStart = 0
+map <Leader>e :MBEOpen<cr>
+map <Leader>c :MBEClose<cr>
+map <Leader>t :MBEToggle<cr>
 
 " Help navigation
 "	nnoremap <buffer> <CR> <C-]>
