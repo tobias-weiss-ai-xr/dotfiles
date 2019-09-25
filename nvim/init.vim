@@ -72,11 +72,11 @@ let g:gitgutter_max_signs=10000
 
 " Return to the same line you left off at
 augroup line_return
-	au!
-	au BufReadPost *
-		\ if line("'\"") > 0 && line("'\"") <= line("$") |
-		\	execute 'normal! g`"zvzz' |
-		\ endif
+    au!
+    au BufReadPost *
+        \ if line("'\"") > 0 && line("'\"") <= line("$") |
+        \   execute 'normal! g`"zvzz' |
+        \ endif
 augroup END
 
 " Tell vim to remember certain things when we exit
@@ -131,19 +131,19 @@ inoremap <expr><BS> deoplete#smart_close_popup()."\<C-h>"
 " Close popup by <Space>.
 " maybe weired behavior with normal spaces
 " inoremap <expr><Space> pumvisible() ? "\<C-y>" : "\<Space>"
- 
+
 " Option menu to choose completion candidate
 call deoplete#custom#option('candidate_marks',
-	\ ['A', 'S', 'D', 'F', 'G'])          
-inoremap <expr>A       pumvisible() ?                        
-\ deoplete#insert_candidate(0) : 'A'                                                                                                          
+    \ ['A', 'S', 'D', 'F', 'G'])
+inoremap <expr>A       pumvisible() ?
+\ deoplete#insert_candidate(0) : 'A'
 inoremap <expr>S       pumvisible() ?
 \ deoplete#insert_candidate(1) : 'S'
 inoremap <expr>D       pumvisible() ?
 \ deoplete#insert_candidate(2) : 'D'
-inoremap <expr>F       pumvisible() ?                     
+inoremap <expr>F       pumvisible() ?
 \ deoplete#insert_candidate(3) : 'F'
-inoremap <expr>G       pumvisible() ?                    
+inoremap <expr>G       pumvisible() ?
 \ deoplete#insert_candidate(4) : 'G'
 
 " Enable omni completion.
@@ -283,34 +283,34 @@ map <Leader>c :MBEClose<cr>
 map <Leader>t :MBEToggle<cr>
 
 " Help navigation
-"	nnoremap <buffer> <CR> <C-]>
-"	nnoremap <buffer> <BS> <C-T>
-"	nnoremap <buffer> o /'\l\{2,\}'<CR>
-"	nnoremap <buffer> O ?'\l\{2,\}'<CR>
-"	nnoremap <buffer> s /\|\zs\S\+\ze\|<CR>
-"	nnoremap <buffer> S ?\|\zs\S\+\ze\|<CR>
+"   nnoremap <buffer> <CR> <C-]>
+"   nnoremap <buffer> <BS> <C-T>
+"   nnoremap <buffer> o /'\l\{2,\}'<CR>
+"   nnoremap <buffer> O ?'\l\{2,\}'<CR>
+"   nnoremap <buffer> s /\|\zs\S\+\ze\|<CR>
+"   nnoremap <buffer> S ?\|\zs\S\+\ze\|<CR>
 
 " ---------------------------------- "
 " config for my laptop only
 " ---------------------------------- "
 let hostname = substitute(system('hostname'), '\n', '', '')
 if hostname == "ThinkPad.local.tobias-weiss.org" 
-	" load templates
-	autocmd BufNewFile *.py 0r ~/git/repo/01_coden/python/dummy.py|3
-	autocmd BufNewFile *.c 0r ~/git/repo/01_coden/c/dummy.c
-	autocmd BufNewFile *.h 0r ~/git/repo/01_coden/c/dummy.h
-	autocmd BufNewFile,BufWritePre,FileWritePre *.[ch] ks|exe "1," . 5 . "g/file:.*/s//file: " .expand("%")|'s
+    " load templates
+    autocmd BufNewFile *.py 0r ~/git/repo/01_coden/python/dummy.py|3
+    autocmd BufNewFile *.c 0r ~/git/repo/01_coden/c/dummy.c
+    autocmd BufNewFile *.h 0r ~/git/repo/01_coden/c/dummy.h
+    autocmd BufNewFile,BufWritePre,FileWritePre *.[ch] ks|exe "1," . 5 . "g/file:.*/s//file: " .expand("%")|'s
 
-	"""" Replace modify date on writing file
-	autocmd BufWritePre,FileWritePre *.[ch]   ks|call LastMod()|'s
-	fun! LastMod()
-	  if line("$") > 20
-		let l = 20
-	  else
-		let l = line("$")
-	  endif
-	  exe "1," . l . "g/Last modified: /s/Last modified: .*/Last modified: " strftime("%Y %b %d %X")
-	endfun
+    """" Replace modify date on writing file
+    autocmd BufWritePre,FileWritePre *.[ch]   ks|call LastMod()|'s
+    fun! LastMod()
+      if line("$") > 20
+        let l = 20
+      else
+        let l = line("$")
+      endif
+      exe "1," . l . "g/Last modified: /s/Last modified: .*/Last modified: " strftime("%Y %b %d %X")
+    endfun
 endif
 
 """"""" Rust stuff
