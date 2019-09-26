@@ -121,20 +121,22 @@ function! s:my_cr_function() abort
   return deoplete#close_popup() . "\<CR>"
 endfunction
 
-" deoplete tab-complete
-inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>""
-
 " <C-h>, <BS>: close popup and delete backword char.
 inoremap <expr><C-h> deoplete#smart_close_popup()."\<C-h>"
 inoremap <expr><BS> deoplete#smart_close_popup()."\<C-h>"
 
 " Close popup by <Space>.
-" maybe weired behavior with normal spaces
+" disables because of weired behavior with normal spaces
 " inoremap <expr><Space> pumvisible() ? "\<C-y>" : "\<Space>"
 
 " Option menu to choose completion candidate
+" deoplete tab-complete
+"inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>""
+
 call deoplete#custom#option('candidate_marks',
-    \ ['A', 'S', 'D', 'F', 'G'])
+    \ ['tab', 'A', 'S', 'D', 'F', 'G'])
+inoremap <expr><tab>       pumvisible() ?
+\ deoplete#insert_candidate(0) : 'tab'
 inoremap <expr>A       pumvisible() ?
 \ deoplete#insert_candidate(0) : 'A'
 inoremap <expr>S       pumvisible() ?

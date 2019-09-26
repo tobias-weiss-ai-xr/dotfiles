@@ -1,4 +1,4 @@
-""""""" Latex specific VIM settings """""""
+" Latex specific vim settings
 
 let g:tex_flavor = 'latex'
 
@@ -14,8 +14,8 @@ nnoremap <leader>lv :VimtexView<cr>
 inoremap <leader>lv :VimtexView<cr>
 nnoremap <leader>lc :VimtexClean<cr>
 inoremap <leader>lc :VimtexClean<cr>
-nnoremap <leader>lm :VimtexToggleMain<cr>
-inoremap <leader>lm :VimtexToggleMain<cr>
+nnoremap <leader>ls :VimtexToggleMain<cr>
+inoremap <leader>ls :VimtexToggleMain<cr>
 map <leader>lt :VimtexTocToggle<cr>
 
 " Spell checking
@@ -30,14 +30,8 @@ nnoremap <leader>k ]s
 inoremap <leader>k ]s
 inoremap <leader>k ]s
 
-" Enable YouCompleteMe Completion
-"  if !exists('g:ycm_semantic_triggers')
-"    let g:ycm_semantic_triggers = {}
-"  endif
-"  let g:ycm_semantic_triggers.tex = g:vimtex#re#youcompleteme
-
 " Disable unwanted space message
-let g:syntastic_tex_lacheck_quiet_messages = { 'regex': '\Vpossible unwanted space at' }
+let g:syntastic_tex_lacheck_quiet_messages = { 'possible unwanted space at' }
 
 " TOC settings
 let g:vimtex_toc_config = {
