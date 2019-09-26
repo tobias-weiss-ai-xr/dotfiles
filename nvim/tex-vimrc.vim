@@ -31,7 +31,10 @@ inoremap <leader>k ]s
 inoremap <leader>k ]s
 
 " Disable unwanted space message
-let g:syntastic_tex_lacheck_quiet_messages = { 'possible unwanted space at' }
+let g:syntastic_tex_lacheck_quiet_messages = { 'regex': 'possible unwanted space at' }
+
+" let g:syntastic_tex_checkers =  ['lacheck', 'text/language_check']
+let g:syntastic_tex_checkers =  ['chktex', 'text/language_check']
 
 " TOC settings
 let g:vimtex_toc_config = {

@@ -12,7 +12,9 @@ endif
 call plug#begin('~/.vim/plugged')
 
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'Shougo/deoplete-clangx' "clang completion
+"Plug 'Shougo/deoplete-clangx' "clang completion
+Plug 'deoplete-plugins/deoplete-clang' "clang completion
+"Plug 'tweekmonster/deoplete-clang2' "clang completion
 Plug 'zchee/deoplete-jedi'
 Plug 'Shougo/neopairs.vim'
 Plug 'Shougo/denite.nvim'
@@ -97,16 +99,18 @@ if hostname == "ThinkPad.local.tobias-weiss.org"
 endif
 "
 " Change clang binary path
-call deoplete#custom#var('clangx', 'clang_binary', '/usr/bin/clang')
+" clangx approach
+" call deoplete#custom#var('clangx', 'clang_binary', '/usr/bin/clang')
+" call deoplete#custom#var('clangx', 'default_c_options', '')
+" call deoplete#custom#var('clangx', 'default_cpp_options', '')
+" clang2 approach
+let g:deoplete#sources#clang#libclang_path = '/usr/lib/llvm-6.0/lib/libclang.so'
+let g:deoplete#sources#clang#clang_header = '/usr/lib/llvm-6.0/lib/clang'
 
-" Change clang options
-call deoplete#custom#var('clangx', 'default_c_options', '')
-call deoplete#custom#var('clangx', 'default_cpp_options', '')
-
-" Use smartcase.
+" Use smartcase
 let g:deoplete#enable_smart_case = 1
 "
-" Set minimum syntax keyword length.
+" Set minimum syntax keyword length
 let g:deoplete#sources#syntax#min_keyword_length = 3
 
 " delay a little bit
@@ -131,12 +135,13 @@ inoremap <expr><BS> deoplete#smart_close_popup()."\<C-h>"
 
 " Option menu to choose completion candidate
 " deoplete tab-complete
-"inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>""
+inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 
 call deoplete#custom#option('candidate_marks',
-    \ ['tab', 'A', 'S', 'D', 'F', 'G'])
-inoremap <expr><tab>       pumvisible() ?
-\ deoplete#insert_candidate(0) : 'tab'
+    \ ['A', 'S', 'D', 'F', 'G'])
+"    \ ['tab', 'A', 'S', 'D', 'F', 'G'])
+"inoremap <expr><tab>       pumvisible() ?
+"\ deoplete#insert_candidate(0) : 'tab'
 inoremap <expr>A       pumvisible() ?
 \ deoplete#insert_candidate(0) : 'A'
 inoremap <expr>S       pumvisible() ?
