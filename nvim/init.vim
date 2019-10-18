@@ -291,7 +291,7 @@ nnoremap <leader>e :Ex<CR>
 "nnoremap <leader>t :tabnew<CR>:Ex<CR>
 nnoremap <leader>v :vsplit<CR>:w<CR>:Ex<CR>
 "nnoremap <leader>s :split<CR>:w<CR>:Ex<CR>
-nnoremap <leader>r :so /home/weiss/dotfiles/nvim/init.vim<cr>
+nnoremap <leader>r :so $MYVIMRC<cr>
 
 nnoremap <leader>n :NERDTreeToggle<CR>
 

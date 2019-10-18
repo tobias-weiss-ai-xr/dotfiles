@@ -4,3 +4,10 @@ alias own_main
    int main (${1:args}){
      ${2}
    }
+
+snippet     for-prefix
+options     head
+abbr        forp
+    for (${1:int} ${2:i} = ${3:0}; $2 != ${4}; ++$2) {
+        ${0:#:TARGET}
+    }
