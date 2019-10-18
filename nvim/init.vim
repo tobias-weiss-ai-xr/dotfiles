@@ -20,9 +20,10 @@ Plug 'Shougo/neopairs.vim'
 Plug 'Shougo/denite.nvim'
 Plug 'Shougo/neosnippet.vim'
 Plug 'Shougo/neosnippet-snippets'
+Plug 'honza/vim-snippets'
+Plug 'Shougo/context_filetype.vim'
 Plug 'Shougo/neoinclude.vim'
 "Plug 'SirVer/ultisnips'
-"Plug 'honza/vim-snippets'
 Plug 'benekastah/neomake'
 Plug 'davidhalter/jedi-vim'
 Plug 'bling/vim-airline'
@@ -111,7 +112,7 @@ let g:deoplete#sources#clang#clang_header = '/usr/lib/llvm-6.0/lib/clang'
 let g:deoplete#enable_smart_case = 1
 "
 " Set minimum syntax keyword length
-let g:deoplete#sources#syntax#min_keyword_length = 3
+" let g:deoplete#sources#syntax#min_keyword_length = 3
 
 " delay a little bit
 call deoplete#custom#option('auto_complete_delay', 200)
@@ -184,11 +185,22 @@ call deoplete#custom#var('omni', 'input_patterns', {
 "endfunction
 
 """""" neosnippet settings
+" Custom snip path
+let g:neosnippet#snippets_directory="~/dotfiles/nvim/own-neosnippets/"
+
 " Note: It must be "imap" and "smap".  It uses <Plug> mappings.
 imap <C-k>     <Plug>(neosnippet_expand_or_jump)
 smap <C-k>     <Plug>(neosnippet_expand_or_jump)
 xmap <C-k>     <Plug>(neosnippet_expand_target)
 
+" SuperTab like snippets' behavior.
+" Note: It must be "imap" and "smap".  It uses <Plug> mappings.
+imap <expr><TAB>
+ \ pumvisible() ? "\<C-n>" :
+ \ neosnippet#expandable_or_jumpable() ?
+ \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+ \ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
 
 """""" Jedivim settings
 " disable jedi autocompletion, cause we use deoplete for completion
@@ -276,7 +288,7 @@ inoremap <leader>x <ESC>:x<CR>
 nnoremap <leader>x :x<CR>
 
 nnoremap <leader>e :Ex<CR>
-nnoremap <leader>t :tabnew<CR>:Ex<CR>
+"nnoremap <leader>t :tabnew<CR>:Ex<CR>
 nnoremap <leader>v :vsplit<CR>:w<CR>:Ex<CR>
 "nnoremap <leader>s :split<CR>:w<CR>:Ex<CR>
 nnoremap <leader>r :so /home/weiss/dotfiles/nvim/init.vim<cr>
@@ -284,7 +296,7 @@ nnoremap <leader>r :so /home/weiss/dotfiles/nvim/init.vim<cr>
 nnoremap <leader>n :NERDTreeToggle<CR>
 
 " MiniBufExpl
-let g:miniBufExplorerAutoStart = 0
+let g:miniBufExplorerAutoStart = 1
 map <Leader>e :MBEOpen<cr>
 map <Leader>c :MBEClose<cr>
 map <Leader>t :MBEToggle<cr>
@@ -307,6 +319,7 @@ if hostname == "ThinkPad.local.tobias-weiss.org"
     autocmd BufNewFile *.c 0r ~/git/repo/01_coden/c/dummy.c
     autocmd BufNewFile *.h 0r ~/git/repo/01_coden/c/dummy.h
     autocmd BufNewFile,BufWritePre,FileWritePre *.[ch] ks|exe "1," . 5 . "g/file:.*/s//file: " .expand("%")|'s
+    autocmd BufNewFile *.cpp 0r ~/git/repo/01_coden/cpp/dummy.cpp|7
 
     """" Replace modify date on writing file
     autocmd BufWritePre,FileWritePre *.[ch]   ks|call LastMod()|'s
@@ -324,4 +337,3 @@ endif
 "let g:rustfmt_autosave = 1
 "set hidden
 "let g:racer_cmd = "/home/user/.cargo/bin/racer"
-
