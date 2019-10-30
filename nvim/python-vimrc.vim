@@ -5,7 +5,7 @@ highlight ColorColumn ctermbg=lightgrey guibg=lightgrey
 
 " Python host prog 
 "let hostname = substitute(system('hostname'), '\n', '', '')
-"if hostname == "ThinkPad.local.tobias-weiss.org" 
+"if hostname == "ThinkPad.local.tobias-weiss.org"
 "  let g:python_host_prog = '/usr/bin/python2.7'
 "  let g:python3_host_prog = '/usr/bin/python3.5'
 "endif
@@ -29,8 +29,10 @@ highlight WhitespaceEOL ctermbg=red guibg=red
 match WhitespaceEOL /\s\+$/
 
 " Map execution of actual file
-map <F5> :! clear & python % &
-map <F6> :! clear & python3 % &
+" map <F5> :! clear & python % &
+" map <F6> :! clear & python3 % &
+map <silent><F5> :w<cr>:! clear<cr>:call VimuxRunCommand("python " . expand("%"))<cr>
+map <silent><F6> :w<cr>:! clear<cr>:call VimuxRunCommand("python3 " . expand("%"))<cr>
 
 " set python mode to python3 for python-mode
 let g:pymode_python = 'python3'
@@ -40,8 +42,4 @@ let g:pymode_quickfix_minheight = 3
 let g:pymode_quickfix_maxheight = 6
 let g:pymode_doc = 1
 let g:pymode_syntax_all = 1
-
-""" python/supertab
-"let g:SuperTabDefaultCompletionType = "context"
-"set completeopt=menuone,longest,preview
 

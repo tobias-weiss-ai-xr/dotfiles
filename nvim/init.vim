@@ -15,7 +15,7 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 "Plug 'Shougo/deoplete-clangx' "clang completion
 Plug 'deoplete-plugins/deoplete-clang' "clang completion
 "Plug 'tweekmonster/deoplete-clang2' "clang completion
-Plug 'zchee/deoplete-jedi'
+Plug 'deoplete-plugins/deoplete-jedi'
 Plug 'Shougo/neopairs.vim'
 Plug 'Shougo/denite.nvim'
 Plug 'Shougo/neosnippet.vim'
@@ -43,7 +43,7 @@ Plug 'fholgado/minibufexpl.vim'
 " After all plugins...
 call plug#end()
 
-""""""" General coding stuff 
+""""""" General coding stuff
 set laststatus=2 " Always show status bar
 set updatetime=100 " Let plugins show effects after 100ms, not 4s
 set mouse-=a " Disable mouse click to go to position
@@ -59,7 +59,7 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 set dir=/tmp/
-set relativenumber 
+set relativenumber
 set number
 " set nofoldenable
 set cursorline
@@ -93,9 +93,9 @@ set viminfo='10,\"100,:20,%,n~/.config/nvim/.viminfo
 """""" Deoplete settings
 let g:deoplete#enable_at_startup = 1
 let g:neopairs#enable = 1
-" Python host prog 
+" Python host prog
 let hostname = substitute(system('hostname'), '\n', '', '')
-if hostname == "ThinkPad.local.tobias-weiss.org" 
+if hostname == "ThinkPad.local.tobias-weiss.org"
   let g:python3_host_prog = '/usr/local/bin/python3.7'
 endif
 "
@@ -112,10 +112,10 @@ let g:deoplete#sources#clang#clang_header = '/usr/lib/llvm-6.0/lib/clang'
 let g:deoplete#enable_smart_case = 1
 "
 " Set minimum syntax keyword length
-" let g:deoplete#sources#syntax#min_keyword_length = 3
+let g:deoplete#sources#syntax#min_keyword_length = 0
 
 " delay a little bit
-call deoplete#custom#option('auto_complete_delay', 200)
+call deoplete#custom#option('auto_complete_delay', 100)
 
 " completion bracket
 call deoplete#custom#source('_', 'converters', ['converter_auto_paren'])
@@ -208,7 +208,7 @@ let g:jedi#completions_enabled = 0
 " open the go-to function in split, not another buffer
 let g:jedi#use_splits_not_buffers = "right"
 " Don't mess up undo history
-"let g:jedi#show_call_signatures = "0"
+let g:jedi#show_call_signatures = "0"
 "let g:jedi#use_tabs_not_buffers = 1
 "let g:jedi#use_splits_not_buffers = "left"
 "let g:jedi#popup_on_dot = 1
@@ -225,14 +225,14 @@ let g:tex_flavor = 'latex'
 let g:vimtex_view_method = 'zathura'
 let g:vimtex_compiler_progname = 'nvr'
 
-""""""" signify settings 
+""""""" signify settings
 let g:signify_vcs_list = [ 'git' ]
 
 """"""" neomake settings
 " Neomake and other build commands (ctrl-b)
 nnoremap <C-b> :w<cr>:Neomake<cr>
 call neomake#configure#automake('w')
-" let g:neomake_python_enabled_makers = ['pep8', 'flake8']
+let g:neomake_python_enabled_makers = ['pep8', 'flake8']
 
 """""" neoformat settings
 " Enable alignment
@@ -274,7 +274,7 @@ set incsearch
 " Mouse behaviour a/i/.../""
 set mouse=""
 
-" File and Window Management 
+" File and Window Management
 inoremap <leader>w <Esc>:w<CR>
 nnoremap <leader>w :w<CR>
 
@@ -313,7 +313,7 @@ map <Leader>t :MBEToggle<cr>
 " config for my laptop only
 " ---------------------------------- "
 let hostname = substitute(system('hostname'), '\n', '', '')
-if hostname == "ThinkPad.local.tobias-weiss.org" 
+if hostname == "ThinkPad.local.tobias-weiss.org"
     " load templates
     autocmd BufNewFile *.py 0r ~/git/repo/01_coden/python/dummy.py|3
     autocmd BufNewFile *.c 0r ~/git/repo/01_coden/c/dummy.c
