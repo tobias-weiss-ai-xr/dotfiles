@@ -28,7 +28,6 @@ nnoremap <leader>j [s
 inoremap <leader>j [s
 nnoremap <leader>k ]s
 inoremap <leader>k ]s
-inoremap <leader>k ]s
 
 " Disable unwanted space message
 let g:syntastic_tex_lacheck_quiet_messages = { 'regex': 'possible unwanted space at' }

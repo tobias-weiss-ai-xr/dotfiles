@@ -241,6 +241,9 @@ let g:neoformat_basic_format_align = 1
 let g:neoformat_basic_format_retab = 1
 " Enable trimmming of trailing whitespace
 let g:neoformat_basic_format_trim = 1
+" Map Neoformat with leader key
+nnoremap <leader>f :Neoformat<cr>
+inoremap <leader>f :Neoformat<cr>
 
 """"""" Keybindings
 " Set up leaders
