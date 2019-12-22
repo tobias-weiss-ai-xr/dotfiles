@@ -39,6 +39,7 @@ Plug 'rust-lang/rust.vim'
 Plug 'fholgado/minibufexpl.vim'
 "Plug 'racer-rust/vim-racer'
 "Plug 'kien/ctrlp.vim'
+Plug 'tmhedberg/SimpylFold'
 
 " After all plugins...
 call plug#end()
@@ -243,7 +244,6 @@ let g:neoformat_basic_format_retab = 1
 let g:neoformat_basic_format_trim = 1
 " Map Neoformat with leader key
 nnoremap <leader>f :Neoformat<cr>
-inoremap <leader>f :Neoformat<cr>
 
 """"""" Keybindings
 " Set up leaders
