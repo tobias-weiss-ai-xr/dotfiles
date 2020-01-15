@@ -4,9 +4,9 @@
 
 """""" plugvim settings
 if empty(glob('~/.config/nvim/autoload/plug.vim'))
-  silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+    silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
+                \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
 call plug#begin('~/.vim/plugged')
@@ -78,9 +78,9 @@ let g:gitgutter_max_signs=10000
 augroup line_return
     au!
     au BufReadPost *
-        \ if line("'\"") > 0 && line("'\"") <= line("$") |
-        \   execute 'normal! g`"zvzz' |
-        \ endif
+                \ if line("'\"") > 0 && line("'\"") <= line("$") |
+                \   execute 'normal! g`"zvzz' |
+                \ endif
 augroup END
 
 " Tell vim to remember certain things when we exit
@@ -97,7 +97,7 @@ let g:neopairs#enable = 1
 " Python host prog
 let hostname = substitute(system('hostname'), '\n', '', '')
 if hostname == "ThinkPad.local.tobias-weiss.org"
-  let g:python3_host_prog = '/usr/local/bin/python3.7'
+    let g:python3_host_prog = '/usr/local/bin/python3.7'
 endif
 "
 " Change clang binary path
@@ -124,7 +124,7 @@ call deoplete#custom#source('_', 'converters', ['converter_auto_paren'])
 " <CR>: close popup and save indent.
 inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
 function! s:my_cr_function() abort
-  return deoplete#close_popup() . "\<CR>"
+    return deoplete#close_popup() . "\<CR>"
 endfunction
 
 " <C-h>, <BS>: close popup and delete backword char.
@@ -140,20 +140,20 @@ inoremap <expr><BS> deoplete#smart_close_popup()."\<C-h>"
 inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 
 call deoplete#custom#option('candidate_marks',
-    \ ['A', 'S', 'D', 'F', 'G'])
+            \ ['A', 'S', 'D', 'F', 'G'])
 "    \ ['tab', 'A', 'S', 'D', 'F', 'G'])
 "inoremap <expr><tab>       pumvisible() ?
 "\ deoplete#insert_candidate(0) : 'tab'
 inoremap <expr>A       pumvisible() ?
-\ deoplete#insert_candidate(0) : 'A'
+            \ deoplete#insert_candidate(0) : 'A'
 inoremap <expr>S       pumvisible() ?
-\ deoplete#insert_candidate(1) : 'S'
+            \ deoplete#insert_candidate(1) : 'S'
 inoremap <expr>D       pumvisible() ?
-\ deoplete#insert_candidate(2) : 'D'
+            \ deoplete#insert_candidate(2) : 'D'
 inoremap <expr>F       pumvisible() ?
-\ deoplete#insert_candidate(3) : 'F'
+            \ deoplete#insert_candidate(3) : 'F'
 inoremap <expr>G       pumvisible() ?
-\ deoplete#insert_candidate(4) : 'G'
+            \ deoplete#insert_candidate(4) : 'G'
 
 " Enable omni completion.
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
@@ -164,8 +164,8 @@ autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
 " work with tex
 call deoplete#custom#var('omni', 'input_patterns', {
-      \ 'tex': g:vimtex#re#deoplete
-      \})
+            \ 'tex': g:vimtex#re#deoplete
+            \})
 
 """""" denite settings
 " Define mappings
@@ -197,11 +197,11 @@ xmap <C-k>     <Plug>(neosnippet_expand_target)
 " SuperTab like snippets' behavior.
 " Note: It must be "imap" and "smap".  It uses <Plug> mappings.
 imap <expr><TAB>
- \ pumvisible() ? "\<C-n>" :
- \ neosnippet#expandable_or_jumpable() ?
- \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+            \ pumvisible() ? "\<C-n>" :
+            \ neosnippet#expandable_or_jumpable() ?
+            \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
 smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
- \ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+            \ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
 
 """""" Jedivim settings
 " disable jedi autocompletion, cause we use deoplete for completion
@@ -222,9 +222,6 @@ autocmd BufRead,BufNewFile,FileReadPost *.py source ~/dotfiles/nvim/python-vimrc
 autocmd BufRead,BufNewFile,FileReadPost *.cpp source ~/dotfiles/nvim/cpp-vimrc.vim
 " Latex specifics
 autocmd BufRead,BufNewFile,FileReadPost *.tex source ~/dotfiles/nvim/tex-vimrc.vim
-let g:tex_flavor = 'latex'
-let g:vimtex_view_method = 'zathura'
-let g:vimtex_compiler_progname = 'nvr'
 
 """"""" signify settings
 let g:signify_vcs_list = [ 'git' ]
@@ -327,12 +324,12 @@ if hostname == "ThinkPad.local.tobias-weiss.org"
     """" Replace modify date on writing file
     autocmd BufWritePre,FileWritePre *.[ch]   ks|call LastMod()|'s
     fun! LastMod()
-      if line("$") > 20
-        let l = 20
-      else
-        let l = line("$")
-      endif
-      exe "1," . l . "g/Last modified: /s/Last modified: .*/Last modified: " strftime("%Y %b %d %X")
+        if line("$") > 20
+            let l = 20
+        else
+            let l = line("$")
+        endif
+        exe "1," . l . "g/Last modified: /s/Last modified: .*/Last modified: " strftime("%Y %b %d %X")
     endfun
 endif
 

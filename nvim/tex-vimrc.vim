@@ -30,8 +30,8 @@ nnoremap <leader>k ]s
 inoremap <leader>k ]s
 
 " syntastic settings
-" let g:syntastic_tex_checkers =  ['lacheck', 'text/language_check']
-let g:syntastic_tex_checkers =  ['lacheck', 'chktex', 'text/language_check', 'proselint']
+let g:syntastic_tex_checkers =  ['lacheck', 'text/language_check']
+" let g:syntastic_tex_checkers =  ['lacheck', 'chktex', 'text/language_check', 'proselint']
 " Disable unwanted space message
 let g:syntastic_tex_lacheck_quiet_messages = { 'regex': 'possible unwanted space' }
 let g:syntastic_tex_chktex_quiet_messages = { 'regex': 'Wrong length of dash' }
@@ -48,3 +48,22 @@ let g:vimtex_toc_config = {
       \ 'show_numbers' : 1,
       \ 'mode' : 2,
       \}
+
+let g:tex_flavor = 'latex'
+let g:vimtex_view_method = 'zathura'
+let g:vimtex_compiler_progname = 'nvr'
+let g:vimtex_compiler_latexmk = {
+            \ 'backend' : 'nvim',
+            \ 'background' : 1,
+            \ 'build_dir' : '',
+            \ 'callback' : 1,
+            \ 'continuous' : 1,
+            \ 'executable' : 'latexmk',
+            \ 'hooks' : [],
+            \ 'options' : [
+            \   '-verbose',
+            \   '-file-line-error',
+            \   '-synctex=1',
+            \   '-interaction=nonstopmode',
+            \ ],
+            \}
