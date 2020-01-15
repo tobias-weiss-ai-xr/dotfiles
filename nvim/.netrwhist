@@ -1,3 +1,4 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =1
+let g:netrw_dirhistcnt =2
+let g:netrw_dirhist_2='/home/weiss/git/studs5/01_seminar/hausarbeit-tex'
 let g:netrw_dirhist_1='/home/weiss/git/studs5/03_angewandte-statistik/softwarepraktikum1'
