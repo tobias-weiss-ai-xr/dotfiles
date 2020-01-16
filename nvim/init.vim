@@ -214,7 +214,6 @@ let g:jedi#show_call_signatures = "0"
 "let g:jedi#use_splits_not_buffers = "left"
 "let g:jedi#popup_on_dot = 1
 
-
 """"""" source other dotfiles
 " Python specifics
 autocmd BufRead,BufNewFile,FileReadPost *.py source ~/dotfiles/nvim/python-vimrc.vim
@@ -222,6 +221,9 @@ autocmd BufRead,BufNewFile,FileReadPost *.py source ~/dotfiles/nvim/python-vimrc
 autocmd BufRead,BufNewFile,FileReadPost *.cpp source ~/dotfiles/nvim/cpp-vimrc.vim
 " Latex specifics
 autocmd BufRead,BufNewFile,FileReadPost *.tex source ~/dotfiles/nvim/tex-vimrc.vim
+let g:tex_flavor = 'latex'
+let g:vimtex_view_method = 'zathura'
+let g:vimtex_compiler_progname = 'nvr'
 
 """"""" signify settings
 let g:signify_vcs_list = [ 'git' ]
