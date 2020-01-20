@@ -30,3 +30,14 @@ Stationsbelegung
 Vorrangsbeziehungen
 Stationsbelegungen
 Vorrangsgraphen
+LB4
+UB
+LB3
+LB2
+LB1
+makespan
+Stationsanforderungen
+Auslot
+Vorrangsgraph
+Stationsindex
+Entscheidungsvariable
