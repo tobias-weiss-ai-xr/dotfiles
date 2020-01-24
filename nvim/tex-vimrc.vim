@@ -1,5 +1,5 @@
 " Latex specific vim settings
-
+let g:tex_indent_items=0 "Do not indent \item one level 'too much'
 let g:tex_flavor = 'latex'
 
 "autocmd BufNewFil,BufRead *.tex,*.bib noremap <buffer> <C-b> :w<cr>:new<bar>r
