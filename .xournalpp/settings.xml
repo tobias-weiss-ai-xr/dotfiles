@@ -4,8 +4,8 @@
   <property name="pressureSensitivity" value="true"/>
   <property name="zoomGesturesEnabled" value="true"/>
   <property name="selectedToolbar" value="TobiasToolbars"/>
-  <property name="lastSavePath" value="/home/weiss/git/studs5/04_iiv/uebung"/>
-  <property name="lastOpenPath" value="/home/weiss/git/studs5/02_statistische_inferenz/inferenz-cheatsheet"/>
+  <property name="lastSavePath" value="/home/weiss/git/studs5/02_statistische_inferenz/inferenz-cheatsheet"/>
+  <property name="lastOpenPath" value="/home/weiss/git/studs5/03_angewandte-statistik/vorlesung"/>
   <property name="lastImagePath" value=""/>
   <property name="zoomStep" value="10.00000000"/>
   <property name="zoomStepScroll" value="2.00000000"/>
@@ -155,7 +155,7 @@
       <attribute name="drawingType" type="string" value="default"/>
     </data>
     <data name="hilighter">
-      <attribute name="color" type="hex" value="ff0000"/>
+      <attribute name="color" type="hex" value="fffce94f"/>
       <attribute name="drawingType" type="string" value="default"/>
       <attribute name="fill" type="int" value="0"/>
       <attribute name="fillAlpha" type="int" value="128"/>
