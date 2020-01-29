@@ -21,6 +21,8 @@ nnoremap <leader>lc :VimtexClean<cr>
 inoremap <leader>lc :VimtexClean<cr>
 nnoremap <leader>ls :VimtexToggleMain<cr>
 inoremap <leader>ls :VimtexToggleMain<cr>
+nnoremap <leader>le :VimtexError<cr>
+inoremap <leader>le :VimtexError<cr>
 map <leader>lt :VimtexTocToggle<cr>
 
 " Spell checking
