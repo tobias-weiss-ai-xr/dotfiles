@@ -123,4 +123,4 @@ plugins=(
 #    eval `keychain --quiet --noask`
 #fi
 
-export PATH=$PATH:$HOME/dotfiles/utils:/home/weiss/.gem/ruby/2.6.0/bin
+export PATH=$PATH:$HOME/dotfiles/utils:/home/weiss/.gem/ruby/2.7.0/bin

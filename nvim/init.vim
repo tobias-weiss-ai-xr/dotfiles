@@ -1,23 +1,48 @@
 """"""" init.vim """""""
 " good tutorial: https://jdhao.github.io/2018/12/24/centos_nvim_install_use_guide_en/
+
+" T440p specific config
+let hostname = substitute(system('hostname'), '\n', '', '')
+if hostname == "ThinkPad.local.tobias-weiss.org"
+	" load templates
+	autocmd BufNewFile *.py 0r ~/git/repo/01_coden/python/dummy.py|3
+	autocmd BufNewFile *.c 0r ~/git/repo/01_coden/c/dummy.c
+	autocmd BufNewFile *.h 0r ~/git/repo/01_coden/c/dummy.h
+	autocmd BufNewFile,BufWritePre,FileWritePre *.[ch] ks|exe "1," . 5 . "g/file:.*/s//file: " .expand("%")|'s
+	autocmd BufNewFile *.cpp 0r ~/git/repo/01_coden/cpp/dummy.cpp|7
+
+	"""" Replace modify date on writing file
+	autocmd BufWritePre,FileWritePre *.[ch]   ks|call LastMod()|'s
+	fun! LastMod()
+		if line("$") > 20
+			let l = 20
+		else
+			let l = line("$")
+		endif
+		exe "1," . l . "g/Last modified: /s/Last modified: .*/Last modified: " strftime("%Y %b %d %X")
+	endfun
+endif
+
+" yoga specific config
+let hostname = substitute(system('hostname'), '\n', '', '')
+if hostname == "ThinkPad.local.tobias-weiss.org"
+	let g:python3_host_prog = '/usr/local/bin/python3.8'
+endif
 "
 
-"""""" plugvim settings
+" plugvim settings
 if empty(glob('~/.config/nvim/autoload/plug.vim'))
-    silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
-                \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+	silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
+				\ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+	autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
 call plug#begin('~/.vim/plugged')
-
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-"Plug 'Shougo/deoplete-clangx' "clang completion
-Plug 'deoplete-plugins/deoplete-clang' "clang completion
-"Plug 'tweekmonster/deoplete-clang2' "clang completion
-Plug 'deoplete-plugins/deoplete-jedi'
+"Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+"Plug 'deoplete-plugins/deoplete-clang' "clang completion
+"Plug 'deoplete-plugins/deoplete-jedi'
+"Plug 'Shougo/denite.nvim'
 Plug 'Shougo/neopairs.vim'
-Plug 'Shougo/denite.nvim'
 Plug 'Shougo/neosnippet.vim'
 Plug 'Shougo/neosnippet-snippets'
 Plug 'honza/vim-snippets'
@@ -38,14 +63,24 @@ Plug 'lervag/vimtex'
 Plug 'rust-lang/rust.vim'
 Plug 'fholgado/minibufexpl.vim'
 "Plug 'racer-rust/vim-racer'
-"Plug 'kien/ctrlp.vim'
 Plug 'tmhedberg/SimpylFold'
 Plug 'jalvesaq/Nvim-R'
 
+Plug 'ncm2/ncm2'
+Plug 'roxma/nvim-yarp'
+Plug 'ncm2/ncm2-bufword'
+Plug 'ncm2/ncm2-path'
+Plug 'ncm2/ncm2-jedi'
+Plug 'ncm2/ncm2-match-highlight'
+Plug 'ncm2/ncm2-pyclang'
+Plug 'ncm2/ncm2-racer'
+Plug 'ncm2/ncm2-jedi'
+Plug 'ncm2/ncm2-neosnippet'
+Plug 'gaalcaras/ncm-R'
 " After all plugins...
 call plug#end()
 
-""""""" General coding stuff
+" General coding stuff
 set laststatus=2 " Always show status bar
 set updatetime=100 " Let plugins show effects after 100ms, not 4s
 set mouse-=a " Disable mouse click to go to position
@@ -70,17 +105,74 @@ set backspace=indent,eol,start
 "Detect file type
 filetype plugin indent on
 
-"""""" gitgutter settings
+" enable ncm2 for all buffers
+autocmd BufEnter * call ncm2#enable_for_buffer()
+
+" IMPORTANT: :help Ncm2PopupOpen for more information
+set completeopt=noinsert,menuone,noselect
+
+au BufEnter * call ncm2#enable_for_buffer()
+au User Ncm2Plugin call ncm2#register_source({
+			\ 'name' : 'vimtex',
+			\ 'priority': 1,
+			\ 'subscope_enable': 1,
+			\ 'complete_length': 1,
+			\ 'scope': ['tex'],
+			\ 'matcher': {'name': 'combine',
+			\           'matchers': [
+			\               {'name': 'abbrfuzzy', 'key': 'menu'},
+			\               {'name': 'prefix', 'key': 'word'},
+			\           ]},
+			\ 'mark': 'tex',
+			\ 'word_pattern': '\w+',
+			\ 'complete_pattern': g:vimtex#re#ncm,
+			\ 'on_complete': ['ncm2#on_complete#omni', 'vimtex#complete#omnifunc'],
+			\ })
+
+" suppress the annoying 'match x of y', 'The only match' and 'Pattern not
+" found' messages
+set shortmess+=c
+
+" CTRL-C doesn't trigger the InsertLeave autocmd . map to <ESC> instead.
+inoremap <c-c> <ESC>
+
+" When the <Enter> key is pressed while the popup menu is visible, it only
+" hides the menu. Use this mapping to close the menu and also start a new
+" line.
+inoremap <expr> <CR> (pumvisible() ? "\<c-y>\<cr>" : "\<CR>")
+
+" Use <TAB> to select the popup menu:
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+
+" wrap existing omnifunc
+" Note that omnifunc does not run in background and may probably block the
+" editor. If you don't want to be blocked by omnifunc too often, you could
+" add 180ms delay before the omni wrapper:
+"  'on_complete': ['ncm2#on_complete#delay', 180,
+"               \ 'ncm2#on_complete#omni', 'csscomplete#CompleteCSS'],
+au User Ncm2Plugin call ncm2#register_source({
+			\ 'name' : 'css',
+			\ 'priority': 9,
+			\ 'subscope_enable': 1,
+			\ 'scope': ['css','scss'],
+			\ 'mark': 'css',
+			\ 'word_pattern': '[\w\-]+',
+			\ 'complete_pattern': ':\s*',
+			\ 'on_complete': ['ncm2#on_complete#omni', 'csscomplete#CompleteCSS'],
+			\ })
+
+" gitgutter settings
 " Let vim-gitgutter do its thing on large files
 let g:gitgutter_max_signs=10000
 
 " Return to the same line you left off at
 augroup line_return
-    au!
-    au BufReadPost *
-                \ if line("'\"") > 0 && line("'\"") <= line("$") |
-                \   execute 'normal! g`"zvzz' |
-                \ endif
+	au!
+	au BufReadPost *
+				\ if line("'\"") > 0 && line("'\"") <= line("$") |
+				\   execute 'normal! g`"zvzz' |
+				\ endif
 augroup END
 
 " Tell vim to remember certain things when we exit
@@ -94,86 +186,9 @@ set viminfo='10,\"100,:20,%,n~/.config/nvim/.viminfo
 " Close paranthesis automatically
 let g:neopairs#enable = 1
 
-"""""" Deoplete settings
-let g:deoplete#enable_at_startup = 1
-" Python host prog
-let hostname = substitute(system('hostname'), '\n', '', '')
-if hostname == "ThinkPad.local.tobias-weiss.org"
-    let g:python3_host_prog = '/usr/local/bin/python3.7'
-endif
-"
-" Change clang binary path
-" clangx approach
-" call deoplete#custom#var('clangx', 'clang_binary', '/usr/bin/clang')
-" call deoplete#custom#var('clangx', 'default_c_options', '')
-" call deoplete#custom#var('clangx', 'default_cpp_options', '')
-" clang2 approach
-let g:deoplete#sources#clang#libclang_path = '/usr/lib/llvm-6.0/lib/libclang.so'
-let g:deoplete#sources#clang#clang_header = '/usr/lib/llvm-6.0/lib/clang'
-
-" Use smartcase
-let g:deoplete#enable_smart_case = 1
-"
-" Set minimum syntax keyword length
-let g:deoplete#sources#syntax#min_keyword_length = 1
-
-" delay a little bit
-call deoplete#custom#option('auto_complete_delay', 100)
-
-" completion bracket
-call deoplete#custom#source('_', 'converters', ['converter_auto_paren'])
-
-" <CR>: close popup and save indent.
-inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
-function! s:my_cr_function() abort
-    return deoplete#close_popup() . "\<CR>"
-endfunction
-
-" <C-h>, <BS>: close popup and delete backword char.
-inoremap <expr><C-h> deoplete#smart_close_popup()."\<C-h>"
-inoremap <expr><BS> deoplete#smart_close_popup()."\<C-h>"
-
-" Close popup by <Space>.
-" disables because of weired behavior with normal spaces
-" inoremap <expr><Space> pumvisible() ? "\<C-y>" : "\<Space>"
-
-" Option menu to choose completion candidate
-" deoplete tab-complete
-inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
-
-call deoplete#custom#option('candidate_marks',
-            \ ['A', 'S', 'D', 'F', 'G'])
-"            \ ['tab', 'A', 'S', 'D', 'F', 'G'])
-"inoremap <expr><tab>       pumvisible() ?
-""            \ deoplete#insert_candidate(0) : 'tab'
-inoremap <expr>A       pumvisible() ?
-            \ deoplete#insert_candidate(0) : 'A'
-inoremap <expr>S       pumvisible() ?
-            \ deoplete#insert_candidate(1) : 'S'
-inoremap <expr>D       pumvisible() ?
-            \ deoplete#insert_candidate(2) : 'D'
-inoremap <expr>F       pumvisible() ?
-            \ deoplete#insert_candidate(3) : 'F'
-inoremap <expr>G       pumvisible() ?
-            \ deoplete#insert_candidate(4) : 'G'
-
-"call deoplete#custom#option('sources', {
-"            \ '_': ['file', 'buffer'],
-"            \ 'python': ['LanguageClient', 'ultisnips'],
-"            \ 'python3': ['LanguageClient', 'ultisnips'],
-"            \ 'rust': ['LanguageClient', 'ultisnips'],
-"            \ 'tex': ['omni'],
-"            \ 'r': ['omni']
-"            \})
-
 " r start libs
 let R_start_libs = 'base,stats,graphics,grDevices,utils,methods'
 
-" work with tex and r
-call deoplete#custom#var('omni', 'input_patterns', {
-            \ 'tex': g:vimtex#re#deoplete,
-            \ 'r': '[*\t]\.\w*',
-            \})
 
 """""" neosnippet settings
 " Custom snip path
@@ -184,30 +199,12 @@ imap <C-k>     <Plug>(neosnippet_expand_or_jump)
 smap <C-k>     <Plug>(neosnippet_expand_or_jump)
 xmap <C-k>     <Plug>(neosnippet_expand_target)
 
-" SuperTab like snippets' behavior.
-" Note: It must be "imap" and "smap".  It uses <Plug> mappings.
-"imap <expr><TAB>
-""            \ pumvisible() ? "\<C-n>" :
-"            \ neosnippet#expandable_or_jumpable() ?
-"            \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-"smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-"            \ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-"
-
-" summon FULL (synced) autocompletion
-inoremap <silent><expr> <C-Space>
-            \ deoplete#manual_complete()
-
 """""" Jedivim settings
-" disable jedi autocompletion, cause we use deoplete for completion
-let g:jedi#completions_enabled = 0
+let g:jedi#completions_enabled = 1
 " open the go-to function in split, not another buffer
 let g:jedi#use_splits_not_buffers = "right"
 " Don't mess up undo history
 let g:jedi#show_call_signatures = "0"
-"let g:jedi#use_tabs_not_buffers = 1
-"let g:jedi#use_splits_not_buffers = "left"
-"let g:jedi#popup_on_dot = 1
 
 """"""" source other dotfiles
 " Python specifics
@@ -306,29 +303,6 @@ map <Leader>t :MBEToggle<cr>
 "   nnoremap <buffer> s /\|\zs\S\+\ze\|<CR>
 "   nnoremap <buffer> S ?\|\zs\S\+\ze\|<CR>
 
-" ---------------------------------- "
-" config for my laptop only
-" ---------------------------------- "
-let hostname = substitute(system('hostname'), '\n', '', '')
-if hostname == "ThinkPad.local.tobias-weiss.org"
-    " load templates
-    autocmd BufNewFile *.py 0r ~/git/repo/01_coden/python/dummy.py|3
-    autocmd BufNewFile *.c 0r ~/git/repo/01_coden/c/dummy.c
-    autocmd BufNewFile *.h 0r ~/git/repo/01_coden/c/dummy.h
-    autocmd BufNewFile,BufWritePre,FileWritePre *.[ch] ks|exe "1," . 5 . "g/file:.*/s//file: " .expand("%")|'s
-    autocmd BufNewFile *.cpp 0r ~/git/repo/01_coden/cpp/dummy.cpp|7
-
-    """" Replace modify date on writing file
-    autocmd BufWritePre,FileWritePre *.[ch]   ks|call LastMod()|'s
-    fun! LastMod()
-        if line("$") > 20
-            let l = 20
-        else
-            let l = line("$")
-        endif
-        exe "1," . l . "g/Last modified: /s/Last modified: .*/Last modified: " strftime("%Y %b %d %X")
-    endfun
-endif
 
 """"""" Rust stuff
 "let g:rustfmt_autosave = 1

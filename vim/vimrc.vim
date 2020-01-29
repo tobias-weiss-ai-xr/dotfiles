@@ -5,6 +5,7 @@
 	set background=dark
 	colorscheme desert
 
+    filetype plugin indent on 
 	set autoindent
 	set tabstop=4
 	set shiftwidth=4
@@ -33,8 +34,6 @@
 	nnoremap J G
 	nnoremap K gg
 
-	"map <tab> %
-
 	set backspace=indent,eol,start
 
 	nnoremap <Space> za
@@ -50,16 +49,6 @@
 	set mouse=""
 
 " Language Specific
-	" Tabs
-	" so ~/dotfiles/vim/tabs.vim
-
-	" Typescript
-		autocmd BufNewFile,BufRead *.ts set syntax=javascript
-		autocmd BufNewFile,BufRead *.tsx set syntax=javascript
-
-	" Markup
-		inoremap <leader>< <esc>I<<esc>A><esc>yypa/<esc>O<tab>
-
 
 " File and Window Management 
 	inoremap <leader>w <Esc>:w<CR>
@@ -79,10 +68,6 @@
 " Help navigation
 "	nnoremap <buffer> <CR> <C-]>
 "	nnoremap <buffer> <BS> <C-T>
-"	nnoremap <buffer> o /'\l\{2,\}'<CR>
-"	nnoremap <buffer> O ?'\l\{2,\}'<CR>
-"	nnoremap <buffer> s /\|\zs\S\+\ze\|<CR>
-"	nnoremap <buffer> S ?\|\zs\S\+\ze\|<CR>
 
 " Return to the same line you left off at
 	augroup line_return
@@ -99,9 +84,6 @@ autocmd BufRead,BufNewFile,FileReadPost *.py source ~/dotfiles/vim/python-vimrc.
 " Remove trailing whitespaces for python
 autocmd BufWritePre *.py :%s/\s\+$//e
 
-" Enable Pathogen plugin bundle manager
-" execute pathogen#infect()
-filetype plugin indent on 
 
 
 " Tell vim to remember certain things when we exit
@@ -112,17 +94,6 @@ filetype plugin indent on
 " "  n... :  where to save the viminfo files
 set viminfo='10,\"100,:20,%,n~/.viminfo
 
-"" NerdTree 
-" let NERDTreeIgnore=['\.pyc']
-"autostart if no file given
-" autocmd VimEnter * if !argc() | NERDTree | endif
-
-"" Tex Hax
-" let g:tex_flavor='latex'
-
-""close quotes automatically (delimitMate)
-" let delimitMate_expand_cr = 1
-
 " ---------------------------------- "
 " Configure MiniBufExpl
 " ---------------------------------- "
@@ -131,41 +102,7 @@ set viminfo='10,\"100,:20,%,n~/.viminfo
 " map <C-m> :MBEToggle<CR>
 
 " ---------------------------------- "
-" Configure Tagbar
-" ---------------------------------- "
-
-" Open Tagbar with F8
-" map <F8> :TagbarToggle<CR>
-
-" ---------------------------------- "
-" Configure Ultisnip and YouCompleteMe
-" ---------------------------------- "
-
-" let g:UltiSnipsExpandTrigger="<tab>"
-" let g:UltiSnipsJumpForwardTrigger="<tab>"
-" let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
-
-" ---------------------------------- "
-" Configure YouCompleteMe
-" ---------------------------------- "
-" let g:ycm_collect_identifiers_from_tags_files = 1 " Let YCM read tags from Ctags file
-" let g:ycm_use_ultisnips_completer = 1 " Default 1, just ensure
-" let g:ycm_seed_identifiers_with_syntax = 1 " Completion for programming language's keyword
-" let g:ycm_complete_in_comments = 1 " Completion in comments
-" let g:ycm_complete_in_strings = 1 " Completion in string
-" 
-" let g:ycm_key_list_select_completion = ['<C-j>', '<Down>']
-" let g:ycm_key_list_previous_completion = ['<C-k>', '<Up>']
-
-" Goto definition with F3
-" map <F3> :YcmCompleter GoTo<CR>
-
-" Tern settings
-" let g:tern_show_argument_hints='on_hold'
-" let g:tern_map_keys=1
- 
-" ---------------------------------- "
-" config for my laptop only
+" config for my T440p only
 " ---------------------------------- "
 let hostname = substitute(system('hostname'), '\n', '', '')
 if hostname == "ThinkPad.local.tobias-weiss.org" 
@@ -186,26 +123,3 @@ if hostname == "ThinkPad.local.tobias-weiss.org"
 	  exe "1," . l . "g/Last modified: /s/Last modified: .*/Last modified: " strftime("%Y %b %d %X")
 	endfun
 endif
-
-""" Sop folding for vim-latex
-" let Tex_FoldedSections=""
-" let Tex_FoldedEnvironments=""
-" let Tex_FoldedMisc=""
-" Auto load
-	" Triger `autoread` when files changes on disk
-	" https://unix.stackexchange.com/questions/149209/refresh-changed-content-of-file-opened-in-vim/383044#383044
-	" https://vi.stackexchange.com/questions/13692/prevent-focusgained-autocmd-running-in-command-line-editing-mode
-	autocmd FocusGained,BufEnter,CursorHold,CursorHoldI * if mode() != 'c' | checktime | endif
-	set autoread 
-	" Notification after file change
-	" https://vi.stackexchange.com/questions/13091/autocmd-event-for-autoread
-	autocmd FileChangedShellPost *
-	  \ echohl WarningMsg | echo "File changed on disk. Buffer reloaded." | echohl None
-
-" Future stuff
-	"Swap line
-	"Insert blank below and above
-
-" Fix for: https://github.com/fatih/vim-go/issues/1509
-
-filetype plugin indent on
