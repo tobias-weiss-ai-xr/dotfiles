@@ -4,6 +4,7 @@
 " T440p specific config
 let hostname = substitute(system('hostname'), '\n', '', '')
 if hostname == "ThinkPad.local.tobias-weiss.org"
+	let g:python3_host_prog = '/usr/local/bin/python3.7'
 	" load templates
 	autocmd BufNewFile *.py 0r ~/git/repo/01_coden/python/dummy.py|3
 	autocmd BufNewFile *.c 0r ~/git/repo/01_coden/c/dummy.c
@@ -22,13 +23,6 @@ if hostname == "ThinkPad.local.tobias-weiss.org"
 		exe "1," . l . "g/Last modified: /s/Last modified: .*/Last modified: " strftime("%Y %b %d %X")
 	endfun
 endif
-
-" yoga specific config
-let hostname = substitute(system('hostname'), '\n', '', '')
-if hostname == "ThinkPad.local.tobias-weiss.org"
-	let g:python3_host_prog = '/usr/local/bin/python3.8'
-endif
-"
 
 " plugvim settings
 if empty(glob('~/.config/nvim/autoload/plug.vim'))
