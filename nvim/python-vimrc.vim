@@ -3,13 +3,6 @@
 set colorcolumn=80
 highlight ColorColumn ctermbg=lightgrey guibg=lightgrey
 
-" Python host prog 
-"let hostname = substitute(system('hostname'), '\n', '', '')
-"if hostname == "ThinkPad.local.tobias-weiss.org"
-"  let g:python_host_prog = '/usr/bin/python2.7'
-"  let g:python3_host_prog = '/usr/bin/python3.5'
-"endif
-
 " Remove trailing whitespaces for python
 autocmd BufWritePre *.py :%s/\s\+$//e
 
@@ -33,6 +26,8 @@ match WhitespaceEOL /\s\+$/
 " map <F6> :! clear & python3 % &
 map <silent><F5> :w<cr>:! clear<cr>:call VimuxRunCommand("python " . expand("%"))<cr>
 map <silent><F6> :w<cr>:! clear<cr>:call VimuxRunCommand("python3 " . expand("%"))<cr>
+nnoremap <silent><leader>ll :w<cr>:Neomake<cr> :! clear<cr>:call VimuxRunCommand("python " . expand("%"))<cr>
+inoremap <silent><leader>ll :w<cr>:Neomake<cr> :! clear<cr>:call VimuxRunCommand("python " . expand("%"))<cr>
 
 " set python mode to python3 for python-mode
 let g:pymode_python = 'python3'

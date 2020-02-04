@@ -26,9 +26,9 @@ endif
 
 " plugvim settings
 if empty(glob('~/.config/nvim/autoload/plug.vim'))
-	silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
-				\ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-	autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+    silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
+                \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
 call plug#begin('~/.vim/plugged')
@@ -107,21 +107,21 @@ set completeopt=noinsert,menuone,noselect
 
 au BufEnter * call ncm2#enable_for_buffer()
 au User Ncm2Plugin call ncm2#register_source({
-			\ 'name' : 'vimtex',
-			\ 'priority': 1,
-			\ 'subscope_enable': 1,
-			\ 'complete_length': 1,
-			\ 'scope': ['tex'],
-			\ 'matcher': {'name': 'combine',
-			\           'matchers': [
-			\               {'name': 'abbrfuzzy', 'key': 'menu'},
-			\               {'name': 'prefix', 'key': 'word'},
-			\           ]},
-			\ 'mark': 'tex',
-			\ 'word_pattern': '\w+',
-			\ 'complete_pattern': g:vimtex#re#ncm,
-			\ 'on_complete': ['ncm2#on_complete#omni', 'vimtex#complete#omnifunc'],
-			\ })
+            \ 'name' : 'vimtex',
+            \ 'priority': 1,
+            \ 'subscope_enable': 1,
+            \ 'complete_length': 1,
+            \ 'scope': ['tex'],
+            \ 'matcher': {'name': 'combine',
+            \           'matchers': [
+            \               {'name': 'abbrfuzzy', 'key': 'menu'},
+            \               {'name': 'prefix', 'key': 'word'},
+            \           ]},
+            \ 'mark': 'tex',
+            \ 'word_pattern': '\w+',
+            \ 'complete_pattern': g:vimtex#re#ncm,
+            \ 'on_complete': ['ncm2#on_complete#omni', 'vimtex#complete#omnifunc'],
+            \ })
 
 " suppress the annoying 'match x of y', 'The only match' and 'Pattern not
 " found' messages
@@ -146,15 +146,15 @@ inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 "  'on_complete': ['ncm2#on_complete#delay', 180,
 "               \ 'ncm2#on_complete#omni', 'csscomplete#CompleteCSS'],
 au User Ncm2Plugin call ncm2#register_source({
-			\ 'name' : 'css',
-			\ 'priority': 9,
-			\ 'subscope_enable': 1,
-			\ 'scope': ['css','scss'],
-			\ 'mark': 'css',
-			\ 'word_pattern': '[\w\-]+',
-			\ 'complete_pattern': ':\s*',
-			\ 'on_complete': ['ncm2#on_complete#omni', 'csscomplete#CompleteCSS'],
-			\ })
+            \ 'name' : 'css',
+            \ 'priority': 9,
+            \ 'subscope_enable': 1,
+            \ 'scope': ['css','scss'],
+            \ 'mark': 'css',
+            \ 'word_pattern': '[\w\-]+',
+            \ 'complete_pattern': ':\s*',
+            \ 'on_complete': ['ncm2#on_complete#omni', 'csscomplete#CompleteCSS'],
+            \ })
 
 " gitgutter settings
 " Let vim-gitgutter do its thing on large files
@@ -162,11 +162,11 @@ let g:gitgutter_max_signs=10000
 
 " Return to the same line you left off at
 augroup line_return
-	au!
-	au BufReadPost *
-				\ if line("'\"") > 0 && line("'\"") <= line("$") |
-				\   execute 'normal! g`"zvzz' |
-				\ endif
+    au!
+    au BufReadPost *
+                \ if line("'\"") > 0 && line("'\"") <= line("$") |
+                \   execute 'normal! g`"zvzz' |
+                \ endif
 augroup END
 
 " Tell vim to remember certain things when we exit
@@ -228,7 +228,7 @@ let g:neoformat_basic_format_retab = 1
 " Enable trimmming of trailing whitespace
 let g:neoformat_basic_format_trim = 1
 " Map Neoformat with leader key
-nnoremap <leader>f :Neoformat<cr>
+map <silent><leader>f :Neoformat<cr>:retab<cr>
 
 """"""" Keybindings
 " Set up leaders
