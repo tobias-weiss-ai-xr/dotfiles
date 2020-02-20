@@ -8,8 +8,8 @@ set foldtext=vimtex#fold#text()
 set fillchars=fold:\
 
 "autocmd BufNewFil,BufRead *.tex,*.bib noremap <buffer> <C-b> :w<cr>:new<bar>r
-            \ !make<cr>:setlocal buftype=nofile<cr>:setlocal
-            \bufhidden=hide<cr>:setlocal noswapfile<cr>
+			\ !make<cr>:setlocal buftype=nofile<cr>:setlocal
+			\bufhidden=hide<cr>:setlocal noswapfile<cr>
 "autocmd BufNewFile,BufRead *.tex,*.bib imap <buffer> <C-b> <Esc><C-b>
 
 " key bindings
@@ -45,28 +45,28 @@ let g:syntastic_tex_chktex_quiet_messages = { 'regex': 'Wrong length of dash' }
 
 " TOC settings
 let g:vimtex_toc_config = {
-            \ 'name' : 'TOC',
-            \ 'layers' : ['content', 'todo', 'include'],
-            \ 'resize' : 1,
-            \ 'split_width' : 50,
-            \ 'todo_sorted' : 0,
-            \ 'show_help' : 1,
-            \ 'show_numbers' : 1,
-            \ 'mode' : 2,
-            \}
+			\ 'name' : 'TOC',
+			\ 'layers' : ['content', 'todo', 'include'],
+			\ 'resize' : 1,
+			\ 'split_width' : 50,
+			\ 'todo_sorted' : 0,
+			\ 'show_help' : 1,
+			\ 'show_numbers' : 1,
+			\ 'mode' : 2,
+			\}
 
 let g:vimtex_compiler_latexmk = {
-            \ 'backend' : 'nvim',
-            \ 'background' : 1,
-            \ 'build_dir' : '',
-            \ 'callback' : 1,
-            \ 'continuous' : 1,
-            \ 'executable' : 'latexmk',
-            \ 'hooks' : [],
-            \ 'options' : [
-            \   '-verbose',
-            \   '-file-line-error',
-            \   '-synctex=1',
-            \   '-interaction=nonstopmode',
-            \ ],
-            \}
+			\ 'backend' : 'nvim',
+			\ 'background' : 1,
+			\ 'build_dir' : '',
+			\ 'callback' : 1,
+			\ 'continuous' : 1,
+			\ 'executable' : 'latexmk',
+			\ 'hooks' : [],
+			\ 'options' : [
+			\   '-verbose',
+			\   '-file-line-error',
+			\   '-synctex=1',
+			\   '-interaction=nonstopmode',
+			\ ],
+			\}

@@ -26,9 +26,9 @@ endif
 
 " plugvim settings
 if empty(glob('~/.config/nvim/autoload/plug.vim'))
-    silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
-                \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+	silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
+				\ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+	autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
 call plug#begin('~/.vim/plugged')
@@ -107,21 +107,21 @@ set completeopt=noinsert,menuone,noselect
 
 au BufEnter * call ncm2#enable_for_buffer()
 au User Ncm2Plugin call ncm2#register_source({
-            \ 'name' : 'vimtex',
-            \ 'priority': 1,
-            \ 'subscope_enable': 1,
-            \ 'complete_length': 1,
-            \ 'scope': ['tex'],
-            \ 'matcher': {'name': 'combine',
-            \           'matchers': [
-            \               {'name': 'abbrfuzzy', 'key': 'menu'},
-            \               {'name': 'prefix', 'key': 'word'},
-            \           ]},
-            \ 'mark': 'tex',
-            \ 'word_pattern': '\w+',
-            \ 'complete_pattern': g:vimtex#re#ncm,
-            \ 'on_complete': ['ncm2#on_complete#omni', 'vimtex#complete#omnifunc'],
-            \ })
+			\ 'name' : 'vimtex',
+			\ 'priority': 1,
+			\ 'subscope_enable': 1,
+			\ 'complete_length': 1,
+			\ 'scope': ['tex'],
+			\ 'matcher': {'name': 'combine',
+			\           'matchers': [
+			\               {'name': 'abbrfuzzy', 'key': 'menu'},
+			\               {'name': 'prefix', 'key': 'word'},
+			\           ]},
+			\ 'mark': 'tex',
+			\ 'word_pattern': '\w+',
+			\ 'complete_pattern': g:vimtex#re#ncm,
+			\ 'on_complete': ['ncm2#on_complete#omni', 'vimtex#complete#omnifunc'],
+			\ })
 
 " suppress the annoying 'match x of y', 'The only match' and 'Pattern not
 " found' messages
@@ -146,15 +146,15 @@ inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 "  'on_complete': ['ncm2#on_complete#delay', 180,
 "               \ 'ncm2#on_complete#omni', 'csscomplete#CompleteCSS'],
 au User Ncm2Plugin call ncm2#register_source({
-            \ 'name' : 'css',
-            \ 'priority': 9,
-            \ 'subscope_enable': 1,
-            \ 'scope': ['css','scss'],
-            \ 'mark': 'css',
-            \ 'word_pattern': '[\w\-]+',
-            \ 'complete_pattern': ':\s*',
-            \ 'on_complete': ['ncm2#on_complete#omni', 'csscomplete#CompleteCSS'],
-            \ })
+			\ 'name' : 'css',
+			\ 'priority': 9,
+			\ 'subscope_enable': 1,
+			\ 'scope': ['css','scss'],
+			\ 'mark': 'css',
+			\ 'word_pattern': '[\w\-]+',
+			\ 'complete_pattern': ':\s*',
+			\ 'on_complete': ['ncm2#on_complete#omni', 'csscomplete#CompleteCSS'],
+			\ })
 
 " gitgutter settings
 " Let vim-gitgutter do its thing on large files
@@ -162,11 +162,11 @@ let g:gitgutter_max_signs=10000
 
 " Return to the same line you left off at
 augroup line_return
-    au!
-    au BufReadPost *
-                \ if line("'\"") > 0 && line("'\"") <= line("$") |
-                \   execute 'normal! g`"zvzz' |
-                \ endif
+	au!
+	au BufReadPost *
+				\ if line("'\"") > 0 && line("'\"") <= line("$") |
+				\   execute 'normal! g`"zvzz' |
+				\ endif
 augroup END
 
 " Tell vim to remember certain things when we exit
@@ -207,12 +207,17 @@ autocmd BufRead,BufNewFile,FileReadPost *.py source ~/dotfiles/nvim/python-vimrc
 autocmd BufRead,BufNewFile,FileReadPost *.cpp source ~/dotfiles/nvim/cpp-vimrc.vim
 " Latex specifics
 autocmd BufRead,BufNewFile,FileReadPost *.tex source ~/dotfiles/nvim/tex-vimrc.vim
+" Don't know why the following settings only work here
+" Maybe FileReadPre could help for the autocmd
+" Test it if there is some spare time...
 let g:tex_flavor = 'latex'
 let g:vimtex_view_method = 'zathura'
 let g:vimtex_compiler_progname = 'nvr'
-
-""""""" signify settings
-let g:signify_vcs_list = [ 'git' ]
+" Disable overfull/underfull \hbox and all package warnings
+let g:vimtex_quickfix_latexlog = {
+			\ 'overfull' : 0,
+			\ 'underfull' : 0,
+			\}
 
 """"""" neomake settings
 " Neomake and other build commands (ctrl-b)
