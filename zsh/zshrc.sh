@@ -9,6 +9,8 @@
 #gurobi optimizer
 if [[ $HOST = "ThinkPad.local.tobias-weiss.org" ]]; then
 	source ~/dotfiles/zsh/gurobi.sh
+elif [[ $HOST = "tobi-yoga" ]]; then
+	source ~/dotfiles/zsh/gurobi901.sh
 fi
 
 #ssh-agent settings

@@ -62,7 +62,7 @@ let g:vimtex_compiler_latexmk = {
 			\ 'callback' : 1,
 			\ 'continuous' : 1,
 			\ 'executable' : 'latexmk',
-			\ 'hooks' : [],
+			\ 'hooks' : [''],
 			\ 'options' : [
 			\   '-verbose',
 			\   '-file-line-error',

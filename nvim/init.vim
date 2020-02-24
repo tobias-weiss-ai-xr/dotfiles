@@ -2,33 +2,33 @@
 " good tutorial: https://jdhao.github.io/2018/12/24/centos_nvim_install_use_guide_en/
 
 " T440p specific config
-let hostname = substitute(system('hostname'), '\n', '', '')
-if hostname == "ThinkPad.local.tobias-weiss.org"
-	let g:python3_host_prog = '/usr/local/bin/python3.7'
-	" load templates
-	autocmd BufNewFile *.py 0r ~/git/repo/01_coden/python/dummy.py|3
-	autocmd BufNewFile *.c 0r ~/git/repo/01_coden/c/dummy.c
-	autocmd BufNewFile *.h 0r ~/git/repo/01_coden/c/dummy.h
-	autocmd BufNewFile,BufWritePre,FileWritePre *.[ch] ks|exe "1," . 5 . "g/file:.*/s//file: " .expand("%")|'s
-	autocmd BufNewFile *.cpp 0r ~/git/repo/01_coden/cpp/dummy.cpp|7
+let g:hostname = substitute(system('hostname'), '\n', '', '')
+if g:hostname == "ThinkPad.local.tobias-weiss.org"
+    let g:python3_host_prog = '/usr/local/bin/python3.7'
+    " load templates
+    autocmd BufNewFile *.py 0r ~/git/repo/01_coden/python/dummy.py|3
+    autocmd BufNewFile *.c 0r ~/git/repo/01_coden/c/dummy.c
+    autocmd BufNewFile *.h 0r ~/git/repo/01_coden/c/dummy.h
+    autocmd BufNewFile,BufWritePre,FileWritePre *.[ch] ks|exe "1," . 5 . "g/file:.*/s//file: " .expand("%")|'s
+    autocmd BufNewFile *.cpp 0r ~/git/repo/01_coden/cpp/dummy.cpp|7
 
-	"""" Replace modify date on writing file
-	autocmd BufWritePre,FileWritePre *.[ch]   ks|call LastMod()|'s
-	fun! LastMod()
-		if line("$") > 20
-			let l = 20
-		else
-			let l = line("$")
-		endif
-		exe "1," . l . "g/Last modified: /s/Last modified: .*/Last modified: " strftime("%Y %b %d %X")
-	endfun
+    """" Replace modify date on writing file
+    autocmd BufWritePre,FileWritePre *.[ch]   ks|call LastMod()|'s
+    fun! LastMod()
+        if line("$") > 20
+            let l = 20
+        else
+            let l = line("$")
+        endif
+        exe "1," . l . "g/Last modified: /s/Last modified: .*/Last modified: " strftime("%Y %b %d %X")
+    endfun
 endif
 
 " plugvim settings
 if empty(glob('~/.config/nvim/autoload/plug.vim'))
-	silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
-				\ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-	autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+    silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
+                \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
 call plug#begin('~/.vim/plugged')
@@ -53,7 +53,9 @@ Plug 'Raimondi/delimitMate' "autoclose brackets etc
 Plug 'vim-syntastic/syntastic' "syntax checking
 Plug 'benmills/vimux'
 Plug 'scrooloose/nerdtree'
-Plug 'lervag/vimtex'
+"Plug 'lervag/vimtex'
+" Using a non-master branch
+Plug 'tobiasweede/vimtex', { 'branch': 'add-pdf-viewer-positioning' }
 Plug 'rust-lang/rust.vim'
 Plug 'fholgado/minibufexpl.vim'
 "Plug 'racer-rust/vim-racer'
@@ -87,6 +89,7 @@ colorscheme desert
 set autoindent
 set tabstop=4
 set shiftwidth=4
+set colorcolumn=80
 set expandtab
 set dir=/tmp/
 set relativenumber
@@ -107,21 +110,21 @@ set completeopt=noinsert,menuone,noselect
 
 au BufEnter * call ncm2#enable_for_buffer()
 au User Ncm2Plugin call ncm2#register_source({
-			\ 'name' : 'vimtex',
-			\ 'priority': 1,
-			\ 'subscope_enable': 1,
-			\ 'complete_length': 1,
-			\ 'scope': ['tex'],
-			\ 'matcher': {'name': 'combine',
-			\           'matchers': [
-			\               {'name': 'abbrfuzzy', 'key': 'menu'},
-			\               {'name': 'prefix', 'key': 'word'},
-			\           ]},
-			\ 'mark': 'tex',
-			\ 'word_pattern': '\w+',
-			\ 'complete_pattern': g:vimtex#re#ncm,
-			\ 'on_complete': ['ncm2#on_complete#omni', 'vimtex#complete#omnifunc'],
-			\ })
+            \ 'name' : 'vimtex',
+            \ 'priority': 1,
+            \ 'subscope_enable': 1,
+            \ 'complete_length': 1,
+            \ 'scope': ['tex'],
+            \ 'matcher': {'name': 'combine',
+            \           'matchers': [
+            \               {'name': 'abbrfuzzy', 'key': 'menu'},
+            \               {'name': 'prefix', 'key': 'word'},
+            \           ]},
+            \ 'mark': 'tex',
+            \ 'word_pattern': '\w+',
+            \ 'complete_pattern': g:vimtex#re#ncm,
+            \ 'on_complete': ['ncm2#on_complete#omni', 'vimtex#complete#omnifunc'],
+            \ })
 
 " suppress the annoying 'match x of y', 'The only match' and 'Pattern not
 " found' messages
@@ -146,15 +149,15 @@ inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 "  'on_complete': ['ncm2#on_complete#delay', 180,
 "               \ 'ncm2#on_complete#omni', 'csscomplete#CompleteCSS'],
 au User Ncm2Plugin call ncm2#register_source({
-			\ 'name' : 'css',
-			\ 'priority': 9,
-			\ 'subscope_enable': 1,
-			\ 'scope': ['css','scss'],
-			\ 'mark': 'css',
-			\ 'word_pattern': '[\w\-]+',
-			\ 'complete_pattern': ':\s*',
-			\ 'on_complete': ['ncm2#on_complete#omni', 'csscomplete#CompleteCSS'],
-			\ })
+            \ 'name' : 'css',
+            \ 'priority': 9,
+            \ 'subscope_enable': 1,
+            \ 'scope': ['css','scss'],
+            \ 'mark': 'css',
+            \ 'word_pattern': '[\w\-]+',
+            \ 'complete_pattern': ':\s*',
+            \ 'on_complete': ['ncm2#on_complete#omni', 'csscomplete#CompleteCSS'],
+            \ })
 
 " gitgutter settings
 " Let vim-gitgutter do its thing on large files
@@ -162,11 +165,11 @@ let g:gitgutter_max_signs=10000
 
 " Return to the same line you left off at
 augroup line_return
-	au!
-	au BufReadPost *
-				\ if line("'\"") > 0 && line("'\"") <= line("$") |
-				\   execute 'normal! g`"zvzz' |
-				\ endif
+    au!
+    au BufReadPost *
+                \ if line("'\"") > 0 && line("'\"") <= line("$") |
+                \   execute 'normal! g`"zvzz' |
+                \ endif
 augroup END
 
 " Tell vim to remember certain things when we exit
@@ -215,9 +218,22 @@ let g:vimtex_view_method = 'zathura'
 let g:vimtex_compiler_progname = 'nvr'
 " Disable overfull/underfull \hbox and all package warnings
 let g:vimtex_quickfix_latexlog = {
-			\ 'overfull' : 0,
-			\ 'underfull' : 0,
-			\}
+            \ 'overfull' : 0,
+            \ 'underfull' : 0,
+            \}
+
+" PDF viewer positioning
+let g:vimtex_view_zathura_hook_view = 'ViewerPosition'
+let g:vimtex_view_zathura_hook_callback = 'ViewerPosition'
+
+function! ViewerPosition() abort dict
+    call self.move('0 0')
+    if g:hostname == "ThinkPad.local.tobias-weiss.org"
+        call self.resize('1366 742')
+    else
+        call self.resize('1600 876')
+    endif
+endfunction
 
 """"""" neomake settings
 " Neomake and other build commands (ctrl-b)
