@@ -53,9 +53,9 @@ Plug 'Raimondi/delimitMate' "autoclose brackets etc
 Plug 'vim-syntastic/syntastic' "syntax checking
 Plug 'benmills/vimux'
 Plug 'scrooloose/nerdtree'
-"Plug 'lervag/vimtex'
+Plug 'lervag/vimtex'
 " Using a non-master branch
-Plug 'tobiasweede/vimtex', { 'branch': 'add-pdf-viewer-positioning' }
+" Plug 'tobiasweede/vimtex', { 'branch': 'add-pdf-viewer-positioning' }
 Plug 'rust-lang/rust.vim'
 Plug 'fholgado/minibufexpl.vim'
 "Plug 'racer-rust/vim-racer'
