@@ -268,7 +268,7 @@ nnoremap L $
 nnoremap J G
 nnoremap K gg
 
-nnoremap <Space> zA
+nnoremap <Space> za
 nnoremap <leader>z zM
 
 nnoremap vv 0v$

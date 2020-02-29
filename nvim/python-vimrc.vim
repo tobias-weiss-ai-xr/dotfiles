@@ -24,10 +24,20 @@ match WhitespaceEOL /\s\+$/
 " Map execution of actual file
 " map <F5> :! clear & python % &
 " map <F6> :! clear & python3 % &
-map <silent><F5> :w<cr>:! clear<cr>:call VimuxRunCommand("python " . expand("%"))<cr>
-map <silent><F6> :w<cr>:! clear<cr>:call VimuxRunCommand("python3 " . expand("%"))<cr>
-nnoremap <silent><leader>ll :w<cr>:Neomake<cr> :! clear<cr>:call VimuxRunCommand("python " . expand("%"))<cr>
-inoremap <silent><leader>ll :w<cr>:Neomake<cr> :! clear<cr>:call VimuxRunCommand("python " . expand("%"))<cr>
+if g:hostname == "ThinkPad.local.tobias-weiss.org"
+map <silent><F5> :w<cr>:! clear<cr>:call VimuxRunCommand("python3.7 " . expand("%"))<cr>
+map <silent><F6> :w<cr>:! clear<cr>:call VimuxRunCommand("python2.7 " . expand("%"))<cr>
+nnoremap <silent><leader>ll :w<cr>:Neomake<cr> :! clear<cr>:call VimuxRunCommand("python3.7 " . expand("%"))<cr>
+inoremap <silent><leader>ll :w<cr>:Neomake<cr> :! clear<cr>:call VimuxRunCommand("python2.7 " . expand("%"))<cr>
+endif
+map <silent><F5> :w<cr>:! clear<cr>:call VimuxRunCommand("python3 " . expand("%"))<cr>
+map <silent><F6> :w<cr>:! clear<cr>:call VimuxRunCommand("python2 " . expand("%"))<cr>
+nnoremap <silent><leader>ll :w<cr>:Neomake<cr> :! clear<cr>:call VimuxRunCommand("python3 " . expand("%"))<cr>
+inoremap <silent><leader>ll :w<cr>:Neomake<cr> :! clear<cr>:call VimuxRunCommand("python2 " . expand("%"))<cr>
+
+" Vimux settings
+let g:VimuxOrientation = "h"
+let g:VimuxHeight = "50"
 
 " set python mode to python3 for python-mode
 let g:pymode_python = 'python3'

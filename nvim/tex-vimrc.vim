@@ -1,5 +1,8 @@
-" Latex specific vim settings
+" Latex specific vim settings (double as also defined in init)
 let g:tex_flavor = 'latex'
+
+" Disable colorcolumn
+set colorcolumn =
 
 "tex specific folding
 set foldmethod=expr
