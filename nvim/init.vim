@@ -1,6 +1,8 @@
 """"""" init.vim """""""
 " good tutorial: https://jdhao.github.io/2018/12/24/centos_nvim_install_use_guide_en/
 
+set path+=** " add actual folder to path
+
 " T440p specific config
 let g:hostname = substitute(system('hostname'), '\n', '', '')
 if g:hostname == "ThinkPad.local.tobias-weiss.org"
@@ -97,12 +99,19 @@ set number
 " set nofoldenable
 set cursorline
 hi Cursor ctermfg=White ctermbg=Yellow cterm=bold guifg=white guibg=yellow gui=bold
+hi MatchParen cterm=bold ctermfg=15 ctermbg=11 gui=bold guifg=white guibg=yellow
 set hlsearch
 set backspace=indent,eol,start
 "Detect file type
 filetype plugin indent on
 
 " enable ncm2 for all buffers
+
+" vim misinterpretes <C-Space> as <C-@> ...
+" https://stackoverflow.com/questions/7722177/how-do-i-map-ctrl-x-ctrl-o-to-ctrl-space-in-terminal-vim/7725796#7725796
+inoremap <C-Space> <C-x><C-o>
+inoremap <C-@> <C-Space>
+
 autocmd BufEnter * call ncm2#enable_for_buffer()
 
 " IMPORTANT: :help Ncm2PopupOpen for more information
