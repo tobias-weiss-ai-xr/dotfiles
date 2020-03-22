@@ -21,19 +21,39 @@ inoremap # X<c-h>#<space>
 highlight WhitespaceEOL ctermbg=red guibg=red
 match WhitespaceEOL /\s\+$/
 
+" mapping to souce all souce files
+noremap <leader>R :so $MYVIMRC<cr>:so ~/dotfiles/nvim/python-vimrc.vim<cr>
+
 " Map execution of actual file
 " map <F5> :! clear & python % &
 " map <F6> :! clear & python3 % &
-if g:hostname == "ThinkPad.local.tobias-weiss.org"
-map <silent><F5> :w<cr>:! clear<cr>:call VimuxRunCommand("python3.7 " . expand("%"))<cr>
-map <silent><F6> :w<cr>:! clear<cr>:call VimuxRunCommand("python2.7 " . expand("%"))<cr>
-nnoremap <silent><leader>ll :w<cr>:Neomake<cr> :! clear<cr>:call VimuxRunCommand("python3.7 " . expand("%"))<cr>
-inoremap <silent><leader>ll :w<cr>:Neomake<cr> :! clear<cr>:call VimuxRunCommand("python2.7 " . expand("%"))<cr>
-endif
-map <silent><F5> :w<cr>:! clear<cr>:call VimuxRunCommand("python3 " . expand("%"))<cr>
+"map <silent><F5> :w<cr>:! clear<cr>:call VimuxRunCommand("python3 " . expand("%"))<cr>
+noremap <silent><F5> :w<cr>
+                \ :call VimuxSetRunner(1)<cr>
+                \ :call VimuxRunCommand("python3 " . expand("%"))<cr>
+                \ :call VimuxSetRunner(2)<cr>
+                \ :call VimuxRunCommand("python3 -m pytest")<cr>
+map <silent><F6> :w<cr>:! clear<cr>:call VimuxRunCommand("python3 -m pudb.run " . expand("%"))<cr>
 map <silent><F6> :w<cr>:! clear<cr>:call VimuxRunCommand("python2 " . expand("%"))<cr>
-nnoremap <silent><leader>ll :w<cr>:Neomake<cr> :! clear<cr>:call VimuxRunCommand("python3 " . expand("%"))<cr>
-inoremap <silent><leader>ll :w<cr>:Neomake<cr> :! clear<cr>:call VimuxRunCommand("python2 " . expand("%"))<cr>
+noremap <silent><leader>ll :w<cr>:Neomake<cr> :! clear<cr>:call VimuxRunCommand("python3 " . expand("%"))<cr>
+noremap <silent><leader>ll :w<cr>:Neomake<cr> :! clear<cr>:call VimuxRunCommand("python2 " . expand("%"))<cr>
+if g:hostname == "ThinkPad.local.tobias-weiss.org"
+noremap <silent><F5> :w<cr>
+               \ :call VimuxSetRunner(1)<cr>
+               \ :call VimuxRunCommand("clear")<cr>
+               \ :call VimuxRunCommand("python3 " . expand("%"))<cr>
+               \ :call VimuxSetRunner(2)<cr>
+               \ :call VimuxRunCommand("clear")<cr>
+               \ :call VimuxRunCommand("python3 -m pytest")<cr>
+map <silent><F6> :w<cr>:! clear<cr>:call VimuxSetRunner(1)<cr>:call VimuxRunCommand("python3.7 -m pudb.run " . expand("%"))<cr>
+noremap <silent><leader>ll :w<cr>
+               \ :call VimuxSetRunner(1)<cr>
+               \ :call VimuxRunCommand("clear")<cr>
+               \ :call VimuxRunCommand("python3 " . expand("%"))<cr>
+               "\ :call VimuxSetRunner(2)<cr>
+               "\ :call VimuxRunCommand("clear")<cr>
+               "\ :call VimuxRunCommand("python3 -m pytest")<cr>
+endif
 
 " Vimux settings
 let g:VimuxOrientation = "h"
@@ -47,4 +67,3 @@ let g:pymode_quickfix_minheight = 3
 let g:pymode_quickfix_maxheight = 6
 let g:pymode_doc = 1
 let g:pymode_syntax_all = 1
-

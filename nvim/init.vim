@@ -53,7 +53,9 @@ Plug 'sbdchd/neoformat'
 Plug 'mhinz/vim-signify' "show changes on left col
 Plug 'Raimondi/delimitMate' "autoclose brackets etc
 Plug 'vim-syntastic/syntastic' "syntax checking
-Plug 'benmills/vimux'
+" Plug 'benmills/vimux'
+" Use vimux forked version until RunnerPane is merged
+Plug 'tobiasweede/vimux', { 'branch': 'set_pane' }
 Plug 'scrooloose/nerdtree'
 Plug 'lervag/vimtex'
 " Using a non-master branch
@@ -63,6 +65,7 @@ Plug 'fholgado/minibufexpl.vim'
 "Plug 'racer-rust/vim-racer'
 Plug 'tmhedberg/SimpylFold'
 Plug 'jalvesaq/Nvim-R'
+Plug 'SkyLeach/pudb.vim'
 
 Plug 'ncm2/ncm2'
 Plug 'roxma/nvim-yarp'
@@ -309,7 +312,7 @@ nnoremap <leader>e :Ex<CR>
 "nnoremap <leader>t :tabnew<CR>:Ex<CR>
 nnoremap <leader>v :vsplit<CR>:w<CR>:Ex<CR>
 "nnoremap <leader>s :split<CR>:w<CR>:Ex<CR>
-nnoremap <leader>r :so $MYVIMRC<cr>
+nnoremap <leader>R :so $MYVIMRC<cr>
 
 nnoremap <leader>n :NERDTreeToggle<CR>
 
