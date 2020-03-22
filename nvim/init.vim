@@ -7,24 +7,25 @@ set path+=** " add actual folder to path
 let g:hostname = substitute(system('hostname'), '\n', '', '')
 if g:hostname == "ThinkPad.local.tobias-weiss.org"
     let g:python3_host_prog = '/usr/local/bin/python3.7'
-    " load templates
-    autocmd BufNewFile *.py 0r ~/git/repo/01_coden/python/dummy.py|3
-    autocmd BufNewFile *.c 0r ~/git/repo/01_coden/c/dummy.c
-    autocmd BufNewFile *.h 0r ~/git/repo/01_coden/c/dummy.h
-    autocmd BufNewFile,BufWritePre,FileWritePre *.[ch] ks|exe "1," . 5 . "g/file:.*/s//file: " .expand("%")|'s
-    autocmd BufNewFile *.cpp 0r ~/git/repo/01_coden/cpp/dummy.cpp|7
-
-    """" Replace modify date on writing file
-    autocmd BufWritePre,FileWritePre *.[ch]   ks|call LastMod()|'s
-    fun! LastMod()
-        if line("$") > 20
-            let l = 20
-        else
-            let l = line("$")
-        endif
-        exe "1," . l . "g/Last modified: /s/Last modified: .*/Last modified: " strftime("%Y %b %d %X")
-    endfun
 endif
+
+" load templates
+autocmd BufNewFile *.py 0r ~/git/repo/01_coden/python/dummy.py|3
+autocmd BufNewFile *.c 0r ~/git/repo/01_coden/c/dummy.c
+autocmd BufNewFile *.h 0r ~/git/repo/01_coden/c/dummy.h
+autocmd BufNewFile,BufWritePre,FileWritePre *.[ch] ks|exe "1," . 5 . "g/file:.*/s//file: " .expand("%")|'s
+autocmd BufNewFile *.cpp 0r ~/git/repo/01_coden/cpp/dummy.cpp|7
+
+"""" Replace modify date on writing file
+autocmd BufWritePre,FileWritePre *.[ch]   ks|call LastMod()|'s
+fun! LastMod()
+    if line("$") > 20
+        let l = 20
+    else
+        let l = line("$")
+    endif
+    exe "1," . l . "g/Last modified: /s/Last modified: .*/Last modified: " strftime("%Y %b %d %X")
+endfun
 
 " plugvim settings
 if empty(glob('~/.config/nvim/autoload/plug.vim'))
@@ -331,7 +332,15 @@ map <Leader>t :MBEToggle<cr>
 "   nnoremap <buffer> S ?\|\zs\S\+\ze\|<CR>
 
 
-""""""" Rust stuff
+" Rust stuff
 "let g:rustfmt_autosave = 1
 "set hidden
 "let g:racer_cmd = "/home/user/.cargo/bin/racer"
+
+" neoformat
+" Enable alignment
+let g:neoformat_basic_format_align = 1
+" Enable tab to spaces conversion
+let g:neoformat_basic_format_retab = 1
+" Enable trimmming of trailing whitespace
+let g:neoformat_basic_format_trim = 1
