@@ -27,7 +27,7 @@ restore_d2()
 cd ~/dotfiles
 git pull
 if [ $(hostname) = "tobi-yoga" ]; then
-    cp ~/dotfiles/d2_save/* '/opt/Diablo2/Diablo2/Save/' 
+    cp ~/dotfiles/d2_save/* '/opt/Diablo2/Save/' 
 fi
 if [ $(hostname) = "ThinkPad.local.tobias-weiss.org" ]; then
     cp ~/dotfiles/d2_save/* '/media/weiss/Windows8_OS/Diablo2/Save/' 
