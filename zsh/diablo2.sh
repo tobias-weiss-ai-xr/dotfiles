@@ -10,16 +10,22 @@ if [ $(hostname) = "ThinkPad.local.tobias-weiss.org" ]; then
     sudo mount /media/weiss/Windows8_OS/Diablo2_CDs/LOD/diablo2-LoD.iso /mnt
     wine '/media/weiss/Windows8_OS/Diablo2/Mod PlugY/PlugY.exe' > /dev/null 2>&1
     echo "Don't forget t osave characters"
-    echo "run save_d2"
+    echo "further commands save_d2 or restore_d2"
 fi
 }
 
 save_d2()
 {
-cp '/media/weiss/Windows8_OS/Diablo2/Save/*' ~/dotfiles/d2_save
-cd ~/dotfiles
-git commit -m "d2 save" && git push
-git push
+if [ $(hostname) = "ThinkPad.local.tobias-weiss.org" ]; then
+    cp /media/weiss/Windows8_OS/Diablo2/Save/* ~/dotfiles/d2_save/
+fi
+if [ $(hostname) = "tobi-yoga" ]; then
+    cp  /opt/Diablo2/Save/* ~/dotfiles/d2_save/ 
+fi
+    cd ~/dotfiles
+    git add -A
+    git commit -m "d2 save" && git push
+    git push
 }
 
 restore_d2()
