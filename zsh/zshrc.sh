@@ -21,7 +21,7 @@ if [[ $HOST = "ThinkPad.local.tobias-weiss.org" ]]; then
 eval $(ssh-agent -s)
 fi
 
-	git config --global push.default current
+git config --global push.default current
 
 # Aliases
 	if [[ $HOST = "ThinkPad.local.tobias-weiss.org" || $HOST = "tobi-yoga" ]]; then
@@ -72,8 +72,14 @@ chpwd() ls
 
 autoload -U compinit
 
+# load plugins
 plugins=(
-	docker
+  git
+  bundler
+  dotenv
+  vi-mode
+  tmuxinator
+  docker
 )
 
 for plugin ($plugins); do
@@ -109,14 +115,8 @@ source ~/dotfiles/zsh/prompt.sh
 # source cpufreq functions
 source ~/dotfiles/zsh/cpufreq.sh
 
-# load plugins
-plugins=(
-  git
-  bundler
-  dotenv
-  vi-mode
-  tmuxinator
-)
+# source cpufreq functions
+source ~/dotfiles/zsh/diablo2.sh
 
 ## key chain config
 #if [[ $HOST = "ThinkPad.local.tobias-weiss.org" ]]; then
