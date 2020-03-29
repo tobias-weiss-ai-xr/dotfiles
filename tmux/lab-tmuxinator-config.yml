@@ -17,7 +17,7 @@ root: ~/git/lab/
 # tmux_command: byobu
 
 # Specifies (by name or index) which window will be selected on project startup. If not set, the first window is used.
-startup_window: misc
+startup_window: lab
 
 # Controls whether the tmux session should be attached to automatically. Defaults to true.
 # attach: false
@@ -29,8 +29,9 @@ windows:
   - misc: 
       layout: even-horizontal
       panes:
-        - sudo systemctl start openvpn-client@client.service; watch systemctl status openvpn-client@client.service
+        - openvpn_start_and_watch
         - htop
         - watch sensors
-  - lab: ssh labor
+  - lab: sleep 7 && ssh labor
   - doc: vi doku.tex
+  - set: vi ~/dotfiles/tmux/lab-tmuxinator-config.yml

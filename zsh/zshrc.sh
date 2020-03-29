@@ -1,27 +1,27 @@
 # Vars
-	HISTFILE=~/.zsh_history
-	SAVEHIST=1000 
-	setopt inc_append_history # To save every command before it is executed 
-	setopt share_history # setopt inc_append_history
-	export KEYTIMEOUT=1 # set timeout for esc key to 0.1
+HISTFILE=~/.zsh_history
+SAVEHIST=1000 
+setopt inc_append_history # To save every command before it is executed 
+setopt share_history # setopt inc_append_history
+export KEYTIMEOUT=1 # set timeout for esc key to 0.1
+export PATH=$PATH:$HOME/dotfiles/utils:/home/weiss/.gem/ruby/2.7.0/bin
 
-
-#gurobi optimizer
-if [[ $HOST = "ThinkPad.local.tobias-weiss.org" ]]; then
-	source ~/dotfiles/zsh/gurobi.sh
-elif [[ $HOST = "tobi-yoga" ]]; then
-	source ~/dotfiles/zsh/gurobi901.sh
-fi
-
-#ssh-agent settings
-if [[ $HOST = "ThinkPad.local.tobias-weiss.org" ]]; then
-#	zstyle :omz:plugins:ssh-agent agent-forwarding on
-#	zstyle :omz:plugins:ssh-agent identities id_github id_uni id_rsa
-#	zstyle :omz:plugins:ssh-agent lifetime 4h
-eval $(ssh-agent -s)
-fi
-
+# git
 git config --global push.default current
+
+# Fix for arrow-key searching
+# start typing + [Up-Arrow] - fuzzy find history forward
+if [[ "${terminfo[kcuu1]}" != "" ]]; then
+	autoload -U up-line-or-beginning-search
+	zle -N up-line-or-beginning-search
+	bindkey "${terminfo[kcuu1]}" up-line-or-beginning-search
+fi
+# start typing + [Down-Arrow] - fuzzy find history backward
+if [[ "${terminfo[kcud1]}" != "" ]]; then
+	autoload -U down-line-or-beginning-search
+	zle -N down-line-or-beginning-search
+	bindkey "${terminfo[kcud1]}" down-line-or-beginning-search
+fi
 
 # Aliases
 	if [[ $HOST = "ThinkPad.local.tobias-weiss.org" || $HOST = "tobi-yoga" ]]; then
@@ -41,8 +41,6 @@ git config --global push.default current
 		export VISUAL=/usr/bin/nvim
 		export EDITOR=/usr/bin/nvim
 	fi
-
-source ~/dotfiles/zsh/plugins/fixls.zsh
 
 #Functions
 	# Loop a command and show the output in vim
@@ -73,6 +71,7 @@ chpwd() ls
 autoload -U compinit
 
 # load plugins
+source ~/dotfiles/zsh/plugins/fixls.zsh
 plugins=(
   git
   bundler
@@ -96,18 +95,19 @@ source ~/dotfiles/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/dotfiles/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/dotfiles/zsh/keybindings.sh
 
-# Fix for arrow-key searching
-# start typing + [Up-Arrow] - fuzzy find history forward
-if [[ "${terminfo[kcuu1]}" != "" ]]; then
-	autoload -U up-line-or-beginning-search
-	zle -N up-line-or-beginning-search
-	bindkey "${terminfo[kcuu1]}" up-line-or-beginning-search
+#gurobi optimizer
+if [[ $HOST = "ThinkPad.local.tobias-weiss.org" ]]; then
+	source ~/dotfiles/zsh/gurobi.sh
+elif [[ $HOST = "tobi-yoga" ]]; then
+	source ~/dotfiles/zsh/gurobi901.sh
 fi
-# start typing + [Down-Arrow] - fuzzy find history backward
-if [[ "${terminfo[kcud1]}" != "" ]]; then
-	autoload -U down-line-or-beginning-search
-	zle -N down-line-or-beginning-search
-	bindkey "${terminfo[kcud1]}" down-line-or-beginning-search
+
+#ssh-agent settings
+if [[ $HOST = "ThinkPad.local.tobias-weiss.org" ]]; then
+#	zstyle :omz:plugins:ssh-agent agent-forwarding on
+#	zstyle :omz:plugins:ssh-agent identities id_github id_uni id_rsa
+#	zstyle :omz:plugins:ssh-agent lifetime 4h
+eval $(ssh-agent -s)
 fi
 
 source ~/dotfiles/zsh/prompt.sh
@@ -115,8 +115,12 @@ source ~/dotfiles/zsh/prompt.sh
 # source cpufreq functions
 source ~/dotfiles/zsh/cpufreq.sh
 
-# source cpufreq functions
+# source diablo2 functions
 source ~/dotfiles/zsh/diablo2.sh
+
+# source openvpn functions
+source ~/dotfiles/zsh/openvpn.sh
+
 
 ## key chain config
 #if [[ $HOST = "ThinkPad.local.tobias-weiss.org" ]]; then
@@ -125,4 +129,3 @@ source ~/dotfiles/zsh/diablo2.sh
 #    eval `keychain --quiet --noask`
 #fi
 
-export PATH=$PATH:$HOME/dotfiles/utils:/home/weiss/.gem/ruby/2.7.0/bin
