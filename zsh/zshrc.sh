@@ -27,6 +27,8 @@ fi
 	if [[ $HOST = "ThinkPad.local.tobias-weiss.org" || $HOST = "tobi-yoga" ]]; then
 		alias vi="nvim"
 		alias vim="nvim"
+		alias lab="tmuxinator lab"
+		alias ba="tmuxinator ba"
 		#alias labor="ssh-add ~/.ssh/id_uni && ssh labor"
 		alias speakers="rfkill unblock bluetooth && bluetoothctl power on && a2dp.py CC:98:8B:D1:BD:D2 -t 4 -w 1 -p hsp"
 	fi
