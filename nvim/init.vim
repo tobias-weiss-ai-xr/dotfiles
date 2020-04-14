@@ -65,6 +65,7 @@ Plug 'rust-lang/rust.vim'
 Plug 'fholgado/minibufexpl.vim'
 "Plug 'racer-rust/vim-racer'
 Plug 'tmhedberg/SimpylFold'
+Plug 'Konfekt/FastFold'
 Plug 'jalvesaq/Nvim-R'
 Plug 'SkyLeach/pudb.vim'
 
@@ -264,6 +265,23 @@ let g:neoformat_basic_format_trim = 1
 " Map Neoformat with leader key
 map <silent><leader>f :Neoformat<cr>:retab<cr>
 
+""""""" FastFold
+let g:fastfold_savehook = 1
+let g:fastfold_fold_command_suffixes =  ['x','X','a','A','o','O','c','C']
+let g:fastfold_fold_movement_commands = [']z', '[z', 'zj', 'zk']
+let g:markdown_folding = 1
+let g:tex_fold_enabled = 1
+let g:vimsyn_folding = 'af'
+let g:xml_syntax_folding = 1
+let g:javaScript_fold = 1
+let g:sh_fold_enabled= 7
+let g:ruby_fold = 1
+let g:perl_fold = 1
+let g:perl_fold_blocks = 1
+let g:r_syntax_folding = 1
+let g:rust_fold = 1
+let g:php_folding = 1
+
 """"""" Keybindings
 " Set up leaders
 let mapleader=","
@@ -331,16 +349,7 @@ map <Leader>t :MBEToggle<cr>
 "   nnoremap <buffer> s /\|\zs\S\+\ze\|<CR>
 "   nnoremap <buffer> S ?\|\zs\S\+\ze\|<CR>
 
-
 " Rust stuff
 "let g:rustfmt_autosave = 1
 "set hidden
 "let g:racer_cmd = "/home/user/.cargo/bin/racer"
-
-" neoformat
-" Enable alignment
-let g:neoformat_basic_format_align = 1
-" Enable tab to spaces conversion
-let g:neoformat_basic_format_retab = 1
-" Enable trimmming of trailing whitespace
-let g:neoformat_basic_format_trim = 1
