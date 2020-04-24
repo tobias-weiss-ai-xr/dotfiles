@@ -92,7 +92,8 @@ set enc =utf-8 " encoding
 set nocompatible
 syntax on
 set background=dark
-colorscheme desert
+"colorscheme desert
+colorscheme default
 set autoindent
 set tabstop=4
 set shiftwidth=4
