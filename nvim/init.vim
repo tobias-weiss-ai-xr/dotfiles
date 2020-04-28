@@ -246,7 +246,7 @@ function! ViewerPosition() abort dict
     if g:hostname == "ThinkPad.local.tobias-weiss.org"
         call self.resize('1366 742')
     else
-        call self.resize('1600 876')
+        call self.resize('1600 870')
     endif
 endfunction
 
