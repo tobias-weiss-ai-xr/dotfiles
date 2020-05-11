@@ -174,6 +174,9 @@ au User Ncm2Plugin call ncm2#register_source({
             \ 'on_complete': ['ncm2#on_complete#omni', 'csscomplete#CompleteCSS'],
             \ })
 
+" path to directory where libclang.so can be found
+let g:ncm2_pyclang#library_path =  '/usr/lib/llvm-6.0/lib'
+
 " gitgutter settings
 " Let vim-gitgutter do its thing on large files
 let g:gitgutter_max_signs=10000
