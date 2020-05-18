@@ -43,7 +43,10 @@ inoremap <leader>k ]s
 let g:syntastic_tex_checkers =  ['lacheck', 'text/language_check']
 " let g:syntastic_tex_checkers =  ['lacheck', 'chktex', 'text/language_check', 'proselint']
 " Disable unwanted space message
-let g:syntastic_tex_lacheck_quiet_messages = { 'regex': '\Vpossible unwanted space' }
+let g:syntastic_tex_lacheck_quiet_messages = { 'regex': [
+            \ '\Vpossible unwanted space',
+            \ '\Vmissing',
+            \ '\Vperhaps you should insert a'] }
 let g:syntastic_tex_chktex_quiet_messages = { 'regex': [
             \ '\VWrong length of dash', 
             \ '\VDelete this space to maintain correct pagereferences.']}
