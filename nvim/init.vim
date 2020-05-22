@@ -256,7 +256,7 @@ endfunction
 """"""" neomake settings
 " Neomake and other build commands (ctrl-b)
 nnoremap <C-b> :w<cr>:Neomake<cr>
-call neomake#configure#automake('w')
+"call neomake#configure#automake('w')
 let g:neomake_python_enabled_makers = ['pep8', 'flake8']
 
 """""" neoformat settings
