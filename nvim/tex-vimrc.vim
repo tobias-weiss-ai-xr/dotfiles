@@ -51,8 +51,10 @@ let g:syntastic_tex_lacheck_quiet_messages = { 'regex': [
 
 let g:syntastic_tex_chktex_quiet_messages = { 'regex': [
             \ '\VWrong length of dash', 
-            \ '\VCommand terminated with a space',
+            \ '\VCommand terminated with space',
             \ '\VInterword spacing',
+            \ '\VUse either',
+            \ '\VIntersentence spacing',
             \ '\VNon-breaking space', 
             \ '\VDelete this space to maintain correct pagereferences.']}
 
