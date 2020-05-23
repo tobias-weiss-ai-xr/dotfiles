@@ -67,7 +67,7 @@ Plug 'fholgado/minibufexpl.vim'
 Plug 'tmhedberg/SimpylFold'
 Plug 'Konfekt/FastFold'
 Plug 'jalvesaq/Nvim-R'
-Plug 'SkyLeach/pudb.vim'
+"Plug 'SkyLeach/pudb.vim'
 
 Plug 'ncm2/ncm2'
 Plug 'roxma/nvim-yarp'
