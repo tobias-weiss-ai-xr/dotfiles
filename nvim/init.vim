@@ -68,6 +68,7 @@ Plug 'tmhedberg/SimpylFold'
 Plug 'Konfekt/FastFold'
 Plug 'jalvesaq/Nvim-R'
 "Plug 'SkyLeach/pudb.vim'
+Plug 'sakhnik/nvim-gdb', { 'do': ':!./install.sh \| UpdateRemotePlugins' }
 
 Plug 'ncm2/ncm2'
 Plug 'roxma/nvim-yarp'
