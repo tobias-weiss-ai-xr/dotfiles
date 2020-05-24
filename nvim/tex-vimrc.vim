@@ -40,8 +40,8 @@ nnoremap <leader>k ]s
 inoremap <leader>k ]s
 
 " syntastic settings
-" let g:syntastic_tex_checkers =  ['lacheck', 'text/language_check']
-let g:syntastic_tex_checkers =  ['lacheck', 'chktex', 'text/language_check', 'proselint']
+let g:syntastic_tex_checkers =  ['lacheck', 'text/language_check']
+"let g:syntastic_tex_checkers =  ['lacheck', 'chktex', 'text/language_check', 'proselint']
 
 " Disable unwanted syntastic message
 let g:syntastic_tex_lacheck_quiet_messages = { 'regex': [
