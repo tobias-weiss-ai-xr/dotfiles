@@ -4,8 +4,8 @@
   <property name="pressureSensitivity" value="true"/>
   <property name="zoomGesturesEnabled" value="true"/>
   <property name="selectedToolbar" value="TobiasToolbars"/>
-  <property name="lastSavePath" value="file:///home/weiss/git/studs6/orga/tutorium"/>
-  <property name="lastOpenPath" value="/home/weiss/git/studs6/orga/tutorium"/>
+  <property name="lastSavePath" value="file:///home/weiss/git/studs6/Data%20and%20Knowledge%20Management/%C3%9Cbung"/>
+  <property name="lastOpenPath" value="/home/weiss/git/studs6/Data and Knowledge Management/Übung"/>
   <property name="lastImagePath" value=""/>
   <property name="zoomStep" value="10.00000000"/>
   <property name="zoomStepScroll" value="2.00000000"/>
@@ -165,7 +165,7 @@
       <attribute name="drawingType" type="string" value="default"/>
     </data>
     <data name="pen">
-      <attribute name="color" type="hex" value="ff3333cc"/>
+      <attribute name="color" type="hex" value="ff0000"/>
       <attribute name="drawingType" type="string" value="default"/>
       <attribute name="fill" type="int" value="0"/>
       <attribute name="fillAlpha" type="int" value="128"/>
