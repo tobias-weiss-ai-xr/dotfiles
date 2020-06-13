@@ -1,0 +1,14 @@
+{
+    "C_Cpp.updateChannel": "Insiders",
+    "workbench.startupEditor": "welcomePage",
+    "C_Cpp.default.cppStandard": "c++11",
+    "c-cpp-compile-run.cpp-flags": "-Wall -Wextra -std=c++17 -lncurses",
+    "terminal.integrated.shell.linux": "/bin/bash",
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "python.jediEnabled": false,
+    "window.zoomLevel": 2,
+    "explorer.confirmDelete": false,
+    "java.semanticHighlighting.enabled": true,
+    "C_Cpp.default.defines": [],
+}
