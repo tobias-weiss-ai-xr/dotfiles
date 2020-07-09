@@ -99,9 +99,16 @@ source ~/dotfiles/zsh/keybindings.sh
 
 #gurobi optimizer
 if [[ $HOST = "ThinkPad.local.tobias-weiss.org" ]]; then
-	source ~/dotfiles/zsh/gurobi.sh
+    export GUROBI_HOME="/opt/gurobi811/linux64"
 elif [[ $HOST = "tobi-yoga" ]]; then
-	source ~/dotfiles/zsh/gurobi901.sh
+    export GUROBI_HOME="/opt/gurobi901/linux64"
+fi
+export PATH="${PATH}:${GUROBI_HOME}/bin"
+export LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:${GUROBI_HOME}/lib"
+
+# add zoom to path
+if [[ $HOST = "tobi-yoga" ]]; then
+    export PATH="${PATH}:/opt/zoom"
 fi
 
 #ssh-agent settings

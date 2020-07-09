@@ -41,11 +41,21 @@ inoremap <leader>k ]s
 
 " syntastic settings
 let g:syntastic_tex_checkers =  ['lacheck', 'text/language_check']
-" let g:syntastic_tex_checkers =  ['lacheck', 'chktex', 'text/language_check', 'proselint']
-" Disable unwanted space message
-let g:syntastic_tex_lacheck_quiet_messages = { 'regex': '\Vpossible unwanted space' }
+"let g:syntastic_tex_checkers =  ['lacheck', 'chktex', 'text/language_check', 'proselint']
+
+" Disable unwanted syntastic message
+let g:syntastic_tex_lacheck_quiet_messages = { 'regex': [
+            \ '\Vmissing',
+            \ '\Vpossible unwanted space',
+            \ '\Vperhaps you should insert a'] }
+
 let g:syntastic_tex_chktex_quiet_messages = { 'regex': [
             \ '\VWrong length of dash', 
+            \ '\VCommand terminated with space',
+            \ '\VInterword spacing',
+            \ '\VUse either',
+            \ '\VIntersentence spacing',
+            \ '\VNon-breaking space', 
             \ '\VDelete this space to maintain correct pagereferences.']}
 
 " TOC settings
