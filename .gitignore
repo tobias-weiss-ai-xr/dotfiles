@@ -2,6 +2,7 @@
 *.swp
 .netrwhist
 nvim/.netrwhist
+dotvim/.netrwhist
 nvim/.viminfo
 dotvim/plugged/
 dotvim/bundle/
