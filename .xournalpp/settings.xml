@@ -4,8 +4,8 @@
   <property name="pressureSensitivity" value="true"/>
   <property name="zoomGesturesEnabled" value="true"/>
   <property name="selectedToolbar" value="TobiasToolbars"/>
-  <property name="lastSavePath" value="/home/weiss/git/studs6/Prognose"/>
-  <property name="lastOpenPath" value="/home/weiss/git/studs6/orga/musterklausur"/>
+  <property name="lastSavePath" value="/home/weiss/git/studs6/Prognose/altklausuren"/>
+  <property name="lastOpenPath" value="/home/weiss/git/studs6/Prognose/altklausuren"/>
   <property name="lastImagePath" value=""/>
   <property name="zoomStep" value="10.00000000"/>
   <property name="zoomStepScroll" value="2.00000000"/>
