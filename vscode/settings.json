@@ -11,4 +11,5 @@
     "explorer.confirmDelete": false,
     "java.semanticHighlighting.enabled": true,
     "C_Cpp.default.defines": [],
+    "java.requirements.JDK11Warning": false,
 }
