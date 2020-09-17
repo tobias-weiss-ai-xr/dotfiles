@@ -36,7 +36,7 @@ if [[ $HOST = "ThinkPad.local.tobias-weiss.org" || $HOST = "tobi-yoga" ]]; then
 fi
 
 if [[ $HOST = "ewf-psl3" ]]; then
-	alias vim="nvim"
+	alias vi="vim"
 fi
 
 mkdir -p /tmp/log
