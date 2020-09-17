@@ -4,6 +4,9 @@ let g:tex_flavor = 'latex'
 " Disable colorcolumn
 set colorcolumn =
 
+" Change MatchParen color
+hi MatchParen ctermbg=5
+
 "tex specific folding
 set foldmethod=expr
 set foldexpr=vimtex#fold#level(v:lnum)
