@@ -35,8 +35,9 @@ if [[ $HOST = "ThinkPad.local.tobias-weiss.org" || $HOST = "tobi-yoga" ]]; then
 	alias speakers="rfkill unblock bluetooth && bluetoothctl power on && a2dp.py CC:98:8B:D1:BD:D2 -t 4 -w 1 -p hsp"
 fi
 
-if [[ $HOST = "ewf-psl3" ]]; then
-	alias vi="vim"
+if [[ $HOST = "ewf-psl3" || $HOST = "lab" ]]; then
+	alias vi="nvim"
+	alias vim="nvim"
 fi
 
 mkdir -p /tmp/log
