@@ -105,7 +105,7 @@ set relativenumber
 set number
 " set nofoldenable
 set cursorline
-hi Cursor ctermfg=White ctermbg=Yellow cterm=bold guifg=white guibg=yellow gui=bold
+hi Cursor ctermfg=black ctermbg=Yellow cterm=bold guifg=black guibg=yellow gui=bold
 hi MatchParen cterm=bold ctermfg=15 ctermbg=11 gui=bold guifg=white guibg=yellow
 set hlsearch
 set backspace=indent,eol,start
