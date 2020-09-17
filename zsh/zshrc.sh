@@ -26,45 +26,49 @@ if [[ "${terminfo[kcud1]}" != "" ]]; then
 fi
 
 # Aliases
-	if [[ $HOST = "ThinkPad.local.tobias-weiss.org" || $HOST = "tobi-yoga" ]]; then
-		alias vi="nvim"
-		alias vim="nvim"
-		alias lab="tmuxinator lab"
-		alias ba="tmuxinator ba"
-		#alias labor="ssh-add ~/.ssh/id_uni && ssh labor"
-		alias speakers="rfkill unblock bluetooth && bluetoothctl power on && a2dp.py CC:98:8B:D1:BD:D2 -t 4 -w 1 -p hsp"
-	fi
+if [[ $HOST = "ThinkPad.local.tobias-weiss.org" || $HOST = "tobi-yoga" ]]; then
+	alias vi="nvim"
+	alias vim="nvim"
+	alias lab="tmuxinator lab"
+	alias ba="tmuxinator ba"
+	#alias labor="ssh-add ~/.ssh/id_uni && ssh labor"
+	alias speakers="rfkill unblock bluetooth && bluetoothctl power on && a2dp.py CC:98:8B:D1:BD:D2 -t 4 -w 1 -p hsp"
+fi
 
-	mkdir -p /tmp/log
-	
-	# This is currently causing problems (fails when you run it anywhere that isn't a git project's root directory)
-	# alias vs="v `git status --porcelain | sed -ne 's/^ M //p'`"
+if [[ $HOST = "ewf-psl3" ]]; then
+	alias vim="nvim"
+fi
+
+mkdir -p /tmp/log
+
+# This is currently causing problems (fails when you run it anywhere that isn't a git project's root directory)
+# alias vs="v `git status --porcelain | sed -ne 's/^ M //p'`"
 
 # Settings
-	if [[ $HOST = "ThinkPad.local.tobias-weiss.org" || $HOST = "tobi-yoga" ]]; then
-		export VISUAL=/usr/bin/nvim
-		export EDITOR=/usr/bin/nvim
-	fi
+if [[ $HOST = "ThinkPad.local.tobias-weiss.org" || $HOST = "tobi-yoga" ]]; then
+	export VISUAL=/usr/bin/nvim
+	export EDITOR=/usr/bin/nvim
+fi
 
 #Functions
-	# Loop a command and show the output in vim
-	loop() {
-		echo ":cq to quit\n" > /tmp/log/output 
-		fc -ln -1 > /tmp/log/program
-		while true; do
-			cat /tmp/log/program >> /tmp/log/output ;
-			$(cat /tmp/log/program) |& tee -a /tmp/log/output ;
-			echo '\n' >> /tmp/log/output
-			vim + /tmp/log/output || break;
-			rm -rf /tmp/log/output
-		done;
-	}
+# Loop a command and show the output in vim
+loop() {
+	echo ":cq to quit\n" > /tmp/log/output 
+	fc -ln -1 > /tmp/log/program
+	while true; do
+		cat /tmp/log/program >> /tmp/log/output ;
+		$(cat /tmp/log/program) |& tee -a /tmp/log/output ;
+		echo '\n' >> /tmp/log/output
+		vim + /tmp/log/output || break;
+		rm -rf /tmp/log/output
+	done;
+}
 
 # Custom cd
 chpwd() ls
 
 # For vim mappings: 
-	stty -ixon
+stty -ixon
 
 # Completions
 # These are all the plugin options available: https://github.com/robbyrussell/oh-my-zsh/tree/291e96dcd034750fbe7473482508c08833b168e3/plugins
@@ -123,15 +127,14 @@ fi
 
 source ~/dotfiles/zsh/prompt.sh
 
-# source cpufreq functions
-source ~/dotfiles/zsh/cpufreq.sh
-
-# source diablo2 functions
-source ~/dotfiles/zsh/diablo2.sh
-
-# source openvpn functions
-source ~/dotfiles/zsh/openvpn.sh
-
+if [[ $HOST = "ThinkPad.local.tobias-weiss.org" || $HOST = "tobi-yoga" ]]; then
+	# source cpufreq functions
+	source ~/dotfiles/zsh/cpufreq.sh
+	# source diablo2 functions
+	source ~/dotfiles/zsh/diablo2.sh
+	# source openvpn functions
+	source ~/dotfiles/zsh/openvpn.sh
+fi
 
 ## key chain config
 #if [[ $HOST = "ThinkPad.local.tobias-weiss.org" ]]; then
