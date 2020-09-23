@@ -39,6 +39,7 @@ call plug#begin('~/.vim/plugged')
 "Plug 'deoplete-plugins/deoplete-clang' "clang completion
 "Plug 'deoplete-plugins/deoplete-jedi'
 "Plug 'Shougo/denite.nvim'
+Plug 'lambdalisue/suda.vim'
 Plug 'Shougo/neopairs.vim'
 Plug 'Shougo/neosnippet.vim'
 Plug 'Shougo/neosnippet-snippets'
@@ -358,3 +359,7 @@ map <Leader>t :MBEToggle<cr>
 "let g:rustfmt_autosave = 1
 "set hidden
 "let g:racer_cmd = "/home/user/.cargo/bin/racer"
+"
+
+" suda automatically switch a buffer name when the target file is not readable or writable.
+let g:suda_smart_edit = 1
