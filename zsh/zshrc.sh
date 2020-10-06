@@ -4,7 +4,7 @@ SAVEHIST=1000
 setopt inc_append_history # To save every command before it is executed 
 setopt share_history # setopt inc_append_history
 export KEYTIMEOUT=1 # set timeout for esc key to 0.1
-export PATH=$PATH:$HOME/dotfiles/utils:/home/weiss/.gem/ruby/2.7.0/bin
+export PATH=$PATH:$HOME/dotfiles/utils:/home/weiss/.gem/ruby/2.7.0/bin:/home/weiss/.local/bin
 #export JAVA_HOME=/usr/lib/jvm/java-8-openjdk/
 export JAVA_HOME=/usr/lib/jvm/java-11-openjdk/
 
