@@ -5,8 +5,6 @@ setopt inc_append_history # To save every command before it is executed
 setopt share_history # setopt inc_append_history
 export KEYTIMEOUT=1 # set timeout for esc key to 0.1
 export PATH=$PATH:$HOME/dotfiles/utils:/home/weiss/.gem/ruby/2.7.0/bin:/home/weiss/.local/bin
-#export JAVA_HOME=/usr/lib/jvm/java-8-openjdk/
-export JAVA_HOME=/usr/lib/jvm/java-11-openjdk/
 
 # git
 git config --global push.default current
@@ -104,11 +102,28 @@ source ~/dotfiles/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/dotfiles/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/dotfiles/zsh/keybindings.sh
 
+# java
+if [[ $HOST = "ThinkPad.local.tobias-weiss.org" ]]; then
+  export JAVA_HOME=/usr/lib/jvm/java-8-openjdk
+  export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+#elif [[ $HOST = "tobi-yoga" ]]; then
+else
+  export JAVA_HOME=/usr/lib/jvm/java-11-openjdk
+fi
+
+# spark
+if [[ $HOST = "ThinkPad.local.tobias-weiss.org" ]]; then
+  export SPARK_HOME="/usr/local/src/spark-3.0.1-bin-hadoop2.7"
+  export PATH="${PATH}:/usr/local/src/spark-3.0.1-bin-hadoop2.7/bin"
+  export PYTHONPATH="${SPARK_HOME}/python:${SPARK_HOME}/python/lib/py4j-0.10.4-src.zip:${PYTHONPATH}"
+  export PATH="${SPARK_HOME}/python:${PATH}"
+fi
+
 #gurobi optimizer
 if [[ $HOST = "ThinkPad.local.tobias-weiss.org" ]]; then
-    export GUROBI_HOME="/opt/gurobi811/linux64"
+export GUROBI_HOME="/opt/gurobi811/linux64"
 elif [[ $HOST = "tobi-yoga" ]]; then
-    export GUROBI_HOME="/opt/gurobi901/linux64"
+export GUROBI_HOME="/opt/gurobi901/linux64"
 fi
 export PATH="${PATH}:${GUROBI_HOME}/bin"
 export LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:${GUROBI_HOME}/lib"
