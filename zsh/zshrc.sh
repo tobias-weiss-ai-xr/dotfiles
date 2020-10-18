@@ -112,7 +112,7 @@ else
 fi
 
 # spark
-if [[ $HOST = "ThinkPad.local.tobias-weiss.org" ]]; then
+if [[ $HOST = "ThinkPad.local.tobias-weiss.org" || $HOST = "tobi-yoga" ]]; then
   export SPARK_HOME="/usr/local/src/spark-3.0.1-bin-hadoop2.7"
   export PATH="${PATH}:/usr/local/src/spark-3.0.1-bin-hadoop2.7/bin"
   export PYTHONPATH="${SPARK_HOME}/python:${SPARK_HOME}/python/lib/py4j-0.10.4-src.zip:${PYTHONPATH}"
