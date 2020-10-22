@@ -123,7 +123,14 @@ if [[ $HOST = "ThinkPad.local.tobias-weiss.org" ]]; then
 #	zstyle :omz:plugins:ssh-agent agent-forwarding on
 #	zstyle :omz:plugins:ssh-agent identities id_github id_uni id_rsa
 #	zstyle :omz:plugins:ssh-agent lifetime 4h
-eval $(ssh-agent -s)
+
+# SSH Agent should be running, once
+runcount=$(ps -ef | grep "ssh-agent" | grep -v "grep" | wc -l)
+if [ $runcount -eq 0 ]; then
+	    echo Starting SSH Agent
+		    eval $(ssh-agent -s)
+fi
+
 fi
 
 source ~/dotfiles/zsh/prompt.sh
@@ -144,9 +151,3 @@ fi
 #    eval `keychain --quiet --noask`
 #fi
 
-# SSH Agent should be running, once
-runcount=$(ps -ef | grep "ssh-agent" | grep -v "grep" | wc -l)
-if [ $runcount -eq 0 ]; then
-	    echo Starting SSH Agent
-		    eval $(ssh-agent -s)
-fi
