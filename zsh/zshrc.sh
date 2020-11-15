@@ -10,6 +10,8 @@ if [[ $HOST = "tobi-legion" ]]; then
 	export PATH=$PATH:$HOME/dotfiles/utils:/home/weiss/bin:/home/weiss/.local/bin
 	export VISUAL=/usr/bin/nvim
 	export EDITOR=/usr/bin/nvim
+    export PLANTUML_JAR=/usr/local/bin/plantuml.jar
+    export GRAPHVIZ_DOT=/usr/bin
 fi
 if [[ $HOST = "ewf-psl3" || $HOST = "lab" ]]; then
 	alias vi="nvim"
