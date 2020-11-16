@@ -10,7 +10,7 @@ if [[ $HOST = "tobi-legion" ]]; then
 	export PATH=$PATH:$HOME/dotfiles/utils:/home/weiss/bin:/home/weiss/.local/bin
 	export VISUAL=/usr/bin/nvim
 	export EDITOR=/usr/bin/nvim
-    export PLANTUML_JAR=/usr/local/bin/plantuml.jar
+    export PLANTUML_JAR=/home/weiss/bin/plantuml.jar
     export GRAPHVIZ_DOT=/usr/bin
 fi
 if [[ $HOST = "ewf-psl3" || $HOST = "lab" ]]; then
@@ -112,8 +112,9 @@ source ~/dotfiles/zsh/keybindings.sh
 
 # java
 if [[ $HOST = "ThinkPad.local.tobias-weiss.org" ]]; then
-  export JAVA_HOME=/usr/lib/jvm/java-8-openjdk
   export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+elif [[ $HOST = "tobi-legion" ]]; then
+  export JAVA_HOME=/usr/lib/jvm/java-14-openjdk
 #elif [[ $HOST = "tobi-yoga" ]]; then
 else
   export JAVA_HOME=/usr/lib/jvm/java-11-openjdk
@@ -127,7 +128,7 @@ if [[ $HOST = "ThinkPad.local.tobias-weiss.org" || $HOST = "tobi-yoga" ]]; then
   export PATH="${SPARK_HOME}/python:${PATH}"
 fi
 if [[ $HOST = "tobi-legion" ]]; then
-  export SPARK_HOME="/usr/local/src/spark-3.0.1-bin-hadoop2.7"
+  export SPARK_HOME="/home/weiss/bin/spark-3.0.1-bin-hadoop2.7"
   export PYTHONPATH="${SPARK_HOME}/python:${SPARK_HOME}/python/lib/py4j-0.10.4-src.zip:${PYTHONPATH}"
   export PATH="${SPARK_HOME}/python:${PATH}"
 fi
