@@ -12,6 +12,8 @@ if [[ $HOST = "tobi-legion" ]]; then
 	export EDITOR=/usr/bin/nvim
     export PLANTUML_JAR=/home/weiss/bin/plantuml.jar
     export GRAPHVIZ_DOT=/usr/bin
+    export WORKON_HOME=~/.virtualenvs
+    source /usr/bin/virtualenvwrapper.sh
 fi
 if [[ $HOST = "ewf-psl3" || $HOST = "lab" ]]; then
 	alias vi="nvim"
