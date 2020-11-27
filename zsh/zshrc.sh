@@ -1,4 +1,5 @@
 # Vars
+ZSH_THEME=robbyrussell
 HISTFILE=~/.zsh_history
 SAVEHIST=1000 
 setopt inc_append_history # To save every command before it is executed 
