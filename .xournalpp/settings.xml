@@ -5,7 +5,7 @@
   <property name="zoomGesturesEnabled" value="true"/>
   <property name="selectedToolbar" value="TobiasToolbars"/>
   <property name="lastSavePath" value="/home/weiss/git/master1/Workflowmanagement"/>
-  <property name="lastOpenPath" value="/home/weiss/git/master1/Decision Making"/>
+  <property name="lastOpenPath" value="/home/weiss/git/master1/Workflowmanagement"/>
   <property name="lastImagePath" value=""/>
   <property name="zoomStep" value="10.00000000"/>
   <property name="zoomStepScroll" value="2.00000000"/>
@@ -47,7 +47,7 @@
   <property name="addVerticalSpaceAmount" value="150"/>
   <property name="drawDirModsEnabled" value="false"/>
   <property name="drawDirModsRadius" value="50"/>
-  <property name="snapRotation" value="true"/>
+  <property name="snapRotation" value="false"/>
   <property name="snapRotationTolerance" value="0.20000000"/>
   <property name="snapGrid" value="false"/>
   <property name="snapGridTolerance" value="0.25000000"/>
