@@ -4,8 +4,8 @@
   <property name="pressureSensitivity" value="true"/>
   <property name="zoomGesturesEnabled" value="true"/>
   <property name="selectedToolbar" value="TobiasToolbars"/>
-  <property name="lastSavePath" value="file:///home/weiss/git/master1/Decision%20Making/Musterklausuren-DM"/>
-  <property name="lastOpenPath" value="/home/weiss/git/master1/Decision Making/Musterklausuren-DM"/>
+  <property name="lastSavePath" value="/home/weiss/git/master1/Decision Making"/>
+  <property name="lastOpenPath" value="/home/weiss/git/master1/Decision Making"/>
   <property name="lastImagePath" value=""/>
   <property name="zoomStep" value="10.00000000"/>
   <property name="zoomStepScroll" value="2.00000000"/>
@@ -137,7 +137,7 @@
     </data>
   </data>
   <data name="tools">
-    <attribute name="current" type="string" value="pen"/>
+    <attribute name="current" type="string" value="selectRect"/>
     <data name="drawArrow">
       <attribute name="drawingType" type="string" value="default"/>
     </data>
