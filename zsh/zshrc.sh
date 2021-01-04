@@ -117,10 +117,10 @@ source ~/dotfiles/zsh/keybindings.sh
 if [[ $HOST = "ThinkPad.local.tobias-weiss.org" ]]; then
   export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
 elif [[ $HOST = "tobi-legion" ]]; then
-  export JAVA_HOME=/usr/lib/jvm/java-14-openjdk
+  export JAVA_HOME=/usr/lib/jvm/java-15-jdk
 #elif [[ $HOST = "tobi-yoga" ]]; then
 else
-  export JAVA_HOME=/usr/lib/jvm/java-11-openjdk
+  export JAVA_HOME=/usr/lib/jvm/java-15-jdk
 fi
 
 # spark
