@@ -1,6 +1,6 @@
 diablo2()
 {
-if [ $(hostname) = "tobi-yoga" ]; then
+if [ $(hostname) = "tobi-yoga" || $(hostname) = "tobi-legion" ]; then
     sudo mount /opt/Diablo2/LOD-CD/diablo2-LoD.iso /mnt
     cd '/opt/Diablo2/Mod PlugY/'
     wine '/opt/Diablo2/Mod PlugY/PlugY.exe' > /dev/null 2>&1
@@ -9,8 +9,6 @@ if [ $(hostname) = "ThinkPad.local.tobias-weiss.org" ]; then
     cd '/media/weiss/Windows8_OS/Diablo2/Mod PlugY'
     sudo mount /media/weiss/Windows8_OS/Diablo2_CDs/LOD/diablo2-LoD.iso /mnt
     wine '/media/weiss/Windows8_OS/Diablo2/Mod PlugY/PlugY.exe' > /dev/null 2>&1
-    echo "Don't forget t osave characters"
-    echo "further commands save_d2 or restore_d2"
 fi
 }
 
@@ -32,7 +30,7 @@ restore_d2()
 {
 cd ~/dotfiles
 git pull
-if [ $(hostname) = "tobi-yoga" ]; then
+if [ $(hostname) = "tobi-yoga" || $(hostname) = "tobi-legion" ]; then
     cp ~/dotfiles/d2_save/* '/opt/Diablo2/Save/' 
 fi
 if [ $(hostname) = "ThinkPad.local.tobias-weiss.org" ]; then
