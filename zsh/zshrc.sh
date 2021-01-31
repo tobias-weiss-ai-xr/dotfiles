@@ -176,6 +176,10 @@ if [[ $HOST = "ThinkPad.local.tobias-weiss.org" || $HOST = "tobi-yoga" ]]; then
 	# source openvpn functions
 	source ~/dotfiles/zsh/openvpn.sh
 fi
+if [[ $HOST = "tobi-legion" ]]; then
+	# source diablo2 functions
+	source ~/dotfiles/zsh/diablo2.sh
+fi
 
 ## key chain config
 #if [[ $HOST = "ThinkPad.local.tobias-weiss.org" ]]; then
