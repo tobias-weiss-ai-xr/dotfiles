@@ -7,7 +7,7 @@
     "editor.suggestSelection": "first",
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
     "python.jediEnabled": false,
-    "window.zoomLevel": 2,
+    "window.zoomLevel": 0,
     "explorer.confirmDelete": false,
     "java.semanticHighlighting.enabled": true,
     "C_Cpp.default.defines": [],
