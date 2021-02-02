@@ -6,7 +6,7 @@ if [[ $HOST = "tobi-yoga" || $HOST = "tobi-legion" ]]; then
     cd '/home/weiss/games/Diablo2'
     wine '/home/weiss/games/Diablo2/Mod PlugY/PlugY.exe' > /dev/null 2>&1
 fi
-if [[ $HOST = "ThinkPad.local.tobias-weiss.org" ]]; then
+if [ $HOST = "ThinkPad.local.tobias-weiss.org" ]; then
     cd '/media/weiss/Windows8_OS/Diablo2/Mod PlugY'
     sudo mount /media/weiss/Windows8_OS/Diablo2_CDs/LOD/diablo2-LoD.iso /mnt
     wine '/media/weiss/Windows8_OS/Diablo2/Mod PlugY/PlugY.exe' > /dev/null 2>&1
@@ -31,10 +31,10 @@ restore_d2()
 {
 cd ~/dotfiles
 git pull
-if [[ $HOST = "tobi-yoga" || $HOST = "tobi-legion" ]]; then
+if [[ "$HOST" = "tobi-yoga" || "$HOST" = "tobi-legion" ]]; then
     cp ~/dotfiles/d2_save/* '/opt/Diablo2/Save/' 
 fi
-if [[ $HOST = "ThinkPad.local.tobias-weiss.org" ]]; then
+if [[ "$HOST" = "ThinkPad.local.tobias-weiss.org" ]]; then
     cp ~/dotfiles/d2_save/* '/media/weiss/Windows8_OS/Diablo2/Save/' 
 
 fi
