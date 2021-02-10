@@ -1,10 +1,15 @@
 diablo2()
 {
-if [[ $HOST = "tobi-yoga" || $HOST = "tobi-legion" ]]; then
+if [[ $HOST = "tobi-legion" ]]; then
     WINEPREFIX=/home/weiss/.local/share/wineprefixes/diablo2
     sudo mount /home/weiss/games/Diablo2/LOD-CD/diablo2-LoD.iso /mnt
     cd '/home/weiss/games/Diablo2'
     wine '/home/weiss/games/Diablo2/Mod PlugY/PlugY.exe' > /dev/null 2>&1
+fi
+if [[ $HOST = "tobi-yoga" ]]; then
+    sudo mount /opt/Diablo2/LOD-CD/diablo2-LoD.iso /mnt
+    cd '/opt/Diablo2/Mod PlugY'
+    wine '/opt/Diablo2/Mod PlugY/PlugY.exe' > /dev/null 2>&1
 fi
 if [ $HOST = "ThinkPad.local.tobias-weiss.org" ]; then
     cd '/media/weiss/Windows8_OS/Diablo2/Mod PlugY'
