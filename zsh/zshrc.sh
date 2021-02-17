@@ -12,6 +12,7 @@ if [[ $HOST = "tobi-legion" ]]; then
 	export EDITOR=/usr/bin/nvim
     export PLANTUML_JAR=/home/weiss/bin/plantuml.jar
     export GRAPHVIZ_DOT=/usr/bin
+    export CONDA_PKGS_DIRS=~/.conda/pkgs
     export WORKON_HOME=~/.virtualenvs
     source /usr/bin/virtualenvwrapper.sh
 fi
