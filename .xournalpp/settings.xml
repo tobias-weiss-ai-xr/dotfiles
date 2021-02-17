@@ -159,7 +159,7 @@
       <attribute name="drawingType" type="string" value="default"/>
     </data>
     <data name="hilighter">
-      <attribute name="color" type="hex" value="ffff00"/>
+      <attribute name="color" type="hex" value="ff0000"/>
       <attribute name="drawingType" type="string" value="default"/>
       <attribute name="fill" type="int" value="0"/>
       <attribute name="fillAlpha" type="int" value="128"/>
@@ -169,7 +169,7 @@
       <attribute name="drawingType" type="string" value="default"/>
     </data>
     <data name="pen">
-      <attribute name="color" type="hex" value="ff3333cc"/>
+      <attribute name="color" type="hex" value="ff0000"/>
       <attribute name="drawingType" type="string" value="default"/>
       <attribute name="fill" type="int" value="0"/>
       <attribute name="fillAlpha" type="int" value="128"/>
