@@ -4,8 +4,8 @@
   <property name="pressureSensitivity" value="true"/>
   <property name="zoomGesturesEnabled" value="true"/>
   <property name="selectedToolbar" value="TobiasToolbars"/>
-  <property name="lastSavePath" value="/home/weiss/git/repo/99_private Dokumente/bafög2021/final"/>
-  <property name="lastOpenPath" value="/home/weiss/git/master1/Decision Making/Musterklausuren-DM"/>
+  <property name="lastSavePath" value="/home/weiss/git/repo/99_private Dokumente/bafög2021"/>
+  <property name="lastOpenPath" value="/home/weiss/git/repo/99_private Dokumente/bafög2021"/>
   <property name="lastImagePath" value=""/>
   <property name="zoomStep" value="10.00000000"/>
   <property name="zoomStepScroll" value="2.00000000"/>
@@ -169,7 +169,7 @@
       <attribute name="drawingType" type="string" value="default"/>
     </data>
     <data name="pen">
-      <attribute name="color" type="hex" value="3333cc"/>
+      <attribute name="color" type="hex" value="008000"/>
       <attribute name="drawingType" type="string" value="default"/>
       <attribute name="fill" type="int" value="0"/>
       <attribute name="fillAlpha" type="int" value="128"/>
