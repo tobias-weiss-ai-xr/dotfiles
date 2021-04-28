@@ -4,8 +4,8 @@
   <property name="pressureSensitivity" value="true"/>
   <property name="zoomGesturesEnabled" value="true"/>
   <property name="selectedToolbar" value="TobiasToolbars"/>
-  <property name="lastSavePath" value="file:///home/weiss/git/repo/99_private%20Dokumente/baf%C3%B6g2021/nachreichung"/>
-  <property name="lastOpenPath" value="/home/weiss/git/repo/99_private Dokumente/bafög2021/nachreichung"/>
+  <property name="lastSavePath" value="file:///home/weiss/git/master1/BPM"/>
+  <property name="lastOpenPath" value="/home/weiss/git/master1/BPM"/>
   <property name="lastImagePath" value=""/>
   <property name="zoomStep" value="10.00000000"/>
   <property name="zoomStepScroll" value="2.00000000"/>
@@ -21,7 +21,7 @@
   <property name="numColumns" value="1"/>
   <property name="numRows" value="1"/>
   <property name="viewFixedRows" value="false"/>
-  <property name="showPairedPages" value="false"/>
+  <property name="showPairedPages" value="true"/>
   <property name="layoutVertical" value="false"/>
   <property name="layoutRightToLeft" value="false"/>
   <property name="layoutBottomToTop" value="false"/>
