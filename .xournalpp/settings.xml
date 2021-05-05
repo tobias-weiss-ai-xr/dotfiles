@@ -21,7 +21,7 @@
   <property name="numColumns" value="1"/>
   <property name="numRows" value="1"/>
   <property name="viewFixedRows" value="false"/>
-  <property name="showPairedPages" value="true"/>
+  <property name="showPairedPages" value="false"/>
   <property name="layoutVertical" value="false"/>
   <property name="layoutRightToLeft" value="false"/>
   <property name="layoutBottomToTop" value="false"/>
