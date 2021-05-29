@@ -25,6 +25,7 @@ if [[ $HOST = "ThinkPad.local.tobias-weiss.org" || $HOST = "tobi-yoga" ]]; then
 	export PATH=$PATH:$HOME/dotfiles/utils:/home/weiss/.gem/ruby/2.7.0/bin:/home/weiss/.local/bin
 	export VISUAL=/usr/bin/nvim
 	export EDITOR=/usr/bin/nvim
+    export NVIM_LISTEN_ADDRESS=/tmp/nvimsocket
 fi
 
 # Aliases

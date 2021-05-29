@@ -244,18 +244,19 @@ let g:vimtex_quickfix_latexlog = {
             \ 'underfull' : 0,
             \}
 
-" PDF viewer positioning
-let g:vimtex_view_zathura_hook_view = 'ViewerPosition'
-let g:vimtex_view_zathura_hook_callback = 'ViewerPosition'
-
-function! ViewerPosition() abort dict
-    call self.move('0 0')
-    if g:hostname == "ThinkPad.local.tobias-weiss.org"
-        call self.resize('1366 742')
-    else
-        call self.resize('1600 870')
-    endif
-endfunction
+" deprecated...
+"" PDF viewer positioning
+"let g:vimtex_view_zathura_hook_view = 'ViewerPosition'
+"let g:vimtex_view_zathura_hook_callback = 'ViewerPosition'
+"
+"function! ViewerPosition() abort dict
+"    call self.move('0 0')
+"    if g:hostname == "ThinkPad.local.tobias-weiss.org"
+"        call self.resize('1366 742')
+"    else
+"        call self.resize('1600 870')
+"    endif
+"endfunction
 
 """"""" neomake settings
 " Neomake and other build commands (ctrl-b)
