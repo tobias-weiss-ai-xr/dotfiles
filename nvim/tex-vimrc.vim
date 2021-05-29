@@ -19,8 +19,8 @@ set fillchars=fold:\
 "autocmd BufNewFile,BufRead *.tex,*.bib imap <buffer> <C-b> <Esc><C-b>
 
 " key bindings
-nnoremap <leader>ll :VimtexCompileSS<cr>
-inoremap <leader>ll :VimtexCompileSS<cr>
+nnoremap <leader>ll :VimtexCompile<cr>
+inoremap <leader>ll :VimtexCompile<cr>
 nnoremap <leader>lv :VimtexView<cr>
 inoremap <leader>lv :VimtexView<cr>
 nnoremap <leader>lc :VimtexClean<cr>

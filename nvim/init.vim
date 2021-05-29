@@ -238,11 +238,20 @@ let g:vimtex_view_method = 'zathura'
 "let g:vimtex_view_method = 'mupdf'
 let g:vimtex_compiler_progname = 'nvr'
 let g:vimtex_latexmk_build_dir = './build'
+" hide quickfix taba after two keystrokes
+let g:vimtex_quickfix_mode = '2'
+let g:vimtex_quickfix_autoclose_after_keystrokes = '2'
+" Disable custom warnings based on regexp
+let g:vimtex_quickfix_ignore_filters = [
+      \ 'Marginpar on page',
+      \ 'Overfull',
+      \ 'Underfull',
+      \]
 " Disable overfull/underfull \hbox and all package warnings
-let g:vimtex_quickfix_latexlog = {
-            \ 'overfull' : 0,
-            \ 'underfull' : 0,
-            \}
+"let g:vimtex_quickfix_latexlog = {
+"            \ 'overfull' : 0,
+"            \ 'underfull' : 0,
+"            \}
 
 " deprecated...
 "" PDF viewer positioning
