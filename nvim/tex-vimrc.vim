@@ -73,18 +73,18 @@ let g:vimtex_toc_config = {
 			\ 'mode' : 2,
 			\}
 
-let g:vimtex_compiler_latexmk = {
-			\ 'backend' : 'nvim',
-			\ 'background' : 1,
-			\ 'build_dir' : '',
-			\ 'callback' : 1,
-			\ 'continuous' : 1,
-			\ 'executable' : 'latexmk',
-			\ 'hooks' : [''],
-			\ 'options' : [
-			\   '-verbose',
-			\   '-file-line-error',
-			\   '-interaction=nonstopmode',
-			\   '-synctex=1',
-			\ ],
-			\}
+"let g:vimtex_compiler_latexmk = {
+"			\ 'backend' : 'nvim',
+"			\ 'background' : 1,
+"			\ 'build_dir' : '',
+"			\ 'callback' : 1,
+"			\ 'continuous' : 1,
+"			\ 'executable' : 'latexmk',
+"			\ 'hooks' : [''],
+"			\ 'options' : [
+"			\   '-verbose',
+"			\   '-file-line-error',
+"			\   '-interaction=nonstopmode',
+"			\   '-synctex=1',
+"			\ ],
+"			\}

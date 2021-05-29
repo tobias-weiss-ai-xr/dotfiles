@@ -233,7 +233,7 @@ autocmd BufRead,BufNewFile,FileReadPost *.tex source ~/dotfiles/nvim/tex-vimrc.v
 " Don't know why the following settings only work here
 " Maybe FileReadPre could help for the autocmd
 " Test it if there is some spare time...
-let g:tex_flavor = 'latex'
+"let g:tex_flavor = 'latex'
 let g:vimtex_view_method = 'zathura'
 let g:vimtex_compiler_progname = 'nvr'
 " Disable overfull/underfull \hbox and all package warnings
