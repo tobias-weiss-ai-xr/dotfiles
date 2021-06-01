@@ -105,7 +105,7 @@ set dir=/tmp/
 set relativenumber
 set number
 " set nofoldenable
-set cursorline
+" set cursorline
 hi Cursor ctermfg=black ctermbg=Yellow cterm=bold guifg=black guibg=yellow gui=bold
 hi MatchParen cterm=bold ctermfg=15 ctermbg=11 gui=bold guifg=white guibg=yellow
 set hlsearch
