@@ -29,7 +29,8 @@ nnoremap <leader>ls :VimtexToggleMain<cr>
 inoremap <leader>ls :VimtexToggleMain<cr>
 nnoremap <leader>le :VimtexError<cr>
 inoremap <leader>le :VimtexError<cr>
-map <leader>lt :VimtexTocToggle<cr>
+" mapped below
+"map <leader>lt :VimtexTocToggle<cr>
 
 " Spell checking
 let g:spellfile_URL = 'http://ftp.vim.org/vim/runtime/spell'
@@ -62,7 +63,14 @@ let g:syntastic_tex_chktex_quiet_messages = { 'regex': [
             \ '\VDelete this space to maintain correct pagereferences.']}
 
 " TOC settings
-let g:vimtex_toc_config = {
+" https://github.com/lervag/vimtex/issues/1124
+  augroup vimtex_customization
+    autocmd!
+    autocmd FileType tex call CreateTocs()
+  augroup END
+
+  function CreateTocs()
+    let g:custom_toc1 = vimtex#toc#new({
 			\ 'name' : 'TOC',
 			\ 'layers' : ['content', 'todo', 'include'],
 			\ 'resize' : 1,
@@ -71,7 +79,37 @@ let g:vimtex_toc_config = {
 			\ 'show_help' : 1,
 			\ 'show_numbers' : 1,
 			\ 'mode' : 2,
-			\}
+			\})
+    nnoremap <leader>lt :call g:custom_toc1.open()<cr>
+    let g:custom_toc2 = vimtex#toc#new({
+            \ 'layers' : ['todo'],
+            \ 'show_help' : 0,
+            \})
+    nnoremap <leader>lT :call g:custom_toc2.open()<cr>
+  endfunction
+
+"let g:vimtex_toc_config = {
+"			\ 'name' : 'TOC',
+"			\ 'layers' : ['content', 'todo', 'include'],
+"			\ 'resize' : 1,
+"			\ 'split_width' : 50,
+"			\ 'todo_sorted' : 0,
+"			\ 'show_help' : 1,
+"			\ 'show_numbers' : 1,
+"			\ 'mode' : 2,
+"			\}
+
+" Disable custom QuickFix warnings based on regexp
+let g:vimtex_quickfix_ignore_filters = [
+      \ 'Marginpar on page',
+      \ 'Overfull',
+      \ 'Underfull',
+      \ 'Using fall-back BibTeX(8) backend',
+      \ 'running in backwards compatibility mode',
+      \ 'float specifier changed',
+      \ 'Package caption Warning',
+      \ 'sortcites',
+      \]
 
 let g:vimtex_compiler_latexmk = {
 			\ 'backend' : 'nvim',

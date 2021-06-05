@@ -228,8 +228,11 @@ let g:jedi#show_call_signatures = "0"
 autocmd BufRead,BufNewFile,FileReadPost *.py source ~/dotfiles/nvim/python-vimrc.vim
 " C++ specifics
 autocmd BufRead,BufNewFile,FileReadPost *.cpp source ~/dotfiles/nvim/cpp-vimrc.vim
+
 " Latex specifics
 autocmd BufRead,BufNewFile,FileReadPost *.tex source ~/dotfiles/nvim/tex-vimrc.vim
+
+""""""" further tex specific config not placeable in tex-vimrc.vim file
 " Don't know why the following settings only work here
 " Maybe FileReadPre could help for the autocmd
 " Test it if there is some spare time...
@@ -241,17 +244,6 @@ let g:vimtex_latexmk_build_dir = './build'
 " hide quickfix taba after two keystrokes
 let g:vimtex_quickfix_mode = '2'
 let g:vimtex_quickfix_autoclose_after_keystrokes = '2'
-" Disable custom warnings based on regexp
-let g:vimtex_quickfix_ignore_filters = [
-      \ 'Marginpar on page',
-      \ 'Overfull',
-      \ 'Underfull',
-      \]
-" Disable overfull/underfull \hbox and all package warnings
-"let g:vimtex_quickfix_latexlog = {
-"            \ 'overfull' : 0,
-"            \ 'underfull' : 0,
-"            \}
 
 " deprecated...
 "" PDF viewer positioning
