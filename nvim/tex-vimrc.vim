@@ -1,17 +1,10 @@
-" Latex specific vim settings (double as also defined in init)
-let g:tex_flavor = 'latex'
+" Latex specific vim settings
 
 " Disable colorcolumn
 set colorcolumn =
 
 " Change MatchParen color
 hi MatchParen ctermbg=5
-
-"tex specific folding
-set foldmethod=expr
-set foldexpr=vimtex#fold#level(v:lnum)
-set foldtext=vimtex#fold#text()
-set fillchars=fold:\
 
 "autocmd BufNewFil,BufRead *.tex,*.bib noremap <buffer> <C-b> :w<cr>:new<bar>r
 			\ !make<cr>:setlocal buftype=nofile<cr>:setlocal
@@ -29,8 +22,7 @@ nnoremap <leader>ls :VimtexToggleMain<cr>
 inoremap <leader>ls :VimtexToggleMain<cr>
 nnoremap <leader>le :VimtexError<cr>
 inoremap <leader>le :VimtexError<cr>
-" mapped below
-"map <leader>lt :VimtexTocToggle<cr>
+nnoremap <leader>lt :VimtexTocToggle<cr>
 
 " Spell checking
 let g:spellfile_URL = 'http://ftp.vim.org/vim/runtime/spell'
@@ -61,43 +53,6 @@ let g:syntastic_tex_chktex_quiet_messages = { 'regex': [
             \ '\VIntersentence spacing',
             \ '\VNon-breaking space', 
             \ '\VDelete this space to maintain correct pagereferences.']}
-
-" TOC settings
-" https://github.com/lervag/vimtex/issues/1124
-  augroup vimtex_customization
-    autocmd!
-    autocmd FileType tex call CreateTocs()
-  augroup END
-
-  function CreateTocs()
-    let g:custom_toc1 = vimtex#toc#new({
-			\ 'name' : 'TOC',
-			\ 'layers' : ['content', 'todo', 'include'],
-			\ 'resize' : 1,
-			\ 'split_width' : 50,
-			\ 'todo_sorted' : 0,
-			\ 'show_help' : 1,
-			\ 'show_numbers' : 1,
-			\ 'mode' : 2,
-			\})
-    nnoremap <leader>lt :call g:custom_toc1.open()<cr>
-    let g:custom_toc2 = vimtex#toc#new({
-            \ 'layers' : ['todo'],
-            \ 'show_help' : 0,
-            \})
-    nnoremap <leader>lT :call g:custom_toc2.open()<cr>
-  endfunction
-
-"let g:vimtex_toc_config = {
-"			\ 'name' : 'TOC',
-"			\ 'layers' : ['content', 'todo', 'include'],
-"			\ 'resize' : 1,
-"			\ 'split_width' : 50,
-"			\ 'todo_sorted' : 0,
-"			\ 'show_help' : 1,
-"			\ 'show_numbers' : 1,
-"			\ 'mode' : 2,
-"			\}
 
 " Disable custom QuickFix warnings based on regexp
 let g:vimtex_quickfix_ignore_filters = [

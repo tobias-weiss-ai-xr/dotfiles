@@ -245,6 +245,26 @@ let g:vimtex_latexmk_build_dir = './build'
 let g:vimtex_quickfix_mode = '2'
 let g:vimtex_quickfix_autoclose_after_keystrokes = '2'
 
+" do not move into tex-vimrc as it breaks it!
+let g:vimtex_toc_config = {
+			\ 'name' : 'TOC',
+			\ 'layers' : ['content', 'todo', 'include'],
+			\ 'resize' : 0, 
+			\ 'split_width' : 20,
+			\ 'todo_sorted' : 0,
+			\ 'show_help' : 1,
+			\ 'show_numbers' : 1,
+			\ 'mode' : 2,
+			\} 
+ 
+let g:vimtex_fold_enabled = 1
+let g:vimtex_fold_types = {
+      \ 'preamble' : {'enabled' : 0},
+      \ 'envs' : {
+      \   'blacklist' : ['figure', 'table'],
+      \ },
+      \}
+
 " deprecated...
 "" PDF viewer positioning
 "let g:vimtex_view_zathura_hook_view = 'ViewerPosition'
