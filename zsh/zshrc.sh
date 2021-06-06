@@ -6,7 +6,7 @@ setopt share_history # setopt inc_append_history
 export KEYTIMEOUT=1 # set timeout for esc key to 0.1
 
 # disable capslock
-setxkbmap -option caps:swapescape
+setxkbmap -option caps:escape
 
 # PATH Settings
 if [[ $HOST = "tobi-legion" ]]; then
