@@ -5,6 +5,9 @@ setopt inc_append_history # To save every command before it is executed
 setopt share_history # setopt inc_append_history
 export KEYTIMEOUT=1 # set timeout for esc key to 0.1
 
+# disable capslock
+setxkbmap -option caps:swapescape
+
 # PATH Settings
 if [[ $HOST = "tobi-legion" ]]; then
 	export PATH=$PATH:$HOME/dotfiles/utils:/home/weiss/bin:/home/weiss/.local/bin
