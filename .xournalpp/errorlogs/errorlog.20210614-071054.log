@@ -1,0 +1,53 @@
+Date: Mon Jun 14 07:10:54 2021
+Error: signal 11
+[bt]: (0) xournalpp(+0x1d95d2) [0x55fb178475d2]
+[bt]: (1) /usr/lib/libc.so.6(+0x3cf80) [0x7fa31f2c6f80]
+[bt]: (2) xournalpp(_ZN7XojPage11unreferenceEv+0x96) [0x55fb178235c6]
+[bt]: (3) xournalpp(_ZN7PageRefaSEP7XojPage+0x1b) [0x55fb1781c34b]
+[bt]: (4) xournalpp(_ZN23SidebarPreviewBaseEntryD1Ev+0xb1) [0x55fb177ec831]
+[bt]: (5) xournalpp(_ZN23SidebarPreviewPageEntryD0Ev+0x9) [0x55fb177eef99]
+[bt]: (6) xournalpp(_ZN18SidebarPreviewBaseD1Ev+0xfe) [0x55fb177eb6ce]
+[bt]: (7) xournalpp(_ZN19SidebarPreviewPagesD0Ev+0x9) [0x55fb177ef8e9]
+[bt]: (8) xournalpp(_ZN7SidebarD1Ev+0xbf) [0x55fb177e8c7f]
+[bt]: (9) xournalpp(_ZN7SidebarD0Ev+0x9) [0x55fb177e8dc9]
+[bt]: (10) xournalpp(_ZN7ControlD1Ev+0x212) [0x55fb1770e0a2]
+[bt]: (11) xournalpp(_ZN7ControlD0Ev+0x9) [0x55fb1770e3c9]
+[bt]: (12) xournalpp(_ZN11XournalMain3runEiPPc+0xc03) [0x55fb17733af3]
+[bt]: (13) xournalpp(main+0x37) [0x55fb17707177]
+[bt]: (14) /usr/lib/libc.so.6(__libc_start_main+0xd5) [0x7fa31f2b1b25]
+[bt]: (15) xournalpp(_start+0x2e) [0x55fb1770770e]
+
+
+Try to get a better stracktrace...
+[bt] #1 xournalpp(+0x1d987b) [0x55fb1784787b]
+??:0
+[bt] #2 /usr/lib/libc.so.6(+0x3cf80) [0x7fa31f2c6f80]
+??:0
+[bt] #3 xournalpp(_ZN7XojPage11unreferenceEv+0x96) [0x55fb178235c6]
+??:0
+[bt] #4 xournalpp(_ZN7PageRefaSEP7XojPage+0x1b) [0x55fb1781c34b]
+??:0
+[bt] #5 xournalpp(_ZN23SidebarPreviewBaseEntryD1Ev+0xb1) [0x55fb177ec831]
+??:0
+[bt] #6 xournalpp(_ZN23SidebarPreviewPageEntryD0Ev+0x9) [0x55fb177eef99]
+??:0
+[bt] #7 xournalpp(_ZN18SidebarPreviewBaseD1Ev+0xfe) [0x55fb177eb6ce]
+??:0
+[bt] #8 xournalpp(_ZN19SidebarPreviewPagesD0Ev+0x9) [0x55fb177ef8e9]
+??:0
+[bt] #9 xournalpp(_ZN7SidebarD1Ev+0xbf) [0x55fb177e8c7f]
+??:0
+[bt] #10 xournalpp(_ZN7SidebarD0Ev+0x9) [0x55fb177e8dc9]
+??:0
+[bt] #11 xournalpp(_ZN7ControlD1Ev+0x212) [0x55fb1770e0a2]
+??:0
+[bt] #12 xournalpp(_ZN7ControlD0Ev+0x9) [0x55fb1770e3c9]
+??:0
+[bt] #13 xournalpp(_ZN11XournalMain3runEiPPc+0xc03) [0x55fb17733af3]
+??:0
+[bt] #14 xournalpp(main+0x37) [0x55fb17707177]
+??:0
+[bt] #15 /usr/lib/libc.so.6(__libc_start_main+0xd5) [0x7fa31f2b1b25]
+??:0
+[bt] #16 xournalpp(_start+0x2e) [0x55fb1770770e]
+??:0
