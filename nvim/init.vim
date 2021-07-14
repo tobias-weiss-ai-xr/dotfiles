@@ -3,12 +3,6 @@
 
 set path+=** " add actual folder to path
 
-" T440p specific config
-let g:hostname = substitute(system('hostname'), '\n', '', '')
-if g:hostname == "ThinkPad.local.tobias-weiss.org"
-    let g:python3_host_prog = '/usr/local/bin/python3.7'
-endif
-
 " load templates
 autocmd BufNewFile *.py 0r ~/git/repo/01_coden/python/dummy.py|3
 autocmd BufNewFile *.c 0r ~/git/repo/01_coden/c/dummy.c
@@ -357,7 +351,7 @@ nnoremap <leader>q :q<CR>
 inoremap <leader>x <ESC>:x<CR>
 nnoremap <leader>x :x<CR>
 
-nnoremap <leader>e :Ex<CR>
+"nnoremap <leader>e :Ex<CR> " Overwritten by MBEOpen
 "nnoremap <leader>t :tabnew<CR>:Ex<CR>
 nnoremap <leader>v :vsplit<CR>:w<CR>:Ex<CR>
 "nnoremap <leader>s :split<CR>:w<CR>:Ex<CR>
