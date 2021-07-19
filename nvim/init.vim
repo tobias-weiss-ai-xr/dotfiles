@@ -3,12 +3,15 @@
 
 set path+=** " add actual folder to path
 
+" get hostname
+let hostname = substitute(system('hostname'), '\n', '', '')
+
 " load templates
-autocmd BufNewFile *.py 0r ~/git/repo/01_coden/python/dummy.py|3
-autocmd BufNewFile *.c 0r ~/git/repo/01_coden/c/dummy.c
-autocmd BufNewFile *.h 0r ~/git/repo/01_coden/c/dummy.h
+autocmd BufNewFile *.py 0r ~/git/code/python/dummy.py|3
+autocmd BufNewFile *.c 0r ~/git/code/c/dummy.c
+autocmd BufNewFile *.h 0r ~/git/code/c/dummy.h
 autocmd BufNewFile,BufWritePre,FileWritePre *.[ch] ks|exe "1," . 5 . "g/file:.*/s//file: " .expand("%")|'s
-autocmd BufNewFile *.cpp 0r ~/git/repo/01_coden/cpp/dummy.cpp|7
+autocmd BufNewFile *.cpp 0r ~/git/code/cpp/dummy.cpp|7
 
 """" Replace modify date on writing file
 autocmd BufWritePre,FileWritePre *.[ch]   ks|call LastMod()|'s
