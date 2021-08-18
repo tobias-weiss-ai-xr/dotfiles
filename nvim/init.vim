@@ -92,7 +92,7 @@ set nocompatible
 syntax on
 set background=dark
 "colorscheme desert
-colorscheme default
+colorscheme darkblue
 set autoindent
 set tabstop=4
 set shiftwidth=4
@@ -103,8 +103,8 @@ set relativenumber
 set number
 " set nofoldenable
 " set cursorline
-hi Cursor ctermfg=black ctermbg=Yellow cterm=bold guifg=black guibg=yellow gui=bold
-hi MatchParen cterm=bold ctermfg=15 ctermbg=11 gui=bold guifg=white guibg=yellow
+hi Cursor ctermfg=lightgray ctermbg=Yellow cterm=bold 
+hi MatchParen cterm=bold ctermfg=blue ctermbg=Yellow 
 set hlsearch
 set backspace=indent,eol,start
 "Detect file type
@@ -223,6 +223,7 @@ let g:jedi#show_call_signatures = "0"
 """"""" source other dotfiles
 " Python specifics
 autocmd BufRead,BufNewFile,FileReadPost *.py source ~/dotfiles/nvim/python-vimrc.vim
+
 " C++ specifics
 autocmd BufRead,BufNewFile,FileReadPost *.cpp source ~/dotfiles/nvim/cpp-vimrc.vim
 

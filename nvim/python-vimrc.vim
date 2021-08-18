@@ -15,6 +15,10 @@ let python_highlight_all = 1
 " Smart indenting
 set smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
 
+" Auto close delimiters via delimitMate
+let loaded_delimitMate = 1
+let delimitMate_autoclose = 1
+
 " set proper indentation for comments
 inoremap # X<c-h>#<space>
 
