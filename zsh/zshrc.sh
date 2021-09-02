@@ -25,7 +25,7 @@ if [[ $HOST = "ewf-psl3" || $HOST = "lab" ]]; then
 fi
 # Settings
 if [[ $HOST = "ThinkPad.local.tobias-weiss.org" || $HOST = "tobi-yoga" ]]; then
-	export PATH=$PATH:$HOME/dotfiles/utils:/home/weiss/.gem/ruby/2.7.0/bin:/home/weiss/.local/bin
+	export PATH=$PATH:$HOME/dotfiles/utils:/home/weiss/.gem/ruby/2.7.0/bin:/home/weiss/.local/bin:/home/weiss/.dotnet/tools
 	export VISUAL=/usr/bin/nvim
 	export EDITOR=/usr/bin/nvim
     export NVIM_LISTEN_ADDRESS=/tmp/nvimsocket
