@@ -8,6 +8,9 @@ export KEYTIMEOUT=1 # set timeout for esc key to 0.1
 # disable capslock
 setxkbmap -option caps:escape
 
+# enable second display
+xrandr --output HDMI-2 --auto --right-of eDP-1
+
 # PATH Settings
 if [[ $HOST = "tobi-legion" ]]; then
 	export PATH=$PATH:$HOME/dotfiles/utils:/home/weiss/bin:/home/weiss/.local/bin
@@ -25,7 +28,7 @@ if [[ $HOST = "ewf-psl3" || $HOST = "lab" ]]; then
 fi
 # Settings
 if [[ $HOST = "ThinkPad.local.tobias-weiss.org" || $HOST = "tobi-yoga" ]]; then
-	export PATH=$PATH:$HOME/dotfiles/utils:/home/weiss/.gem/ruby/2.7.0/bin:/home/weiss/.local/bin:/home/weiss/.dotnet/tools
+	export PATH=$PATH:$HOME/dotfiles/utils:/home/weiss/.gem/ruby/2.7.0/bin:/home/weiss/.local/bin:/home/weiss/.dotnet/tools:/opt/ti/ccs1040
 	export VISUAL=/usr/bin/nvim
 	export EDITOR=/usr/bin/nvim
     export NVIM_LISTEN_ADDRESS=/tmp/nvimsocket
