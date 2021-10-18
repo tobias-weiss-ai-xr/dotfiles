@@ -1,18 +1,177 @@
 {
     "C_Cpp.updateChannel": "Insiders",
-    "workbench.startupEditor": "welcomePage",
-    "C_Cpp.default.cppStandard": "c++11",
-    "c-cpp-compile-run.cpp-flags": "-Wall -Wextra -std=c++17 -lncurses",
-    "terminal.integrated.shell.linux": "/bin/bash",
-    "editor.suggestSelection": "first",
-    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-    "python.jediEnabled": false,
-    "window.zoomLevel": 0,
-    "explorer.confirmDelete": false,
-    "java.semanticHighlighting.enabled": true,
-    "C_Cpp.default.defines": [],
-    "java.requirements.JDK11Warning": false,
+    "window.zoomLevel": 1,
     "update.showReleaseNotes": false,
-    "update.mode": "none",
-    "python.languageServer": "Microsoft",
+    "extensions.autoCheckUpdates": false,
+    "extensions.autoUpdate": false,
+    "telemetry.enableCrashReporter": false,
+    "telemetry.enableTelemetry": false,
+    "window.menuBarVisibility": "toggle",
+    "workbench.activityBar.visible": true,
+    "editor.suggestSelection": "first",
+    "files.exclude": {
+        "**/.classpath": true,
+        "**/.project": true,
+        "**/.settings": true,
+        "**/.factorypath": true
+    },
+    "update.mode": "manual",
+    "editor.accessibilitySupport": "off",
+    "keyboard.dispatch": "keyCode",
+    "python.dataScience.sendSelectionToInteractiveWindow": false,
+    "vim.hlsearch": true,
+    "vim.history": 100,
+    "vim.leader": "<Space>",
+    "vim.normalModeKeyBindingsNonRecursive":[
+        {
+          "before": ["leader", "w"],
+          "commands": [
+              "workbench.action.files.save",
+          ]
+        },
+        {
+          "before": ["leader", "l", "l"],
+          "commands": [
+              "workbench.action.files.save",
+              "workbench.action.debug.run",
+              "workbench.action.terminal.focus"
+          ]
+        },
+        {
+          "before": ["leader", "l", "d"],
+          "commands": [
+              "workbench.action.files.save",
+              "workbench.action.debug.start",
+              "workbench.action.focusActiveEditorGroup",
+          ]
+        },
+        {
+          "before": ["leader", "l", "c"],
+          "commands": [
+              "workbench.action.debug.stop"
+          ]
+        },
+        {
+          "before": ["leader", "l", "f"],
+          "commands": [
+              "workbench.action.files.save",
+              "code-runner.run",
+          ]
+        },
+        {
+          "before": ["leader", "f", "f"],
+          "commands": [
+              "editor.foldAll",
+          ]
+        },
+        {
+          "before": ["leader", "f", "u"],
+          "commands": [
+              "editor.unfoldAll",
+          ]
+        },
+        {
+            "before": ["<Leader>", "/"],
+            "commands": [":noh"]
+        }
+    ],
+    "code-runner.executorMap": {
+        "python": "python",
+        "fsharp": "dotnet fsi",
+        "c": "cd $dir && gcc -Wall $fileName -o $fileNameWithoutExt.out && $dir$fileNameWithoutExt.out",
+        "cpp": "cd $dir && g++ -std=c++14 $fileName -o $fileNameWithoutExt.out && $dir$fileNameWithoutExt.out",
+    },
+    "git.autofetch": true,
+    "terminal.explorerKind": "external",
+    "terminal.integrated.shell.linux": "/bin/bash",
+    "C_Cpp.workspaceSymbols": "All",
+    "debug.onTaskErrors": "abort",
+    "terminal.integrated.unicodeVersion": "11",
+    "terminal.integrated.fontWeightBold": "normal",
+    "output.smartScroll.enabled": false,
+    "latex-workshop.view.pdf.viewer": "tab",
+    "latex-workshop.latex.recipe.default": "lualatex",
+    "latex-workshop.latex.tools": [
+      {
+        "name": "latexmk",
+        "command": "latexmk",
+        "args": [
+          "-synctex=1",
+          "-interaction=nonstopmode",
+          "-file-line-error",
+          "-pdf",
+          "-outdir=%OUTDIR%",
+          "%DOC%"
+        ],
+        "env": {}
+      },
+      {
+        "name": "lualatex",
+        "command": "lualatex",
+        "args": [
+          "-synctex=1",
+          "-interaction=nonstopmode",
+          "-file-line-error",
+          "%DOC%"
+        ],
+        "env": {}
+      },
+      {
+        "name": "pdflatex",
+        "command": "pdflatex",
+        "args": [
+          "-synctex=1",
+          "-interaction=nonstopmode",
+          "-file-line-error",
+          "%DOC%"
+        ],
+        "env": {}
+      },
+      {
+        "name": "bibtex",
+        "command": "bibtex",
+        "args": [
+          "%DOCFILE%"
+        ],
+        "env": {}
+      }
+    ],
+    "latex-workshop.latex.recipes": [
+      {
+        "name": "latexmk 🔃",
+        "tools": [
+          "latexmk"
+        ]
+      },
+      {
+        "name": "pdflatex ➞ bibtex ➞ pdflatex`×2",
+        "tools": [
+          "pdflatex",
+          "bibtex",
+          "lualatex",
+          "pdflatex"
+        ]
+      },
+      {
+        "name": "lualatex ➞ bibtex ➞ lualatex`×2",
+        "tools": [
+          "lualatex",
+          "bibtex",
+          "lualatex",
+          "lualatex"
+        ]
+      }
+    ],
+    // "latex-workshop.view.pdf.viewer": "external",
+    // "latex-workshop.view.pdf.external.viewer.command": "zathura",
+    // "latex-workshop.view.pdf.external.viewer.args": [
+    //     "--synctex-editor-command",
+    //     "code --reuse-window -g \"%{input}:%{line}\"",
+    //     "%PDF%"
+    // ],
+    // "latex-workshop.view.pdf.external.synctex.command": "zathura",
+    // "latex-workshop.view.pdf.external.synctex.args": [
+    //     "--synctex-forward=%LINE%:0:%TEX%",
+    //     "%PDF%"
+    // ],
 }
