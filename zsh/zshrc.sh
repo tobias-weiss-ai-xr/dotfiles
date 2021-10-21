@@ -4,14 +4,21 @@ SAVEHIST=1000
 setopt inc_append_history # To save every command before it is executed 
 setopt share_history # setopt inc_append_history
 export KEYTIMEOUT=1 # set timeout for esc key to 0.1
+git config --global push.default current
 
-# disable capslock
-setxkbmap -option caps:escape
+if [[ $HOST = "tobi-yoga"  || $HOST = "tobi-legion" ]]; then
+    setxkbmap -option caps:escape # map esc to capslock
+    # Aliases
+	alias vi="nvim"
+	alias vim="nvim"
+	alias lab="tmuxinator lab"
+	alias ba="tmuxinator ba"
+    alias gp="git checkout develop && git merge tobias && git push && git checkout master && git merge develop && git push && git checkout tobias"
+	#alias labor="ssh-add ~/.ssh/id_uni && ssh labor"
+	alias speakers="rfkill unblock bluetooth && bluetoothctl power on && a2dp.py CC:98:8B:D1:BD:D2 -t 4 -w 1 -p hsp"
 
-# enable second display
-xrandr --output HDMI-2 --auto --right-of eDP-1
+fi
 
-# PATH Settings
 if [[ $HOST = "tobi-legion" ]]; then
 	export PATH=$PATH:$HOME/dotfiles/utils:/home/weiss/bin:/home/weiss/.local/bin
 	export VISUAL=/usr/bin/nvim
@@ -20,33 +27,33 @@ if [[ $HOST = "tobi-legion" ]]; then
     export GRAPHVIZ_DOT=/usr/bin
     export CONDA_PKGS_DIRS=~/.conda/pkgs
     export WORKON_HOME=~/.virtualenvs
+    export SPARK_HOME="/home/weiss/bin/spark-3.0.1-bin-hadoop2.7"
+    export PYTHONPATH="${SPARK_HOME}/python:${SPARK_HOME}/python/lib/py4j-0.10.4-src.zip:${PYTHONPATH}"
+    export PATH="${SPARK_HOME}/python:${PATH}"
     source /usr/bin/virtualenvwrapper.sh
+	source ~/dotfiles/zsh/diablo2.sh # source diablo2 functions
+    export JAVA_HOME=/usr/lib/jvm/java-15-jdk
 fi
-if [[ $HOST = "ewf-psl3" || $HOST = "lab" ]]; then
-	alias vi="nvim"
-	alias vim="nvim"
-fi
-# Settings
-if [[ $HOST = "ThinkPad.local.tobias-weiss.org" || $HOST = "tobi-yoga" ]]; then
+
+if [[ $HOST = "tobi-yoga" ]]; then
+    xrandr --output HDMI-2 --auto --right-of eDP-1 # enable second display
 	export PATH=$PATH:$HOME/dotfiles/utils:/home/weiss/.gem/ruby/2.7.0/bin:/home/weiss/.local/bin:/home/weiss/.dotnet/tools:/opt/ti/ccs1040
+    export PATH="${PATH}:/usr/local/src/spark-3.0.1-bin-hadoop2.7/bin"
+    export PATH="${SPARK_HOME}/python:${PATH}"
+    export PATH="${PATH}:/opt/zoom"
+    export PATH="${PATH}:${GUROBI_HOME}/bin"
+    export LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:${GUROBI_HOME}/lib"
 	export VISUAL=/usr/bin/nvim
 	export EDITOR=/usr/bin/nvim
     export NVIM_LISTEN_ADDRESS=/tmp/nvimsocket
+    export SPARK_HOME="/usr/local/src/spark-3.0.1-bin-hadoop2.7"
+    export PYTHONPATH="${SPARK_HOME}/python:${SPARK_HOME}/python/lib/py4j-0.10.4-src.zip:${PYTHONPATH}"
+    export JAVA_HOME=/usr/lib/jvm/java-15-jdk
+    export GUROBI_HOME="/opt/gurobi901/linux64"
+	source ~/dotfiles/zsh/cpufreq.sh # source cpufreq functions
+	source ~/dotfiles/zsh/diablo2.sh # source diablo2 functions
+	source ~/dotfiles/zsh/openvpn.sh # source openvpn functions
 fi
-
-# Aliases
-if [[ $HOST = "ThinkPad.local.tobias-weiss.org" || $HOST = "tobi-yoga"  || $HOST = "tobi-legion" ]]; then
-	alias vi="nvim"
-	alias vim="nvim"
-	alias lab="tmuxinator lab"
-	alias ba="tmuxinator ba"
-    alias gp="git checkout develop && git merge tobias && git push && git checkout master && git merge develop && git push && git checkout tobias"
-	#alias labor="ssh-add ~/.ssh/id_uni && ssh labor"
-	alias speakers="rfkill unblock bluetooth && bluetoothctl power on && a2dp.py CC:98:8B:D1:BD:D2 -t 4 -w 1 -p hsp"
-fi
-
-# git
-git config --global push.default current
 
 # Fix for arrow-key searching
 # start typing + [Up-Arrow] - fuzzy find history forward
@@ -121,73 +128,22 @@ source ~/dotfiles/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/dotfiles/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/dotfiles/zsh/keybindings.sh
 
-# java
-if [[ $HOST = "ThinkPad.local.tobias-weiss.org" ]]; then
-  export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
-elif [[ $HOST = "tobi-legion" ]]; then
-  export JAVA_HOME=/usr/lib/jvm/java-15-jdk
-#elif [[ $HOST = "tobi-yoga" ]]; then
-else
-  export JAVA_HOME=/usr/lib/jvm/java-15-jdk
-fi
-
-# spark
-if [[ $HOST = "ThinkPad.local.tobias-weiss.org" || $HOST = "tobi-yoga" ]]; then
-  export SPARK_HOME="/usr/local/src/spark-3.0.1-bin-hadoop2.7"
-  export PATH="${PATH}:/usr/local/src/spark-3.0.1-bin-hadoop2.7/bin"
-  export PYTHONPATH="${SPARK_HOME}/python:${SPARK_HOME}/python/lib/py4j-0.10.4-src.zip:${PYTHONPATH}"
-  export PATH="${SPARK_HOME}/python:${PATH}"
-fi
-if [[ $HOST = "tobi-legion" ]]; then
-  export SPARK_HOME="/home/weiss/bin/spark-3.0.1-bin-hadoop2.7"
-  export PYTHONPATH="${SPARK_HOME}/python:${SPARK_HOME}/python/lib/py4j-0.10.4-src.zip:${PYTHONPATH}"
-  export PATH="${SPARK_HOME}/python:${PATH}"
-fi
-
-
-#gurobi optimizer
-if [[ $HOST = "ThinkPad.local.tobias-weiss.org" ]]; then
-export GUROBI_HOME="/opt/gurobi811/linux64"
-elif [[ $HOST = "tobi-yoga" ]]; then
-export GUROBI_HOME="/opt/gurobi901/linux64"
-fi
-export PATH="${PATH}:${GUROBI_HOME}/bin"
-export LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:${GUROBI_HOME}/lib"
-
-# add zoom to path
-if [[ $HOST = "tobi-yoga" ]]; then
-    export PATH="${PATH}:/opt/zoom"
-fi
-
-#ssh-agent settings
-if [[ $HOST = "ThinkPad.local.tobias-weiss.org" ]]; then
-#	zstyle :omz:plugins:ssh-agent agent-forwarding on
-#	zstyle :omz:plugins:ssh-agent identities id_github id_uni id_rsa
-#	zstyle :omz:plugins:ssh-agent lifetime 4h
-
-# SSH Agent should be running, once
-runcount=$(ps -ef | grep "ssh-agent" | grep -v "grep" | wc -l)
-if [ $runcount -eq 0 ]; then
-	    echo Starting SSH Agent
-		    eval $(ssh-agent -s)
-fi
-
-fi
+##ssh-agent settings
+#if [[ $HOST = "ThinkPad.local.tobias-weiss.org" ]]; then
+##	zstyle :omz:plugins:ssh-agent agent-forwarding on
+##	zstyle :omz:plugins:ssh-agent identities id_github id_uni id_rsa
+##	zstyle :omz:plugins:ssh-agent lifetime 4h
+#
+## SSH Agent should be running, once
+#runcount=$(ps -ef | grep "ssh-agent" | grep -v "grep" | wc -l)
+#    if [ $runcount -eq 0 ]; then
+#            echo Starting SSH Agent
+#                eval $(ssh-agent -s)
+#    fi
+#
+#fi
 
 source ~/dotfiles/zsh/prompt.sh
-
-if [[ $HOST = "ThinkPad.local.tobias-weiss.org" || $HOST = "tobi-yoga" ]]; then
-	# source cpufreq functions
-	source ~/dotfiles/zsh/cpufreq.sh
-	# source diablo2 functions
-	source ~/dotfiles/zsh/diablo2.sh
-	# source openvpn functions
-	source ~/dotfiles/zsh/openvpn.sh
-fi
-if [[ $HOST = "tobi-legion" ]]; then
-	# source diablo2 functions
-	source ~/dotfiles/zsh/diablo2.sh
-fi
 
 ## key chain config
 #if [[ $HOST = "ThinkPad.local.tobias-weiss.org" ]]; then
