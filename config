@@ -1,0 +1,63 @@
+Host srv tobias-weiss.org www.tobias-weiss.org
+    HostName tobias-weiss.org
+	IdentitiesOnly yes
+    IdentityFile ~/.ssh/id_rsa                                            
+    User homaar
+
+Host giessen
+    User pi
+    IdentityFile ~/.ssh/id_ed25519 
+
+Host kube*
+    User pi
+    IdentityFile ~/.ssh/id_ed25519 
+
+Host gentoo
+    HostName gentoo
+	IdentitiesOnly yes
+    IdentityFile=~/.ssh/id_rsa                                            
+    User root
+
+Host voyage
+    HostName 192.168.1.1
+    User homaar
+
+Host labor
+    HostName 141.35.47.200
+    #CertificateFile ~/.ssh/id_uni.pub
+    IdentityFile ~/.ssh/id_ed25519 
+    IdentitiesOnly yes
+    ProxyCommand ssh -p 2258 -i ~/.ssh/id_ed25519 weiss@141.35.45.31
+    User weiss
+    ForwardX11 yes
+
+Host github.com
+    HostName github.com
+    User tobiasweede 
+    IdentityFile ~/.ssh/id_github
+
+Host gitlab.com
+    HostName gitlab.com
+    User git 
+    IdentityFile ~/.ssh/id_github
+
+Host thinkpad
+    HostName 10.1.0.2
+    User weiss
+    IdentityFile ~/.ssh/tobi-yoga
+    IdentitiesOnly yes
+
+Host client
+    HostName localhost
+    Port 2522
+	IdentitiesOnly yes
+    IdentityFile=~/.ssh/id_clients_root 
+    User root
+
+Host gitlab.cs.ttu.ee
+    User toweis
+    IdentityFile=~/.ssh/taltech-git
+
+Host gitlab.pld.ttu.ee
+    User toweis
+    IdentityFile=~/.ssh/taltech-git
