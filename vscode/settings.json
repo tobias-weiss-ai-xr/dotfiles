@@ -181,4 +181,5 @@
         "--synctex-forward=%LINE%:0:%TEX%",
         "%PDF%"
     ],
+    "workbench.colorTheme": "Visual Studio Dark - C++",
 }
