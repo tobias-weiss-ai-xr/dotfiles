@@ -1,6 +1,5 @@
 {
     "C_Cpp.updateChannel": "Insiders",
-    "window.zoomLevel": 1,
     "update.showReleaseNotes": false,
     "extensions.autoCheckUpdates": false,
     "extensions.autoUpdate": false,
@@ -89,7 +88,6 @@
         "cpp": "cd $dir && g++ -std=c++14 $fileName -o $fileNameWithoutExt.out && $dir$fileNameWithoutExt.out",
     },
     "git.autofetch": true,
-    "terminal.explorerKind": "external",
     "terminal.integrated.shell.linux": "/bin/bash",
     "C_Cpp.workspaceSymbols": "All",
     "debug.onTaskErrors": "abort",
@@ -182,4 +180,9 @@
         "%PDF%"
     ],
     "workbench.colorTheme": "Visual Studio Dark - C++",
+    "python.languageServer": "Pylance",
+    "window.zoomLevel": 2,
+    "terminal.external.linuxExec": "xfce4-terminal",
+    "python.terminal.activateEnvInCurrentTerminal": true,
+    "terminal.integrated.inheritEnv": false,
 }

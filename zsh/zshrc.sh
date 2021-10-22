@@ -17,10 +17,23 @@ if [[ $HOST = "tobi-yoga"  || $HOST = "tobi-legion" ]]; then
 	#alias labor="ssh-add ~/.ssh/id_uni && ssh labor"
 	alias speakers="rfkill unblock bluetooth && bluetoothctl power on && a2dp.py CC:98:8B:D1:BD:D2 -t 4 -w 1 -p hsp"
 
+    # >>> conda initialize >>>
+    __conda_setup="${/usr/bin/conda shell.zsh hook 2> /dev/null)}"
+    if [ $? -eq 0 ]; then
+        eval "$__conda_setup"
+    else
+        if [ -f "/usr/etc/profile.d/conda.sh" ]; then
+            . "/usr/etc/profile.d/conda.sh"
+        else
+            export PATH="/usr/bin:$PATH"
+        fi
+    fi
+    unset __conda_setup
+
 fi
 
 if [[ $HOST = "tobi-legion" ]]; then
-	export PATH=$PATH:$HOME/dotfiles/utils:/home/weiss/bin:/home/weiss/.local/bin
+	export PATH=${PATH}:${HOME}/dotfiles/utils:/home/weiss/bin:/home/weiss/.local/bin
 	export VISUAL=/usr/bin/nvim
 	export EDITOR=/usr/bin/nvim
     export PLANTUML_JAR=/home/weiss/bin/plantuml.jar
