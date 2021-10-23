@@ -3,8 +3,7 @@
     "update.showReleaseNotes": false,
     "extensions.autoCheckUpdates": false,
     "extensions.autoUpdate": false,
-    "telemetry.enableCrashReporter": false,
-    "telemetry.enableTelemetry": false,
+    "telemetry.telemetryLevel": "off",
     "window.menuBarVisibility": "toggle",
     "workbench.activityBar.visible": true,
     "editor.suggestSelection": "first",
@@ -44,6 +43,12 @@
           ]
         },
         {
+          "before": ["leader", "l", "c"],
+          "commands": [
+              "workbench.action.debug.stop"
+          ]
+        },
+        {
           "before": ["leader", "l", "d"],
           "commands": [
               "workbench.action.files.save",
@@ -52,9 +57,10 @@
           ]
         },
         {
-          "before": ["leader", "l", "c"],
+          "before": ["leader", "l", "m"],
           "commands": [
-              "workbench.action.debug.stop"
+              "workbench.action.files.save",
+              "makefile.outline.launchDebug"
           ]
         },
         {
@@ -68,6 +74,12 @@
           "before": ["leader", "f", "f"],
           "commands": [
               "editor.foldAll",
+          ]
+        },
+        {
+          "before": ["leader", "f", "t"],
+          "commands": [
+              "editor.toggleFold",
           ]
         },
         {
@@ -88,7 +100,6 @@
         "cpp": "cd $dir && g++ -std=c++14 $fileName -o $fileNameWithoutExt.out && $dir$fileNameWithoutExt.out",
     },
     "git.autofetch": true,
-    "terminal.integrated.shell.linux": "/bin/bash",
     "C_Cpp.workspaceSymbols": "All",
     "debug.onTaskErrors": "abort",
     "terminal.integrated.unicodeVersion": "11",
@@ -185,4 +196,5 @@
     "terminal.external.linuxExec": "xfce4-terminal",
     "python.terminal.activateEnvInCurrentTerminal": true,
     "terminal.integrated.inheritEnv": false,
+    "cmake.configureOnOpen": true,
 }
