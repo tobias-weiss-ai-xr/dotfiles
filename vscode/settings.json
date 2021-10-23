@@ -1,12 +1,12 @@
 {
     "C_Cpp.updateChannel": "Insiders",
+    "cmake.configureOnOpen": true,
     "update.showReleaseNotes": false,
+    "editor.accessibilitySupport": "off",
+    "editor.suggestSelection": "first",
     "extensions.autoCheckUpdates": false,
     "extensions.autoUpdate": false,
     "telemetry.telemetryLevel": "off",
-    "window.menuBarVisibility": "toggle",
-    "workbench.activityBar.visible": true,
-    "editor.suggestSelection": "first",
     "files.exclude": {
         "**/.classpath": true,
         "**/.project": true,
@@ -14,9 +14,17 @@
         "**/.factorypath": true
     },
     "update.mode": "manual",
-    "editor.accessibilitySupport": "off",
     "keyboard.dispatch": "keyCode",
-    "python.dataScience.sendSelectionToInteractiveWindow": false,
+    "workbench.activityBar.visible": true,
+    "workbench.colorTheme": "Visual Studio Dark - C++",
+    "window.zoomLevel": 2,
+    "window.menuBarVisibility": "toggle",
+    "python.languageServer": "Pylance",
+    "python.terminal.activateEnvInCurrentTerminal": true,
+    "terminal.external.linuxExec": "xfce4-terminal",
+    "terminal.integrated.inheritEnv": false,
+    "terminal.integrated.unicodeVersion": "11",
+    "terminal.integrated.fontWeightBold": "normal",
     "vim.hlsearch": true,
     "vim.history": 100,
     "vim.leader": "<Space>",
@@ -102,8 +110,6 @@
     "git.autofetch": true,
     "C_Cpp.workspaceSymbols": "All",
     "debug.onTaskErrors": "abort",
-    "terminal.integrated.unicodeVersion": "11",
-    "terminal.integrated.fontWeightBold": "normal",
     "output.smartScroll.enabled": false,
     "latex-workshop.latex.tools": [
       {
@@ -197,12 +203,6 @@
         "--synctex-forward=%LINE%:0:%TEX%",
         "%PDF%"
     ],
-    "workbench.colorTheme": "Visual Studio Dark - C++",
-    "python.languageServer": "Pylance",
-    "window.zoomLevel": 2,
-    "terminal.external.linuxExec": "xfce4-terminal",
-    "python.terminal.activateEnvInCurrentTerminal": true,
-    "terminal.integrated.inheritEnv": false,
-    "cmake.configureOnOpen": true,
     "latex-workshop.latex.build.forceRecipeUsage": true,
+    "latex-workshop.latex.autoBuild.run": "onSave",
 }
