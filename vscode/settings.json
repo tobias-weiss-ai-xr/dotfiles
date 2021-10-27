@@ -19,7 +19,7 @@
     "workbench.colorTheme": "Visual Studio Dark - C++",
     "window.zoomLevel": 2,
     "window.menuBarVisibility": "toggle",
-    "python.languageServer": "Pylance",
+    "python.languageServer": "Jedi",
     "python.terminal.activateEnvInCurrentTerminal": true,
     "terminal.external.linuxExec": "xfce4-terminal",
     "terminal.integrated.inheritEnv": false,
