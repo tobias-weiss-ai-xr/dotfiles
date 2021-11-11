@@ -319,6 +319,9 @@ nnoremap <C-l> :nohl<CR><C-l>:echo "Search Cleared"<CR>
 nnoremap <C-c> :set norelativenumber<CR>:set nonumber<CR>:echo "Line numbers turned off."<CR>
 nnoremap <C-n> :set relativenumber<CR>:set number<CR>:echo "Line numbers turned on."<CR>
 
+" copy current line
+nnoremap <C-d> yyp
+
 nnoremap n nzzzv
 nnoremap N Nzzzv
 
@@ -327,7 +330,7 @@ nnoremap L $
 nnoremap J G
 nnoremap K gg
 
-nnoremap <Space> za
+nnoremap <leader>Z za
 nnoremap <leader>z zM
 
 nnoremap vv 0v$

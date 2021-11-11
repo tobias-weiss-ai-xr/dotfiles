@@ -67,6 +67,8 @@ if [[ $HOST = "tobi-yoga" ]]; then
 	source ~/dotfiles/zsh/cpufreq.sh # source cpufreq functions
 	source ~/dotfiles/zsh/diablo2.sh # source diablo2 functions
 	source ~/dotfiles/zsh/openvpn.sh # source openvpn functions
+    # check for miniconda and load if present
+    [ -f /opt/miniconda3/etc/profile.d/conda.sh ] && source /opt/miniconda3/etc/profile.d/conda.sh
 fi
 
 # Fix for arrow-key searching
