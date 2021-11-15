@@ -69,6 +69,9 @@ if [[ $HOST = "tobi-yoga" ]]; then
 	source ~/dotfiles/zsh/openvpn.sh # source openvpn functions
     # check for miniconda and load if present
     [ -f /opt/miniconda3/etc/profile.d/conda.sh ] && source /opt/miniconda3/etc/profile.d/conda.sh
+    export CUBE_FW_DIR=/home/weiss/STM32Cube/Repository
+    export X_CUBE_AI_DIR=$CUBE_FW_DIR/Packs/STMicroelectronics/X-CUBE-AI/7.0.0
+export PATH=$X_CUBE_AI_DIR/Utilities/linux:$PATH
 fi
 
 # Fix for arrow-key searching
