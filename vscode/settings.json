@@ -1,5 +1,7 @@
 {
+  "update.mode": "manual",
   "C_Cpp.updateChannel": "Insiders",
+  "security.workspace.trust.untrustedFiles": "open",
   "cmake.configureOnOpen": true,
   "update.showReleaseNotes": false,
   "editor.accessibilitySupport": "off",
@@ -13,18 +15,31 @@
     "**/.settings": true,
     "**/.factorypath": true
   },
-  "update.mode": "manual",
+  "code-runner.executorMap": {
+    "python": "python",
+    "fsharp": "dotnet fsi",
+    "c": "cd $dir && gcc -Wall $fileName -o $fileNameWithoutExt.out && $dir$fileNameWithoutExt.out",
+    "cpp": "cd $dir && g++ -std=c++14 $fileName -o $fileNameWithoutExt.out && $dir$fileNameWithoutExt.out",
+  },
+  "git.autofetch": true,
+  "C_Cpp.workspaceSymbols": "All",
+  "debug.onTaskErrors": "abort",
+  "output.smartScroll.enabled": false,
   "keyboard.dispatch": "keyCode",
-  "workbench.activityBar.visible": true,
-  "workbench.colorTheme": "Visual Studio Dark - C++",
-  "window.zoomLevel": 2,
-  "window.menuBarVisibility": "toggle",
+
   "python.languageServer": "Jedi",
   "python.terminal.activateEnvInCurrentTerminal": true,
+
   "terminal.external.linuxExec": "xfce4-terminal",
   "terminal.integrated.inheritEnv": false,
   "terminal.integrated.unicodeVersion": "11",
   "terminal.integrated.fontWeightBold": "normal",
+  "terminal.integrated.defaultProfile.linux": "bash",
+
+  "workbench.activityBar.visible": true,
+  "window.zoomLevel": 2,
+  "window.menuBarVisibility": "toggle",
+
   "vim.handleKeys": {
     "<C-k>": false
   },
@@ -147,16 +162,6 @@
       ]
     }
   ],
-  "code-runner.executorMap": {
-    "python": "python",
-    "fsharp": "dotnet fsi",
-    "c": "cd $dir && gcc -Wall $fileName -o $fileNameWithoutExt.out && $dir$fileNameWithoutExt.out",
-    "cpp": "cd $dir && g++ -std=c++14 $fileName -o $fileNameWithoutExt.out && $dir$fileNameWithoutExt.out",
-  },
-  "git.autofetch": true,
-  "C_Cpp.workspaceSymbols": "All",
-  "debug.onTaskErrors": "abort",
-  "output.smartScroll.enabled": false,
   "latex-workshop.latex.tools": [
     {
       "name": "latexmk",
@@ -250,13 +255,25 @@
   ],
   "latex-workshop.latex.build.forceRecipeUsage": true,
   "latex-workshop.latex.autoBuild.run": "onSave",
-  "terminal.integrated.defaultProfile.linux": "bash",
+
+
   "editor.wordWrap": "on",
+
   "jupyter.jupyterServerType": "local",
   "diffEditor.ignoreTrimWhitespace": false,
-  "security.workspace.trust.untrustedFiles": "open",
-  "cSpell.userWords": [
-    "MNIST"
-  ],
+
   "workbench.editor.untitled.hint": "hidden",
+  "jupyter.askForKernelRestart": false,
+  "breadcrumbs.enabled": false,
+  "notebook.consolidatedRunButton": true,
+  "csv-preview.separator": "[,;]",
+
+  "cSpell.userWords": [
+    "MNIST",
+    "Pfeiffer"
+  ],
+  "notebook.cellToolbarLocation": {
+    "default": "right",
+    "jupyter-notebook": "right"
+  },
 }

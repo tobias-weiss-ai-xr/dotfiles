@@ -62,5 +62,13 @@
         "key": "ctrl+shift+d",
         "command": "-workbench.view.debug",
         "when": "viewContainer.workbench.view.debug.enabled"
+    },
+    {
+        "key": "ctrl+alt+enter",
+        "command": "jupyter.runallcells"
+    },
+    {
+        "key": "ctrl+alt+enter",
+        "command": "notebook.execute"
     }
 ]
