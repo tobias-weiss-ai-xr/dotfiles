@@ -26,8 +26,6 @@
   "debug.onTaskErrors": "abort",
   "output.smartScroll.enabled": false,
   "keyboard.dispatch": "keyCode",
-
-  "python.languageServer": "Jedi",
   "python.terminal.activateEnvInCurrentTerminal": true,
 
   "terminal.external.linuxExec": "xfce4-terminal",
