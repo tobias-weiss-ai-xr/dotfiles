@@ -205,7 +205,7 @@
       "env": {}
     }
   ],
-  "latex-workshop.latex.recipe.default": "lualatex",
+  "latex-workshop.latex.recipe.default": "lastUsed",
   "latex-workshop.latex.recipes": [
     {
       "name": "lualatex ➞ bibtex ➞ lualatex`×2",

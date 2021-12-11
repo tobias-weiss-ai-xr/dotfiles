@@ -28,6 +28,28 @@ match WhitespaceEOL /\s\+$/
 " mapping to souce all souce files
 noremap <leader>R :so $MYVIMRC<cr>:so ~/dotfiles/nvim/python-vimrc.vim<cr>
 
+" Vimux settings
+let g:VimuxOrientation = "h"
+let g:VimuxHeight = "50"
+
+" set python mode to python3 for python-mode
+let g:pymode_python = 'python3'
+let g:pymode_options = 1
+let g:pymode_folding = 0
+let g:pymode_quickfix_minheight = 3
+let g:pymode_quickfix_maxheight = 6
+let g:pymode_doc = 1
+let g:pymode_syntax_all = 1
+
+" neoformat
+let g:neoformat_python_autopep8 = { 'exe': 'autopep8',
+            \ 'args': ['-v', '--aggressive']}
+
+let g:neoformat_enabled_python = ['autopep8', 'yapf', 'docformatter']
+let g:neoformat_run_all_formatters = 1
+"let g:neoformat_verbose = 1 " only affects the verbosity of Neoformat
+"let &verbose            = 1 " also increases verbosity of the editor as a
+
 " Map execution of actual file
 " map <F5> :! clear & python % &
 " map <F6> :! clear & python3 % &
@@ -72,25 +94,3 @@ if g:hostname == "ThinkPad.local.tobias-weiss.org"
     "\ :call VimuxRunCommand("clear")<cr>
     "\ :call VimuxRunCommand("python3 -m pytest")<cr>
 endif
-
-" Vimux settings
-let g:VimuxOrientation = "h"
-let g:VimuxHeight = "50"
-
-" set python mode to python3 for python-mode
-let g:pymode_python = 'python3'
-let g:pymode_options = 1
-let g:pymode_folding = 0
-let g:pymode_quickfix_minheight = 3
-let g:pymode_quickfix_maxheight = 6
-let g:pymode_doc = 1
-let g:pymode_syntax_all = 1
-
-" neoformat
-let g:neoformat_python_autopep8 = { 'exe': 'autopep8',
-            \ 'args': ['-v', '--aggressive']}
-
-let g:neoformat_enabled_python = ['autopep8', 'yapf', 'docformatter']
-let g:neoformat_run_all_formatters = 1
-"let g:neoformat_verbose = 1 " only affects the verbosity of Neoformat
-"let &verbose            = 1 " also increases verbosity of the editor as a
