@@ -70,5 +70,9 @@
     {
         "key": "ctrl+alt+enter",
         "command": "notebook.execute"
+    },
+    {
+        "key": "ctrl+shift+j",
+        "command": "editor.action.joinLines"
     }
 ]
