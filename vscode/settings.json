@@ -5,7 +5,11 @@
   "cmake.configureOnOpen": true,
   "update.showReleaseNotes": false,
   "editor.accessibilitySupport": "off",
-  "editor.suggestSelection": "first",
+  "editor.quickSuggestions": {
+    "other": false,
+    "comments": false,
+    "strings": false
+  },
   "extensions.autoCheckUpdates": false,
   "extensions.autoUpdate": false,
   "telemetry.telemetryLevel": "off",
@@ -35,7 +39,6 @@
   "terminal.integrated.defaultProfile.linux": "bash",
 
   "workbench.activityBar.visible": true,
-  "window.zoomLevel": 2,
   "window.menuBarVisibility": "toggle",
 
   "vim.handleKeys": {
@@ -274,8 +277,9 @@
     "default": "right",
     "jupyter-notebook": "right"
   },
-  "editor.autoClosingBrackets": "always",
   "editor.autoClosingQuotes": "always",
-  "editor.acceptSuggestionOnEnter": "smart",
   "editor.tabCompletion": "on",
+  "editor.snippetSuggestions": "top",
+  "notebook.output.textLineLimit": 500,
+  "editor.suggest.preview": true,
 }
