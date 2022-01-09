@@ -50,7 +50,7 @@ fi
 
 if [[ $HOST = "tobi-yoga" ]]; then
     xrandr --output HDMI-2 --auto --right-of eDP-1 # enable second display
-	export PATH=$PATH:$HOME/dotfiles/utils:/home/weiss/.gem/ruby/2.7.0/bin:/home/weiss/.local/bin:/home/weiss/.dotnet/tools:/opt/ti/ccs1040
+	export PATH=$PATH:$HOME/dotfiles/utils:/home/weiss/.gem/ruby/2.7.0/bin:/home/weiss/.local/bin:/home/weiss/.cargo/bin
     export PATH="/usr/local/src/spark-3.0.1-bin-hadoop2.7/bin:${PATH}"
     export PATH="${SPARK_HOME}/python:${PATH}"
     export PATH="/opt/zoom:${PATH}"

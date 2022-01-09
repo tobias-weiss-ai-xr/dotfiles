@@ -36,7 +36,6 @@
   "output.smartScroll.enabled": false,
   "keyboard.dispatch": "keyCode",
   "python.terminal.activateEnvInCurrentTerminal": true,
-  "python.jediEnabled": true,
   "terminal.external.linuxExec": "xfce4-terminal",
   "terminal.integrated.inheritEnv": false,
   "terminal.integrated.unicodeVersion": "11",
@@ -287,4 +286,5 @@
   "editor.suggestSelection": "first",
 "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
 "python.languageServer": "Jedi",
+"window.zoomLevel": 3,
 }
