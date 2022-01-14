@@ -74,5 +74,16 @@
     {
         "key": "ctrl+shift+j",
         "command": "editor.action.joinLines"
+    },
+    {
+        "key": "ctrl+shift+t",
+        "command": "workbench.action.tasks.runTask",
+        "args": "cargo test",
+        "when": "editorTextFocus && editorLangId == rust"
+    },{
+        "key": "ctrl+shift+r",
+        "command": "workbench.action.tasks.runTask",
+        "args": "cargo run",
+        "when": "editorTextFocus && editorLangId == rust"
     }
 ]

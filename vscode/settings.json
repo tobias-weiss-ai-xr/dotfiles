@@ -1,8 +1,11 @@
 {
   "update.mode": "manual",
+  "window.menuBarVisibility": "toggle",
   "C_Cpp.updateChannel": "Insiders",
   "security.workspace.trust.untrustedFiles": "open",
   "cmake.configureOnOpen": true,
+  "extensions.autoCheckUpdates": false,
+  "extensions.autoUpdate": false,
   "update.showReleaseNotes": false,
   "editor.autoClosingQuotes": "always",
   "editor.tabCompletion": "on",
@@ -11,11 +14,8 @@
   "editor.quickSuggestions": {
     "other": true,
     "comments": true,
-    "strings": true,
+    "strings": true
   },
-
-  "extensions.autoCheckUpdates": false,
-  "extensions.autoUpdate": false,
 
   "telemetry.telemetryLevel": "off",
   "files.exclude": {
@@ -28,23 +28,27 @@
     "python": "python",
     "fsharp": "dotnet fsi",
     "c": "cd $dir && gcc -Wall $fileName -o $fileNameWithoutExt.out && $dir$fileNameWithoutExt.out",
-    "cpp": "cd $dir && g++ -std=c++14 $fileName -o $fileNameWithoutExt.out && $dir$fileNameWithoutExt.out",
+    "cpp": "cd $dir && g++ -std=c++14 $fileName -o $fileNameWithoutExt.out && $dir$fileNameWithoutExt.out"
   },
   "git.autofetch": true,
   "C_Cpp.workspaceSymbols": "All",
   "debug.onTaskErrors": "abort",
   "output.smartScroll.enabled": false,
   "keyboard.dispatch": "keyCode",
-  "python.terminal.activateEnvInCurrentTerminal": true,
+
   "terminal.external.linuxExec": "xfce4-terminal",
-  "terminal.integrated.inheritEnv": false,
+  "terminal.integrated.inheritEnv": true,
   "terminal.integrated.unicodeVersion": "11",
   "terminal.integrated.fontWeightBold": "normal",
   "terminal.integrated.defaultProfile.linux": "bash",
+  "terminal.integrated.profiles.linux": {
+    "bash": {
+      "path": "bash",
+      "args": ["-l"]
+    }
+  },
 
   "workbench.activityBar.visible": true,
-  "window.menuBarVisibility": "toggle",
-
   "vim.handleKeys": {
     "<C-k>": false
   },
@@ -53,30 +57,15 @@
   "vim.leader": "<Space>",
   "vim.normalModeKeyBindingsNonRecursive": [
     {
-      "before": [
-        "leader",
-        "c"
-      ],
-      "commands": [
-        "workbench.action.files.save",
-        "editor.action.commentLine"
-      ]
+      "before": ["leader", "c"],
+      "commands": ["workbench.action.files.save", "editor.action.commentLine"]
     },
     {
-      "before": [
-        "leader",
-        "w"
-      ],
-      "commands": [
-        "workbench.action.files.save",
-      ]
+      "before": ["leader", "w"],
+      "commands": ["workbench.action.files.save"]
     },
     {
-      "before": [
-        "leader",
-        "l",
-        "l"
-      ],
+      "before": ["leader", "l", "l"],
       "commands": [
         "workbench.action.files.save",
         "workbench.action.debug.run",
@@ -84,87 +73,43 @@
       ]
     },
     {
-      "before": [
-        "leader",
-        "l",
-        "c"
-      ],
-      "commands": [
-        "workbench.action.debug.stop"
-      ]
+      "before": ["leader", "l", "c"],
+      "commands": ["workbench.action.debug.stop"]
     },
     {
-      "before": [
-        "leader",
-        "l",
-        "d"
-      ],
+      "before": ["leader", "l", "d"],
       "commands": [
         "workbench.action.files.save",
         "workbench.action.debug.start",
-        "workbench.action.focusActiveEditorGroup",
+        "workbench.action.focusActiveEditorGroup"
       ]
     },
     {
-      "before": [
-        "leader",
-        "l",
-        "m"
-      ],
+      "before": ["leader", "l", "m"],
       "commands": [
         "workbench.action.files.save",
         "makefile.outline.launchDebug"
       ]
     },
     {
-      "before": [
-        "leader",
-        "l",
-        "f"
-      ],
-      "commands": [
-        "workbench.action.files.save",
-        "code-runner.run",
-      ]
+      "before": ["leader", "l", "f"],
+      "commands": ["workbench.action.files.save", "code-runner.run"]
     },
     {
-      "before": [
-        "leader",
-        "f",
-        "f"
-      ],
-      "commands": [
-        "editor.foldAll",
-      ]
+      "before": ["leader", "f", "f"],
+      "commands": ["editor.foldAll"]
     },
     {
-      "before": [
-        "leader",
-        "f",
-        "t"
-      ],
-      "commands": [
-        "editor.toggleFold",
-      ]
+      "before": ["leader", "f", "t"],
+      "commands": ["editor.toggleFold"]
     },
     {
-      "before": [
-        "leader",
-        "f",
-        "u"
-      ],
-      "commands": [
-        "editor.unfoldAll",
-      ]
+      "before": ["leader", "f", "u"],
+      "commands": ["editor.unfoldAll"]
     },
     {
-      "before": [
-        "<Leader>",
-        "/"
-      ],
-      "commands": [
-        ":noh"
-      ]
+      "before": ["<Leader>", "/"],
+      "commands": [":noh"]
     }
   ],
   "latex-workshop.latex.tools": [
@@ -206,9 +151,7 @@
     {
       "name": "bibtex",
       "command": "bibtex",
-      "args": [
-        "%DOCFILE%"
-      ],
+      "args": ["%DOCFILE%"],
       "env": {}
     }
   ],
@@ -216,34 +159,20 @@
   "latex-workshop.latex.recipes": [
     {
       "name": "lualatex ➞ bibtex ➞ lualatex`×2",
-      "tools": [
-        "lualatex",
-        "bibtex",
-        "lualatex",
-        "lualatex"
-      ]
+      "tools": ["lualatex", "bibtex", "lualatex", "lualatex"]
     },
     {
       "name": "pdflatex ➞ bibtex ➞ pdflatex`×2",
-      "tools": [
-        "pdflatex",
-        "bibtex",
-        "pdflatex",
-        "pdflatex"
-      ]
+      "tools": ["pdflatex", "bibtex", "pdflatex", "pdflatex"]
     },
     {
       "name": "lualatex",
-      "tools": [
-        "lualatex",
-      ]
+      "tools": ["lualatex"]
     },
     {
       "name": "latexmk",
-      "tools": [
-        "latexmk"
-      ]
-    },
+      "tools": ["latexmk"]
+    }
   ],
   "latex-workshop.view.pdf.trim": 2,
   "latex-workshop.view.pdf.viewer": "tab",
@@ -261,7 +190,6 @@
   "latex-workshop.latex.build.forceRecipeUsage": true,
   "latex-workshop.latex.autoBuild.run": "onSave",
 
-
   "editor.wordWrap": "on",
 
   "jupyter.jupyterServerType": "local",
@@ -273,10 +201,7 @@
   "notebook.consolidatedRunButton": true,
   "csv-preview.separator": "[,;]",
 
-  "cSpell.userWords": [
-    "MNIST",
-    "Pfeiffer"
-  ],
+  "cSpell.userWords": ["MNIST", "Pfeiffer"],
   "notebook.cellToolbarLocation": {
     "default": "right",
     "jupyter-notebook": "right"
@@ -284,7 +209,15 @@
   "notebook.output.textLineLimit": 500,
   "python.testing.unittestEnabled": true,
   "editor.suggestSelection": "first",
-"vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-"python.languageServer": "Jedi",
-"window.zoomLevel": 3,
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "python.languageServer": "Pylance",
+  "python.terminal.activateEnvInCurrentTerminal": true,
+  "window.zoomLevel": 3,
+  "rust-client.rustupPath": "/home/weiss/.cargo/bin/rustup",
+  "beautify.language": {
+    "html": ["htm", "html", "django-html"]
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }
