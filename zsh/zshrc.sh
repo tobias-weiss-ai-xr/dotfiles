@@ -33,7 +33,7 @@ if [[ $HOST = "tobi-yoga"  || $HOST = "tobi-legion" ]]; then
 fi
 
 if [[ $HOST = "tobi-legion" ]]; then
-	export PATH=${PATH}:${HOME}/dotfiles/utils:/home/weiss/bin:/home/weiss/.local/bin
+	export PATH=${PATH}:${HOME}/dotfiles/utils:/home/weiss/bin:/home/weiss/.local/bin:${HOME}/.cargo/bin
 	export VISUAL=/usr/bin/nvim
 	export EDITOR=/usr/bin/nvim
     export PLANTUML_JAR=/home/weiss/bin/plantuml.jar
