@@ -40,6 +40,7 @@ set hlsearch
 set backspace=indent,eol,start
 "Detect file type
 filetype plugin indent on
+set omnifunc=syntaxcomplete#Complete
 
 inoremap <C-Space> <C-x><C-o>
 inoremap <C-@> <C-Space>
