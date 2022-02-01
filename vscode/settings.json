@@ -212,7 +212,7 @@
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
   "python.languageServer": "Pylance",
   "python.terminal.activateEnvInCurrentTerminal": true,
-  "window.zoomLevel": 3,
+  "window.zoomLevel": 2,
   "rust-client.rustupPath": "/home/weiss/.cargo/bin/rustup",
   "beautify.language": {
     "html": ["htm", "html", "django-html"]
