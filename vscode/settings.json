@@ -219,5 +219,7 @@
   },
   "[jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  },
+  "editor.insertSpaces": true,
+  "git.enableSmartCommit": true
 }
