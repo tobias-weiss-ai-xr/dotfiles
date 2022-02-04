@@ -7,6 +7,7 @@
   "extensions.autoCheckUpdates": false,
   "extensions.autoUpdate": false,
   "update.showReleaseNotes": false,
+  "editor.wordWrap": "on",
   "editor.autoClosingQuotes": "always",
   "editor.tabCompletion": "on",
   "editor.snippetSuggestions": "top",
@@ -156,7 +157,9 @@
     }
   ],
   "latex-workshop.latex.recipe.default": "lastUsed",
+  "latex-workshop.latex.autoBuild.run": "onSave",
   "latex-workshop.latex.recipes": [
+
     {
       "name": "lualatex ➞ bibtex ➞ lualatex`×2",
       "tools": ["lualatex", "bibtex", "lualatex", "lualatex"]
@@ -175,22 +178,18 @@
     }
   ],
   "latex-workshop.view.pdf.trim": 2,
-  "latex-workshop.view.pdf.viewer": "tab",
+  "latex-workshop.view.pdf.viewer": "external",
   "latex-workshop.view.pdf.external.viewer.command": "zathura",
   "latex-workshop.view.pdf.external.viewer.args": [
-    "--synctex-editor-command",
-    "code --reuse-window -g \"%{input}:%{line}\"",
-    "%PDF%"
+      "--synctex-editor-command",
+      "code --reuse-window -g \"%{input}:%{line}\"",
+      "%PDF%"
   ],
   "latex-workshop.view.pdf.external.synctex.command": "zathura",
   "latex-workshop.view.pdf.external.synctex.args": [
-    "--synctex-forward=%LINE%:0:%TEX%",
-    "%PDF%"
+      "--synctex-forward=%LINE%:0:%TEX%",
+      "%PDF%"
   ],
-  "latex-workshop.latex.build.forceRecipeUsage": true,
-  "latex-workshop.latex.autoBuild.run": "onSave",
-
-  "editor.wordWrap": "on",
 
   "jupyter.jupyterServerType": "local",
   "diffEditor.ignoreTrimWhitespace": false,
@@ -221,5 +220,7 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "editor.insertSpaces": true,
-  "git.enableSmartCommit": true
+  "git.enableSmartCommit": true,
+  "latex-workshop.view.pdf.ref.viewer": "external",
+  "files.autoSave": "afterDelay"
 }
