@@ -159,7 +159,6 @@
   "latex-workshop.latex.recipe.default": "lastUsed",
   "latex-workshop.latex.autoBuild.run": "onSave",
   "latex-workshop.latex.recipes": [
-
     {
       "name": "lualatex ➞ bibtex ➞ lualatex`×2",
       "tools": ["lualatex", "bibtex", "lualatex", "lualatex"]
@@ -181,14 +180,14 @@
   "latex-workshop.view.pdf.viewer": "external",
   "latex-workshop.view.pdf.external.viewer.command": "zathura",
   "latex-workshop.view.pdf.external.viewer.args": [
-      "--synctex-editor-command",
-      "code --reuse-window -g \"%{input}:%{line}\"",
-      "%PDF%"
+    "--synctex-editor-command",
+    "code --reuse-window -g \"%{input}:%{line}\"",
+    "%PDF%"
   ],
   "latex-workshop.view.pdf.external.synctex.command": "zathura",
   "latex-workshop.view.pdf.external.synctex.args": [
-      "--synctex-forward=%LINE%:0:%TEX%",
-      "%PDF%"
+    "--synctex-forward=%LINE%:0:%TEX%",
+    "%PDF%"
   ],
 
   "jupyter.jupyterServerType": "local",
@@ -200,17 +199,30 @@
   "notebook.consolidatedRunButton": true,
   "csv-preview.separator": "[,;]",
 
-  "cSpell.userWords": ["MNIST", "Pfeiffer"],
+  "cSpell.userWords": ["keras", "MNIST", "Pfeiffer"],
   "notebook.cellToolbarLocation": {
     "default": "right",
     "jupyter-notebook": "right"
   },
   "notebook.output.textLineLimit": 500,
+  "python.analysis.autoImportCompletions": true,
+  "python.analysis.typeCheckingMode": "off",
   "python.testing.unittestEnabled": true,
-  "editor.suggestSelection": "first",
-  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
   "python.languageServer": "Pylance",
   "python.terminal.activateEnvInCurrentTerminal": true,
+  "python.linting.enabled": true,
+  "python.linting.flake8Enabled": false,
+  "python.linting.pylintEnabled": true,
+  "python.linting.pylintArgs": ["--ignored-modules=tensorflow.keras"],
+  "python.formatting.provider": "black",
+
+  "editor.formatOnSaveMode": "file",
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": true
+  },
+  "editor.suggestSelection": "first",
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
   "window.zoomLevel": 2,
   "rust-client.rustupPath": "/home/weiss/.cargo/bin/rustup",
   "beautify.language": {
