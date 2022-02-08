@@ -113,6 +113,10 @@
       "commands": [":noh"]
     }
   ],
+  "latex-workshop.latex.recipe.default": "lastUsed",
+  // "latex-workshop.latex.autoBuild.run": "onSave",
+  "latex-workshop.message.warning.show": false,
+  "latex-workshop.message.error.show": true,
   "latex-workshop.latex.tools": [
     {
       "name": "latexmk",
@@ -162,8 +166,6 @@
       "env": {}
     }
   ],
-  "latex-workshop.latex.recipe.default": "lastUsed",
-  "latex-workshop.latex.autoBuild.run": "onSave",
   "latex-workshop.latex.recipes": [
     {
       "name": "lualatex ➞ biber ➞ lualatex`×2",
