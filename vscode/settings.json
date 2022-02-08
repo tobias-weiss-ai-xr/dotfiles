@@ -155,10 +155,20 @@
       "args": ["%DOCFILE%"],
       "env": {}
     }
+    {
+      "name": "biber",
+      "command": "biber",
+      "args": ["%DOCFILE%"],
+      "env": {}
+    }
   ],
   "latex-workshop.latex.recipe.default": "lastUsed",
   "latex-workshop.latex.autoBuild.run": "onSave",
   "latex-workshop.latex.recipes": [
+    {
+      "name": "lualatex ➞ biber ➞ lualatex`×2",
+      "tools": ["lualatex", "biber", "lualatex", "lualatex"]
+    },
     {
       "name": "lualatex ➞ bibtex ➞ lualatex`×2",
       "tools": ["lualatex", "bibtex", "lualatex", "lualatex"]
