@@ -158,7 +158,7 @@
       "command": "bibtex",
       "args": ["%DOCFILE%"],
       "env": {}
-    }
+    },
     {
       "name": "biber",
       "command": "biber",
