@@ -33,16 +33,12 @@ if [[ $HOST = "tobi-yoga"  || $HOST = "tobi-legion" ]]; then
 fi
 
 if [[ $HOST = "tobi-legion" ]]; then
-	export PATH=${PATH}:${HOME}/dotfiles/utils:/home/weiss/bin:/home/weiss/.local/bin:${HOME}/.cargo/bin
+	export PATH=${PATH}:${HOME}/dotfiles/utils:/home/weiss/.local/bin:${HOME}/.cargo/bin
 	export VISUAL=/usr/bin/nvim
 	export EDITOR=/usr/bin/nvim
-    export PLANTUML_JAR=/home/weiss/bin/plantuml.jar
     export GRAPHVIZ_DOT=/usr/bin
     export CONDA_PKGS_DIRS=~/.conda/pkgs
     export WORKON_HOME=~/.virtualenvs
-    export SPARK_HOME="/home/weiss/bin/spark-3.0.1-bin-hadoop2.7"
-    export PYTHONPATH="${SPARK_HOME}/python:${SPARK_HOME}/python/lib/py4j-0.10.4-src.zip:${PYTHONPATH}"
-    export PATH="${SPARK_HOME}/python:${PATH}"
     source /usr/bin/virtualenvwrapper.sh
 	source ~/dotfiles/zsh/diablo2.sh # source diablo2 functions
     export JAVA_HOME=/usr/lib/jvm/java-15-jdk

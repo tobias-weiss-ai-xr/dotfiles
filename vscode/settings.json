@@ -10,7 +10,7 @@
   "editor.wordWrap": "on",
   "editor.autoClosingQuotes": "always",
   "editor.tabCompletion": "on",
-  "editor.snippetSuggestions": "top",
+  "editor.snippetSuggestions": "bottom",
   "editor.accessibilitySupport": "off",
   "editor.quickSuggestions": {
     "other": true,
