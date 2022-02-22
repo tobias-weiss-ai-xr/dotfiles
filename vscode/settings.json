@@ -246,5 +246,8 @@
   "editor.insertSpaces": true,
   "git.enableSmartCommit": true,
   "latex-workshop.view.pdf.ref.viewer": "external",
-  "files.autoSave": "afterDelay"
+  "files.autoSave": "afterDelay",
+  "[django-html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }
