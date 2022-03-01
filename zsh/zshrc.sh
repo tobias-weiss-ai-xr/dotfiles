@@ -48,27 +48,17 @@ if [[ $HOST = "tobi-yoga" ]]; then
     # display adjustment
     # xrandr --output HDMI-2 --auto --right-of eDP-1 # enable second display
 	export PATH=$PATH:$HOME/dotfiles/utils:/home/weiss/.gem/ruby/2.7.0/bin:/home/weiss/.local/bin:/home/weiss/.cargo/bin
-    export PATH="/usr/local/src/spark-3.0.1-bin-hadoop2.7/bin:${PATH}"
-    export PATH="${SPARK_HOME}/python:${PATH}"
     export PATH="/opt/zoom:${PATH}"
-    export PATH="${GUROBI_HOME}/bin:${PATH}"
     export PATH="/opt/cuda:${PATH}"
-    export LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:${GUROBI_HOME}/lib"
 	export VISUAL=/usr/bin/nvim
 	export EDITOR=/usr/bin/nvim
     export NVIM_LISTEN_ADDRESS=/tmp/nvimsocket
-    export SPARK_HOME="/usr/local/src/spark-3.0.1-bin-hadoop2.7"
-    export PYTHONPATH="${SPARK_HOME}/python:${SPARK_HOME}/python/lib/py4j-0.10.4-src.zip:${PYTHONPATH}"
     export JAVA_HOME=/usr/lib/jvm/java-17-jdk
-    export GUROBI_HOME="/opt/gurobi901/linux64"
 	source ~/dotfiles/zsh/cpufreq.sh # source cpufreq functions
 	source ~/dotfiles/zsh/diablo2.sh # source diablo2 functions
 	source ~/dotfiles/zsh/openvpn.sh # source openvpn functions
     # check for miniconda and load if present
     [ -f /opt/miniconda3/etc/profile.d/conda.sh ] && source /opt/miniconda3/etc/profile.d/conda.sh
-    export CUBE_FW_DIR=/home/weiss/STM32Cube/Repository
-    export X_CUBE_AI_DIR=$CUBE_FW_DIR/Packs/STMicroelectronics/X-CUBE-AI/7.0.0
-export PATH=$X_CUBE_AI_DIR/Utilities/linux:$PATH
 fi
 
 # Fix for arrow-key searching
