@@ -8,6 +8,8 @@ git config --global push.default current
 
 if [[ $HOST = "tobi-yoga"  || $HOST = "tobi-legion" ]]; then
     setxkbmap -option caps:escape # map esc to capslock
+    # to reset
+    # setxkbmap -layout de -option
     # Aliases
 	alias vi="nvim"
 	alias vim="nvim"
