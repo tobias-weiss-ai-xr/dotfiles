@@ -211,7 +211,7 @@
   "notebook.consolidatedRunButton": true,
   "csv-preview.separator": "[,;]",
 
-  "cSpell.userWords": ["keras", "MNIST", "Pfeiffer"],
+  "cSpell.userWords": ["keras", "Mathf", "MNIST", "Pfeiffer"],
   "notebook.cellToolbarLocation": {
     "default": "right",
     "jupyter-notebook": "right"
@@ -249,5 +249,6 @@
   "files.autoSave": "afterDelay",
   "[django-html]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  },
+  "omnisharp.useGlobalMono": "always"
 }
