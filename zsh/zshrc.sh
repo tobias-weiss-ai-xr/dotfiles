@@ -36,6 +36,7 @@ fi
 
 if [[ $HOST = "tobi-legion" ]]; then
 	export PATH=${PATH}:${HOME}/dotfiles/utils:/home/weiss/.local/bin:${HOME}/.cargo/bin
+    export PATH="/usr/local/src/pycharm-2021.3.2/bin:${PATH}"
 	export VISUAL=/usr/bin/nvim
 	export EDITOR=/usr/bin/nvim
     export GRAPHVIZ_DOT=/usr/bin
@@ -52,6 +53,7 @@ if [[ $HOST = "tobi-yoga" ]]; then
 	export PATH=$PATH:$HOME/dotfiles/utils:/home/weiss/.gem/ruby/2.7.0/bin:/home/weiss/.local/bin:/home/weiss/.cargo/bin
     export PATH="/opt/zoom:${PATH}"
     export PATH="/opt/cuda:${PATH}"
+    export PATH="/usr/local/src/pycharm-2021.3.2/bin:${PATH}"
 	export VISUAL=/usr/bin/nvim
 	export EDITOR=/usr/bin/nvim
     export NVIM_LISTEN_ADDRESS=/tmp/nvimsocket

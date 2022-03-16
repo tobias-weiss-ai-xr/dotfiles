@@ -211,7 +211,7 @@
   "notebook.consolidatedRunButton": true,
   "csv-preview.separator": "[,;]",
 
-  "cSpell.userWords": ["keras", "Mathf", "MNIST", "Pfeiffer"],
+  "cSpell.userWords": ["Behaviour", "keras", "Mathf", "MNIST", "Pfeiffer"],
   "notebook.cellToolbarLocation": {
     "default": "right",
     "jupyter-notebook": "right"
