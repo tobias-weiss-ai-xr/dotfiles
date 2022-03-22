@@ -17,6 +17,7 @@
     "comments": true,
     "strings": true
   },
+  "editor.insertSpaces": true,
 
   "telemetry.telemetryLevel": "off",
   "files.exclude": {
@@ -67,11 +68,7 @@
     },
     {
       "before": ["leader", "l", "l"],
-      "commands": [
-        "workbench.action.files.save",
-        "workbench.action.debug.run",
-        "workbench.action.terminal.focus"
-      ]
+      "commands": ["workbench.action.files.save", "workbench.action.debug.run", "workbench.action.terminal.focus"]
     },
     {
       "before": ["leader", "l", "c"],
@@ -79,18 +76,11 @@
     },
     {
       "before": ["leader", "l", "d"],
-      "commands": [
-        "workbench.action.files.save",
-        "workbench.action.debug.start",
-        "workbench.action.focusActiveEditorGroup"
-      ]
+      "commands": ["workbench.action.files.save", "workbench.action.debug.start", "workbench.action.focusActiveEditorGroup"]
     },
     {
       "before": ["leader", "l", "m"],
-      "commands": [
-        "workbench.action.files.save",
-        "makefile.outline.launchDebug"
-      ]
+      "commands": ["workbench.action.files.save", "makefile.outline.launchDebug"]
     },
     {
       "before": ["leader", "l", "f"],
@@ -121,36 +111,19 @@
     {
       "name": "latexmk",
       "command": "latexmk",
-      "args": [
-        "-synctex=1",
-        "-interaction=nonstopmode",
-        "-file-line-error",
-        "-pdf",
-        "-outdir=%OUTDIR%",
-        "%DOC%"
-      ],
+      "args": ["-synctex=1", "-interaction=nonstopmode", "-file-line-error", "-pdf", "-outdir=%OUTDIR%", "%DOC%"],
       "env": {}
     },
     {
       "name": "lualatex",
       "command": "lualatex",
-      "args": [
-        "-synctex=1",
-        "-interaction=nonstopmode",
-        "-file-line-error",
-        "%DOC%"
-      ],
+      "args": ["-synctex=1", "-interaction=nonstopmode", "-file-line-error", "%DOC%"],
       "env": {}
     },
     {
       "name": "pdflatex",
       "command": "pdflatex",
-      "args": [
-        "-synctex=1",
-        "-interaction=nonstopmode",
-        "-file-line-error",
-        "%DOC%"
-      ],
+      "args": ["-synctex=1", "-interaction=nonstopmode", "-file-line-error", "%DOC%"],
       "env": {}
     },
     {
@@ -191,32 +164,24 @@
   "latex-workshop.view.pdf.trim": 2,
   "latex-workshop.view.pdf.viewer": "external",
   "latex-workshop.view.pdf.external.viewer.command": "zathura",
-  "latex-workshop.view.pdf.external.viewer.args": [
-    "--synctex-editor-command",
-    "code --reuse-window -g \"%{input}:%{line}\"",
-    "%PDF%"
-  ],
+  "latex-workshop.view.pdf.external.viewer.args": ["--synctex-editor-command", "code --reuse-window -g \"%{input}:%{line}\"", "%PDF%"],
   "latex-workshop.view.pdf.external.synctex.command": "zathura",
-  "latex-workshop.view.pdf.external.synctex.args": [
-    "--synctex-forward=%LINE%:0:%TEX%",
-    "%PDF%"
-  ],
+  "latex-workshop.view.pdf.external.synctex.args": ["--synctex-forward=%LINE%:0:%TEX%", "%PDF%"],
 
   "jupyter.jupyterServerType": "local",
+  "jupyter.askForKernelRestart": false,
+
   "diffEditor.ignoreTrimWhitespace": false,
 
   "workbench.editor.untitled.hint": "hidden",
-  "jupyter.askForKernelRestart": false,
-  "breadcrumbs.enabled": false,
   "notebook.consolidatedRunButton": true,
-  "csv-preview.separator": "[,;]",
-
-  "cSpell.userWords": ["Behaviour", "keras", "Mathf", "MNIST", "Pfeiffer"],
   "notebook.cellToolbarLocation": {
     "default": "right",
     "jupyter-notebook": "right"
   },
-  "notebook.output.textLineLimit": 500,
+
+  "cSpell.userWords": ["Behaviour", "keras", "Mathf", "MNIST", "Pfeiffer"],
+  "cSpell.language": "en,de-de",
   "python.analysis.autoImportCompletions": true,
   "python.analysis.typeCheckingMode": "off",
   "python.testing.unittestEnabled": true,
@@ -235,7 +200,7 @@
   },
   "editor.suggestSelection": "first",
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-  "window.zoomLevel": 2,
+  "window.zoomLevel": 1,
   "rust-client.rustupPath": "/home/weiss/.cargo/bin/rustup",
   "beautify.language": {
     "html": ["htm", "html", "django-html"]
@@ -243,12 +208,13 @@
   "[jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "editor.insertSpaces": true,
   "git.enableSmartCommit": true,
   "latex-workshop.view.pdf.ref.viewer": "external",
   "files.autoSave": "afterDelay",
   "[django-html]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "omnisharp.useGlobalMono": "always"
+  "omnisharp.useGlobalMono": "always",
+  "prettier.printWidth": 240,
+  "python.formatting.blackArgs": ["--line-length=240"]
 }
