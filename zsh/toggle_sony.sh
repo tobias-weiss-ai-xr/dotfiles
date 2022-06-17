@@ -13,7 +13,8 @@ pa_source=bluez_source."$bluetooth_mac"
 toggle_sony_state() {
   if [[ -z $(pacmd list-cards | grep $pa_card) ]]
   then
-    bluetoothctl power on && bluetoothctl connect CC:98:8B:D1:BD:D2
+    sudo systemctl restart bluetooth && sleep 1 && bluetoothctl power on && bluetoothctl connect CC:98:8B:D1:BD:D2
+    #bluetoothctl power on && bluetoothctl connect CC:98:8B:D1:BD:D2
   else
     bluetoothctl power off
   fi
