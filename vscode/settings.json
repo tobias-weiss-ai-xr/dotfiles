@@ -216,5 +216,6 @@
   },
   "omnisharp.useGlobalMono": "always",
   "prettier.printWidth": 240,
-  "python.formatting.blackArgs": ["--line-length=240"]
+  "python.formatting.blackArgs": ["--line-length=240"],
+  "git.confirmSync": false
 }
