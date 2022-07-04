@@ -214,8 +214,13 @@
   "[django-html]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+
+  // unity
+  "omnisharp.path": "latest",
   "omnisharp.useGlobalMono": "always",
+
   "prettier.printWidth": 240,
   "python.formatting.blackArgs": ["--line-length=240"],
-  "git.confirmSync": false
+  "git.confirmSync": false,
+  "omnisharp.useModernNet": false
 }
