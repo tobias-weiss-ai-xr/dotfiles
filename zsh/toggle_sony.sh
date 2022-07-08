@@ -21,8 +21,9 @@ toggle_sony_state() {
 }
 
 toggle_sony_profile() {
-
-  if grep -q handsfree_head_unit "$cache_data" 2>/dev/null
+  
+  if [[ $(pacmd list-sinks | grep bluetooth.protocol | awk '/".*"/{print $3}' | tr -d '"')  = handsfree_head_unit ]]
+  #if grep -q handsfree_head_unit "$cache_data" 2>/dev/null
   then
     local profile="a2dp_sink"
   else
