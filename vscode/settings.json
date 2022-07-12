@@ -222,5 +222,6 @@
   "prettier.printWidth": 240,
   "python.formatting.blackArgs": ["--line-length=240"],
   "git.confirmSync": false,
-  "omnisharp.useModernNet": false
+  "omnisharp.useModernNet": false,
+  "extensions.ignoreRecommendations": true
 }
