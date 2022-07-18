@@ -1,9 +1,9 @@
 # Vars
+export KEYTIMEOUT=1 # set timeout for esc key to 0.1
 HISTFILE=~/.zsh_history
 SAVEHIST=1000 
 setopt inc_append_history # To save every command before it is executed 
-setopt share_history # setopt inc_append_history
-export KEYTIMEOUT=1 # set timeout for esc key to 0.1
+setopt share_history
 git config --global push.default current
 
 if [[ $HOST = "tobi-yoga"  || $HOST = "tobi-legion" ]]; then
@@ -14,8 +14,8 @@ if [[ $HOST = "tobi-yoga"  || $HOST = "tobi-legion" ]]; then
 	alias vi="nvim"
 	alias vim="nvim"
 	alias lab="tmuxinator lab"
-	alias ba="tmuxinator ba"
-    alias gp="git checkout develop && git merge tobias && git push && git checkout master && git merge develop && git push && git checkout tobias"
+	#alias ba="tmuxinator ba"
+    #alias gp="git checkout develop && git merge tobias && git push && git checkout master && git merge develop && git push && git checkout tobias"
 	#alias labor="ssh-add ~/.ssh/id_uni && ssh labor"
 
     source ~/dotfiles/zsh/toggle_sony.sh
@@ -140,6 +140,7 @@ source ~/dotfiles/zsh/plugins/vi-mode.plugin.zsh
 source ~/dotfiles/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/dotfiles/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/dotfiles/zsh/keybindings.sh
+source ~/dotfiles/zsh/prompt.sh
 
 ##ssh-agent settings
 #if [[ $HOST = "ThinkPad.local.tobias-weiss.org" ]]; then
@@ -156,7 +157,6 @@ source ~/dotfiles/zsh/keybindings.sh
 #
 #fi
 
-source ~/dotfiles/zsh/prompt.sh
 
 ## key chain config
 #if [[ $HOST = "ThinkPad.local.tobias-weiss.org" ]]; then
