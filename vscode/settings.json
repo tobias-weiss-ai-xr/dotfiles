@@ -51,6 +51,8 @@
   },
 
   "workbench.activityBar.visible": true,
+
+  "vim.useSystemClipboard": true, // ctrl + c to copy and p to paste,
   "vim.handleKeys": {
     "<C-k>": false
   },
@@ -68,7 +70,13 @@
     },
     {
       "before": ["leader", "l", "l"],
-      "commands": ["workbench.action.files.save", "workbench.action.debug.run", "workbench.action.terminal.focus"]
+      // "commands": ["workbench.action.files.save", "workbench.action.debug.start", "workbench.action.terminal.focus"]
+      "commands": ["workbench.action.files.save", "workbench.action.debug.start"]
+    },
+    {
+      "before": ["leader", "l", "r"],
+      // "commands": ["workbench.action.files.save", "workbench.action.debug.run", "workbench.action.terminal.focus"]
+      "commands": ["workbench.action.files.save", "workbench.action.debug.run"]
     },
     {
       "before": ["leader", "l", "c"],
