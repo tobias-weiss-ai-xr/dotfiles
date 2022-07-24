@@ -1,4 +1,4 @@
-# Vars
+# vars
 export KEYTIMEOUT=1 # set timeout for esc key to 0.1
 HISTFILE=~/.zsh_history
 SAVEHIST=1000 
@@ -57,6 +57,7 @@ if [[ $HOST = "tobi-yoga" ]]; then
     export PATH="/opt/zoom:${PATH}"
     export PATH="/opt/cuda:${PATH}"
     export PATH="/usr/local/src/pycharm-2021.3.2/bin:${PATH}"
+    export PATH="/usr/local/bin:${PATH}"
 	export VISUAL=/usr/bin/nvim
 	export EDITOR=/usr/bin/nvim
     export NVIM_LISTEN_ADDRESS=/tmp/nvimsocket
