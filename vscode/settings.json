@@ -232,4 +232,7 @@
   "git.confirmSync": false,
   "omnisharp.useModernNet": false,
   "extensions.ignoreRecommendations": true
+
+  // esp for c#
+  "editor.snippetSuggestions": "top"
 }
