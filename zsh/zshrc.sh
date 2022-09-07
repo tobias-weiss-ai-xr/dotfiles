@@ -61,7 +61,7 @@ if [[ $HOST = "tobi-yoga" ]]; then
 	export VISUAL=/usr/bin/nvim
 	export EDITOR=/usr/bin/nvim
     export NVIM_LISTEN_ADDRESS=/tmp/nvimsocket
-    export JAVA_HOME=/usr/lib/jvm/java-17-jdk
+    export JAVA_HOME=/usr/lib/jvm/java-18-jdk
 	source ~/dotfiles/zsh/cpufreq.sh # source cpufreq functions
 	source ~/dotfiles/zsh/diablo2.sh # source diablo2 functions
 	source ~/dotfiles/zsh/openvpn.sh # source openvpn functions
