@@ -5,9 +5,9 @@ if command -v tmux>/dev/null; then
 	# check tmux version and load alternative config for 2.9
 	tmux_version=$(tmux -V)
 	if [[ $tmux_version == "tmux 2.8" ]]; then
-		[ -z $TMUX ] && exec tmux -f ~/dotfiles/tmux/tmux.conf
+		[ -z $TMUX ] && exec tmux -f ~/dotfiles/tmux/tmux28.conf
 	else
-		[ -z $TMUX ] && exec tmux -f ~/dotfiles/tmux/tmux29.conf
+		[ -z $TMUX ] && exec tmux -f ~/dotfiles/tmux/tmux.conf
 	fi
 else 
 	echo "tmux not installed. Run ./deploy to configure dependencies"
