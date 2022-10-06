@@ -34,7 +34,6 @@ if [[ $HOST = "tobi-yoga"  || $HOST = "tobi-legion" ]]; then
         fi
     fi
     unset __conda_setup
-
 fi
 
 if [[ $HOST = "tobi-legion" ]]; then
@@ -48,6 +47,11 @@ if [[ $HOST = "tobi-legion" ]]; then
     source /usr/bin/virtualenvwrapper.sh
 	source ~/dotfiles/zsh/diablo2.sh # source diablo2 functions
     export JAVA_HOME=/usr/lib/jvm/java-15-jdk
+
+    # pyenv
+    export PYENV_ROOT="$HOME/.pyenv"
+    command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+    eval "$(pyenv init -)"
 fi
 
 if [[ $HOST = "tobi-yoga" ]]; then
