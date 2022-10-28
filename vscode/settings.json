@@ -231,8 +231,9 @@
   "python.formatting.blackArgs": ["--line-length=240"],
   "git.confirmSync": false,
   "omnisharp.useModernNet": false,
-  "extensions.ignoreRecommendations": true
+  "extensions.ignoreRecommendations": true,
 
   // esp for c#
-  "editor.snippetSuggestions": "top"
+  "editor.snippetSuggestions": "top",
+  "notebook.lineNumbers": "on"
 }
