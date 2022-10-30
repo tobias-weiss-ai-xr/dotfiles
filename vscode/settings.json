@@ -190,6 +190,7 @@
 
   "cSpell.userWords": ["Behaviour", "keras", "Mathf", "MNIST", "Pfeiffer"],
   "cSpell.language": "en,de-de",
+
   "python.analysis.autoImportCompletions": true,
   "python.analysis.typeCheckingMode": "off",
   "python.testing.unittestEnabled": true,
@@ -200,6 +201,7 @@
   "python.linting.pylintEnabled": false,
   "python.linting.pylintArgs": ["--ignored-modules=tensorflow.keras"],
   "python.formatting.provider": "black",
+  "python.formatting.blackArgs": ["--line-length=240"],
 
   "editor.formatOnSaveMode": "file",
   "editor.formatOnSave": true,
@@ -228,7 +230,6 @@
   "omnisharp.useGlobalMono": "always",
 
   "prettier.printWidth": 240,
-  "python.formatting.blackArgs": ["--line-length=240"],
   "git.confirmSync": false,
   "omnisharp.useModernNet": false,
   "extensions.ignoreRecommendations": true,
