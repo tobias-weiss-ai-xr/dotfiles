@@ -210,7 +210,6 @@
   },
   "editor.suggestSelection": "first",
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-  "window.zoomLevel": 1,
   "rust-client.rustupPath": "/home/weiss/.cargo/bin/rustup",
   "beautify.language": {
     "html": ["htm", "html", "django-html"]
@@ -236,5 +235,6 @@
 
   // esp for c#
   "editor.snippetSuggestions": "top",
-  "notebook.lineNumbers": "on"
+  "notebook.lineNumbers": "on",
+  "window.zoomLevel": 1
 }
