@@ -201,7 +201,7 @@
   "python.linting.pylintEnabled": false,
   "python.linting.pylintArgs": ["--ignored-modules=tensorflow.keras"],
   "python.formatting.provider": "black",
-  "python.formatting.blackArgs": ["--line-length=240"],
+  "python.formatting.blackArgs": ["--line-length=79"],
 
   "editor.formatOnSaveMode": "file",
   "editor.formatOnSave": true,
