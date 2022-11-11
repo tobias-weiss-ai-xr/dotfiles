@@ -176,7 +176,6 @@
   "latex-workshop.view.pdf.external.synctex.command": "zathura",
   "latex-workshop.view.pdf.external.synctex.args": ["--synctex-forward=%LINE%:0:%TEX%", "%PDF%"],
 
-  "jupyter.jupyterServerType": "local",
   "jupyter.askForKernelRestart": false,
 
   "diffEditor.ignoreTrimWhitespace": false,
@@ -201,7 +200,13 @@
   "python.linting.pylintEnabled": false,
   "python.linting.pylintArgs": ["--ignored-modules=tensorflow.keras"],
   "python.formatting.provider": "black",
+<<<<<<< Updated upstream
   "python.formatting.blackArgs": ["--line-length=79"],
+=======
+  "python.formatting.blackArgs": [
+    "--line-length=79"
+  ],
+>>>>>>> Stashed changes
 
   "editor.formatOnSaveMode": "file",
   "editor.formatOnSave": true,
@@ -210,10 +215,6 @@
   },
   "editor.suggestSelection": "first",
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-  "rust-client.rustupPath": "/home/weiss/.cargo/bin/rustup",
-  "beautify.language": {
-    "html": ["htm", "html", "django-html"]
-  },
   "[jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -226,9 +227,6 @@
 
   // unity
   "omnisharp.path": "latest",
-  "omnisharp.useGlobalMono": "always",
-
-  "prettier.printWidth": 240,
   "git.confirmSync": false,
   "omnisharp.useModernNet": false,
   "extensions.ignoreRecommendations": true,
@@ -236,5 +234,9 @@
   // esp for c#
   "editor.snippetSuggestions": "top",
   "notebook.lineNumbers": "on",
-  "window.zoomLevel": 1
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.python"
+  },
+  "window.zoomLevel": 1,
+  "lldb.suppressUpdateNotifications": true
 }
