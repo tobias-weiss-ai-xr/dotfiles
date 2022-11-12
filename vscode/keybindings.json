@@ -97,5 +97,17 @@
   {
     "key": "f6",
     "command": "workbench.action.debug.run"
+  },
+  {
+    "key": "alt+r",
+    "command": "extension.multiCommand.execute",
+    "args": {
+      "sequence": [
+        "notebook.clearAllCellsOutputs",
+        "jupyter.notebookeditor.restartkernel",
+        "notebook.execute"
+      ]
+    },
+    "when": "notebookEditable && activeEditor == 'workbench.editor.notebook'"
   }
 ]

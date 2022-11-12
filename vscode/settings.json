@@ -200,13 +200,9 @@
   "python.linting.pylintEnabled": false,
   "python.linting.pylintArgs": ["--ignored-modules=tensorflow.keras"],
   "python.formatting.provider": "black",
-<<<<<<< Updated upstream
-  "python.formatting.blackArgs": ["--line-length=79"],
-=======
   "python.formatting.blackArgs": [
     "--line-length=79"
   ],
->>>>>>> Stashed changes
 
   "editor.formatOnSaveMode": "file",
   "editor.formatOnSave": true,
@@ -215,10 +211,7 @@
   },
   "editor.suggestSelection": "first",
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-<<<<<<< Updated upstream
-=======
   "rust-client.rustupPath": "/home/weiss/.cargo/bin/rustup",
->>>>>>> Stashed changes
   "[jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -231,12 +224,9 @@
 
   // unity
   "omnisharp.path": "latest",
-<<<<<<< Updated upstream
-=======
   //"omnisharp.useGlobalMono": "always",
 
   "prettier.printWidth": 240,
->>>>>>> Stashed changes
   "git.confirmSync": false,
   "omnisharp.useModernNet": false,
   "extensions.ignoreRecommendations": true,
@@ -244,14 +234,6 @@
   // esp for c#
   "editor.snippetSuggestions": "top",
   "notebook.lineNumbers": "on",
-<<<<<<< Updated upstream
-  "[python]": {
-    "editor.defaultFormatter": "ms-python.python"
-  },
-  "window.zoomLevel": 1,
-  "lldb.suppressUpdateNotifications": true
-=======
   "window.zoomLevel": 2,
   "notebook.cellFocusIndicator": "border"
->>>>>>> Stashed changes
 }
