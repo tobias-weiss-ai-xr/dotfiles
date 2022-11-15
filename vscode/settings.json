@@ -200,9 +200,7 @@
   "python.linting.pylintEnabled": false,
   "python.linting.pylintArgs": ["--ignored-modules=tensorflow.keras"],
   "python.formatting.provider": "black",
-  "python.formatting.blackArgs": [
-    "--line-length=79"
-  ],
+  "python.formatting.blackArgs": ["--line-length=79"],
 
   "editor.formatOnSaveMode": "file",
   "editor.formatOnSave": true,
@@ -235,5 +233,6 @@
   "editor.snippetSuggestions": "top",
   "notebook.lineNumbers": "on",
   "window.zoomLevel": 2,
-  "notebook.cellFocusIndicator": "border"
+  "notebook.cellFocusIndicator": "border",
+  "jupyter.showVariableViewWhenDebugging": false
 }
