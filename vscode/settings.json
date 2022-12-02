@@ -234,5 +234,6 @@
   "notebook.lineNumbers": "on",
   "window.zoomLevel": 2,
   "notebook.cellFocusIndicator": "border",
-  "jupyter.showVariableViewWhenDebugging": false
+  "jupyter.showVariableViewWhenDebugging": false,
+  "python.terminal.executeInFileDir": true
 }
