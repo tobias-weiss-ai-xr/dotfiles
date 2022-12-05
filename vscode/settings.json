@@ -232,8 +232,8 @@
   // esp for c#
   "editor.snippetSuggestions": "top",
   "notebook.lineNumbers": "on",
-  "window.zoomLevel": 2,
   "notebook.cellFocusIndicator": "border",
   "jupyter.showVariableViewWhenDebugging": false,
-  "python.terminal.executeInFileDir": true
+  "python.terminal.executeInFileDir": true,
+  "window.zoomLevel": 1
 }
