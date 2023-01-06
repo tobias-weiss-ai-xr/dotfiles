@@ -5,7 +5,6 @@
   "security.workspace.trust.untrustedFiles": "open",
   "cmake.configureOnOpen": true,
   "extensions.autoCheckUpdates": false,
-  "extensions.autoUpdate": false,
   "update.showReleaseNotes": false,
   "editor.wordWrap": "on",
   "editor.autoClosingQuotes": "always",
@@ -191,7 +190,7 @@
   "cSpell.language": "en,de-de",
 
   "python.analysis.autoImportCompletions": true,
-  "python.analysis.typeCheckingMode": "off",
+  "python.analysis.typeCheckingMode": "basic",
   "python.testing.unittestEnabled": true,
   "python.languageServer": "Pylance",
   "python.terminal.activateEnvInCurrentTerminal": true,
@@ -221,12 +220,12 @@
   },
 
   // unity
-  "omnisharp.path": "latest",
+  // "omnisharp.path": "latest",
   //"omnisharp.useGlobalMono": "always",
+  // "omnisharp.useModernNet": false,
 
   "prettier.printWidth": 240,
   "git.confirmSync": false,
-  "omnisharp.useModernNet": false,
   "extensions.ignoreRecommendations": true,
 
   // esp for c#
@@ -235,5 +234,8 @@
   "notebook.cellFocusIndicator": "border",
   "jupyter.showVariableViewWhenDebugging": false,
   "python.terminal.executeInFileDir": true,
-  "window.zoomLevel": 1
+  "window.zoomLevel": 1,
+  "vala.languageServerPath": "vala-language-server",
+  "vala.debugMode": true,
+  "extensions.autoUpdate": false
 }
