@@ -41,7 +41,7 @@
   "terminal.integrated.inheritEnv": true,
   "terminal.integrated.unicodeVersion": "11",
   "terminal.integrated.fontWeightBold": "normal",
-  "terminal.integrated.defaultProfile.linux": "bash",
+  "terminal.integrated.defaultProfile.linux": "zsh",
   "terminal.integrated.profiles.linux": {
     "bash": {
       "path": "bash",
