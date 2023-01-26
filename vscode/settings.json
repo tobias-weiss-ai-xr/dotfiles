@@ -241,6 +241,7 @@
   "extensions.autoUpdate": false
 =======
   "[python]": {
+  
     "editor.defaultFormatter": "ms-python.python"
   }
 >>>>>>> Stashed changes
