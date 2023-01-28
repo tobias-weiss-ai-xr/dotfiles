@@ -22,6 +22,9 @@ if [[ $HOST = "tobi-yoga"  || $HOST = "tobi-legion" ]]; then
     alias sony="toggle_sony_state"
     alias sink="toggle_sony_profile"
 
+    #wacom
+    alias wacom="mapwacom -d 'Wacom Intuos PT M Pen stylus' -d 'Wacom Intuos PT M Pen eraser'  -s 'HDMI-0'"
+
     # >>> conda initialize >>>
     __conda_setup="${/usr/bin/conda shell.zsh hook 2> /dev/null)}"
     if [ $? -eq 0 ]; then
