@@ -1,0 +1,12 @@
+# linked form dotfiles to /etc/sysstemd/system/
+[Unit]
+Description=Run setxkbmap -option caps:escape
+After=suspend.target hibernate.target hybrid-sleep.target suspend-then-hibernate.target
+
+[Service]
+ExecStart=/usr/bin/setxkbmap -option caps:escape
+User=weiss
+Environment=DISPLAY=:0
+
+[Install]
+WantedBy=suspend.target hibernate.target hybrid-sleep.target suspend-then-hibernate.target
