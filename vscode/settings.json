@@ -189,7 +189,7 @@
   "cSpell.userWords": ["Behaviour", "keras", "Mathf", "MNIST", "Pfeiffer"],
   "cSpell.language": "en,de-de",
 
-  "python.analysis.autoImportCompletions": true,
+  "python.analysis.autoImportCompletions": false,
   "python.analysis.typeCheckingMode": "basic",
   "python.testing.unittestEnabled": true,
   "python.languageServer": "Pylance",
@@ -237,9 +237,8 @@
   "window.zoomLevel": 1,
   "vala.languageServerPath": "vala-language-server",
   "vala.debugMode": true,
-  "extensions.autoUpdate": false
+  "extensions.autoUpdate": false,
   "[python]": {
-  
     "editor.defaultFormatter": "ms-python.python"
-  }
+  },
 }
