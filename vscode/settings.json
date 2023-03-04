@@ -234,11 +234,11 @@
   "notebook.cellFocusIndicator": "border",
   "jupyter.showVariableViewWhenDebugging": false,
   "python.terminal.executeInFileDir": true,
-  "window.zoomLevel": 1,
   "vala.languageServerPath": "vala-language-server",
   "vala.debugMode": true,
   "extensions.autoUpdate": false,
   "[python]": {
     "editor.defaultFormatter": "ms-python.python"
   },
+  "window.zoomLevel": 1,
 }
