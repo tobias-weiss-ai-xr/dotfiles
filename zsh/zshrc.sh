@@ -32,7 +32,6 @@ if [[ $HOST = "tobi-legion" ]]; then
 	export VISUAL=/usr/bin/nvim
 	export EDITOR=/usr/bin/nvim
     export GRAPHVIZ_DOT=/usr/bin
-    export CONDA_PKGS_DIRS=~/.conda/pkgs
     export WORKON_HOME=~/.virtualenvs
     source /usr/bin/virtualenvwrapper.sh
 	source ~/dotfiles/zsh/diablo2.sh # source diablo2 functions
