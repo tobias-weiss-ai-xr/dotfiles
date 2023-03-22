@@ -240,7 +240,6 @@
   "[python]": {
     "editor.defaultFormatter": "ms-python.python"
   },
-  "window.zoomLevel": 1,
   "lldb.suppressUpdateNotifications": true,
   "git.ignoreLegacyWarning": true,
 }
