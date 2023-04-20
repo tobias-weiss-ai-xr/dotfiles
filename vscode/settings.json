@@ -242,5 +242,5 @@
   },
   "lldb.suppressUpdateNotifications": true,
   "git.ignoreLegacyWarning": true,
-  "window.zoomLevel": 2,
+  "window.zoomLevel": 1,
 }
