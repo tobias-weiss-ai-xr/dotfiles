@@ -111,7 +111,7 @@
     }
   ],
   "latex-workshop.latex.recipe.default": "lastUsed",
-  "latex-workshop.latex.autoBuild.run": "never", // "onsave", "onFileChange"
+  "latex-workshop.latex.autoBuild.run": "onsave", // "onsave", "onFileChange"
   "latex-workshop.message.warning.show": false,
   "latex-workshop.message.error.show": true,
   "latex-workshop.latex.tools": [
@@ -148,16 +148,16 @@
   ],
   "latex-workshop.latex.recipes": [
     {
+      "name": "pdflatex ➞ bibtex ➞ pdflatex`×2",
+      "tools": ["pdflatex", "bibtex", "pdflatex", "pdflatex"]
+    },
+    {
       "name": "lualatex ➞ biber ➞ lualatex`×2",
       "tools": ["lualatex", "biber", "lualatex", "lualatex"]
     },
     {
       "name": "lualatex ➞ bibtex ➞ lualatex`×2",
       "tools": ["lualatex", "bibtex", "lualatex", "lualatex"]
-    },
-    {
-      "name": "pdflatex ➞ bibtex ➞ pdflatex`×2",
-      "tools": ["pdflatex", "bibtex", "pdflatex", "pdflatex"]
     },
     {
       "name": "lualatex",
