@@ -175,7 +175,6 @@
   "latex-workshop.view.pdf.external.synctex.command": "zathura",
   "latex-workshop.view.pdf.external.synctex.args": ["--synctex-forward=%LINE%:0:%TEX%", "%PDF%"],
 
-  "jupyter.askForKernelRestart": false,
 
   "diffEditor.ignoreTrimWhitespace": false,
 
@@ -232,7 +231,6 @@
   "editor.snippetSuggestions": "top",
   "notebook.lineNumbers": "on",
   "notebook.cellFocusIndicator": "border",
-  "jupyter.showVariableViewWhenDebugging": false,
   "python.terminal.executeInFileDir": true,
   "vala.languageServerPath": "vala-language-server",
   "vala.debugMode": true,
@@ -243,4 +241,10 @@
   "lldb.suppressUpdateNotifications": true,
   "git.ignoreLegacyWarning": true,
   "window.zoomLevel": 1,
+  "jupyter.showVariableViewWhenDebugging": true,
+  "jupyter.askForKernelRestart": false,
+  "jupyter.jupyterCommandLineArguments": [
+  
+  ],
+  "jupyter.debugJustMyCode": false,
 }

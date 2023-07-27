@@ -42,6 +42,11 @@ if [[ $HOST = "tobi-legion" ]]; then
     command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
     eval "$(pyenv init -)"
 
+    # conda
+    export PATH="/opt/miniconda3/bin/:${PATH}"
+    export VIRTUALENVWRAPPER_PYTHON=/opt/miniconda3/bin/python
+
+
     # >>> mamba initialize >>>                                     
     # !! Contents within this block are managed by 'mamba init' !!                                                                 
     export MAMBA_EXE="/home/weiss/.local/bin/micromamba";                                                                          
