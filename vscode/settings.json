@@ -247,4 +247,5 @@
   ],
   "jupyter.debugJustMyCode": false,
   "window.zoomLevel": 1,
+  "html.format.enable": false,
 }
