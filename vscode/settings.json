@@ -247,4 +247,5 @@
   ],
   "jupyter.debugJustMyCode": false,
   "html.format.enable": false,
+  "workbench.editor.empty.hint": "hidden",
 }
