@@ -43,8 +43,8 @@ if [[ $HOST = "tobi-legion" ]]; then
     eval "$(pyenv init -)"
 
     # conda
-    export PATH="/opt/miniconda3/bin/:${PATH}"
-    export VIRTUALENVWRAPPER_PYTHON=/opt/miniconda3/bin/python
+    # export PATH="/opt/miniconda3/bin/:${PATH}"
+    # export VIRTUALENVWRAPPER_PYTHON=/opt/miniconda3/bin/python
 
 
     # >>> mamba initialize >>>                                     
