@@ -41,14 +41,6 @@ if [[ $HOST = "tobi-legion" ]]; then
     export PYENV_ROOT="$HOME/.pyenv"
     command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
     eval "$(pyenv init -)"
-
-    # conda
-    # export PATH="/opt/miniconda3/bin/:${PATH}"
-    # export VIRTUALENVWRAPPER_PYTHON=/opt/miniconda3/bin/python
-
-
-    # >>> mamba initialize >>>                                     
-    # !! Contents within this block are managed by 'mamba init' !!                                                                 
     export MAMBA_EXE="/home/weiss/.local/bin/micromamba";                                                                          
     export MAMBA_ROOT_PREFIX="/home/weiss/micromamba";                                                                             
     __mamba_setup="$("$MAMBA_EXE" shell hook --shell bash --prefix "$MAMBA_ROOT_PREFIX" 2> /dev/null)"                             
@@ -67,8 +59,6 @@ if [[ $HOST = "tobi-legion" ]]; then
 fi
 
 if [[ $HOST = "tobi-yoga" ]]; then
-    # display adjustment
-    # xrandr --output HDMI-2 --auto --right-of eDP-1 # enable second display
 	export PATH=$PATH:$HOME/dotfiles/utils:/home/weiss/.gem/ruby/2.7.0/bin:/home/weiss/.local/bin:/home/weiss/.cargo/bin
     export PATH="/opt/zoom:${PATH}"
     export PATH="/opt/cuda:${PATH}"
@@ -81,8 +71,6 @@ if [[ $HOST = "tobi-yoga" ]]; then
 	source ~/dotfiles/zsh/cpufreq.sh # source cpufreq functions
 	source ~/dotfiles/zsh/diablo2.sh # source diablo2 functions
 	source ~/dotfiles/zsh/openvpn.sh # source openvpn functions
-    # check for miniconda and load if present
-    [ -f /opt/miniconda3/etc/profile.d/conda.sh ] && source /opt/miniconda3/etc/profile.d/conda.sh
 fi
 
 # Fix for arrow-key searching
