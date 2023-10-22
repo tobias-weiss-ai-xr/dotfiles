@@ -234,7 +234,6 @@
   "python.terminal.executeInFileDir": true,
   "vala.languageServerPath": "vala-language-server",
   "vala.debugMode": true,
-  "extensions.autoUpdate": false,
   "[python]": {
     "editor.defaultFormatter": "ms-python.python"
   },
@@ -250,4 +249,5 @@
   "workbench.editor.empty.hint": "hidden",
   "notebook.output.textLineLimit": 300,
   "window.zoomLevel": 1,
+  "extensions.autoUpdate": false,
 }
