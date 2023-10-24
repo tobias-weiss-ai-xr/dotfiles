@@ -100,7 +100,7 @@
     "args": {
       "sequence": [
         "notebook.clearAllCellsOutputs",
-        "jupyter.notebookeditor.restartkernel",
+        "jupyter.restartkernel",
         "notebook.execute"
       ]
     },

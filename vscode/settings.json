@@ -182,7 +182,7 @@
   "notebook.consolidatedRunButton": true,
   "notebook.cellToolbarLocation": {
     "default": "right",
-    "jupyter-notebook": "right"
+    "jupyter-notebook": "left"
   },
 
   "cSpell.userWords": ["Behaviour", "keras", "Mathf", "MNIST", "Pfeiffer"],
@@ -250,4 +250,8 @@
   "notebook.output.textLineLimit": 300,
   "window.zoomLevel": 1,
   "extensions.autoUpdate": false,
+  "files.associations": {
+    "*.rmd": "markdown"
+  },
+  "r.rpath.linux": "/usr/bin/R",
 }

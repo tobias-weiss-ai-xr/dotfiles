@@ -28,7 +28,8 @@ fi
 
 if [[ $HOST = "tobi-legion" ]]; then
 	export PATH=${PATH}:${HOME}/dotfiles/utils:/home/weiss/.local/bin:${HOME}/.cargo/bin
-    export PATH="/usr/local/src/pycharm-2021.3.2/bin:${PATH}"
+    #export PATH="/usr/local/src/pycharm-2021.3.2/bin:${PATH}"
+    export PATH="/usr/lib/rstudio:${PATH}"
 	export VISUAL=/usr/bin/nvim
 	export EDITOR=/usr/bin/nvim
     export GRAPHVIZ_DOT=/usr/bin
