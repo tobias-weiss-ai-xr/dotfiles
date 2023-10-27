@@ -29,7 +29,8 @@ fi
 if [[ $HOST = "tobi-legion" ]]; then
 	export PATH=${PATH}:${HOME}/dotfiles/utils:/home/weiss/.local/bin:${HOME}/.cargo/bin
     #export PATH="/usr/local/src/pycharm-2021.3.2/bin:${PATH}"
-    export PATH="/usr/lib/rstudio:${PATH}"
+    export PATH="/opt/asdf-vm/bin:${PATH}"
+    export PATH="/home/weiss/JLUBox-bin:${PATH}"
 	export VISUAL=/usr/bin/nvim
 	export EDITOR=/usr/bin/nvim
     export GRAPHVIZ_DOT=/usr/bin
@@ -37,6 +38,8 @@ if [[ $HOST = "tobi-legion" ]]; then
     source /usr/bin/virtualenvwrapper.sh
 	source ~/dotfiles/zsh/diablo2.sh # source diablo2 functions
     export JAVA_HOME=/usr/lib/jvm/java-15-jdk
+    export WORKON_HOME=~/.virtualenvs
+    export ASDF_DIR="/opt/asdf-vm"
 
     # pyenv
     export PYENV_ROOT="$HOME/.pyenv"
