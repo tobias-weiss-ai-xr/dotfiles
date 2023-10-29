@@ -254,4 +254,5 @@
     "*.rmd": "markdown"
   },
   "r.rpath.linux": "/usr/bin/R",
+  "go.toolsManagement.autoUpdate": true,
 }
