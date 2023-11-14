@@ -49,8 +49,6 @@
     }
   },
 
-  "workbench.activityBar.visible": true,
-
   "vim.useSystemClipboard": true, // ctrl + c to copy and p to paste,
   "vim.handleKeys": {
     "<C-k>": false
@@ -177,8 +175,6 @@
 
 
   "diffEditor.ignoreTrimWhitespace": false,
-
-  "workbench.editor.untitled.hint": "hidden",
   "notebook.consolidatedRunButton": true,
   "notebook.cellToolbarLocation": {
     "default": "right",
@@ -207,7 +203,6 @@
   },
   "editor.suggestSelection": "first",
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-  "rust-client.rustupPath": "/home/weiss/.cargo/bin/rustup",
   "[jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -255,4 +250,5 @@
   },
   "r.rpath.linux": "/usr/bin/R",
   "go.toolsManagement.autoUpdate": true,
+  "git.openRepositoryInParentFolders": "never",
 }

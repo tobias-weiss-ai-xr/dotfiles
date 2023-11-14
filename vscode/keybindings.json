@@ -14,6 +14,12 @@
     "when": "editorTextFocus && editorLangId == python",
   },
   {
+    "key": "ctrl+shift+b",
+    "command": "workbench.action.tasks.runTask",
+    "args": "cargo run",
+    "when": "editorTextFocus && editorLangId == rust"
+  },
+  {
     "key": "f6",
     "command": "workbench.action.tasks.runTask",
     "args": "cargo run",
