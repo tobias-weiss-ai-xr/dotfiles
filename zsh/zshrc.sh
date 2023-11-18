@@ -24,7 +24,28 @@ if [[ $HOST = "tobi-yoga"  || $HOST = "tobi-legion" ]]; then
 
     #wacom
     alias wacom="mapwacom -d 'Wacom Intuos PT M Pen stylus' -d 'Wacom Intuos PT M Pen eraser'  -s 'HDMI-0'"
+
+    # pyenv
+    export PYENV_ROOT="$HOME/.pyenv"
+    [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+    eval "$(pyenv init -)"
+
+    # >>> conda initialize >>>
+    # !! Contents within this block are managed by 'conda init' !!
+    __conda_setup="$('/home/weiss/.pyenv/versions/mambaforge/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+    if [ $? -eq 0 ]; then
+        eval "$__conda_setup"
+    else
+        if [ -f "/home/weiss/.pyenv/versions/mambaforge/etc/profile.d/conda.sh" ]; then
+            . "/home/weiss/.pyenv/versions/mambaforge/etc/profile.d/conda.sh"
+        else
+            export PATH="/home/weiss/.pyenv/versions/mambaforge/bin:$PATH"
+        fi
+    fi
+    unset __conda_setup
+
 fi
+
 
 if [[ $HOST = "tobi-legion" ]]; then
 	export PATH=${PATH}:${HOME}/dotfiles/utils:/home/weiss/.local/bin:${HOME}/.cargo/bin
@@ -34,40 +55,19 @@ if [[ $HOST = "tobi-legion" ]]; then
 	export VISUAL=/usr/bin/nvim
 	export EDITOR=/usr/bin/nvim
     export GRAPHVIZ_DOT=/usr/bin
-    export WORKON_HOME=~/.virtualenvs
     source /usr/bin/virtualenvwrapper.sh
 	source ~/dotfiles/zsh/diablo2.sh # source diablo2 functions
-    export JAVA_HOME=/usr/lib/jvm/java-15-jdk
-    export WORKON_HOME=~/.virtualenvs
+    #export JAVA_HOME=/usr/lib/jvm/java-15-jdk
+    #export WORKON_HOME=~/.virtualenvs
     export ASDF_DIR="/opt/asdf-vm"
-
-    # pyenv
-    export PYENV_ROOT="$HOME/.pyenv"
-    command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-    eval "$(pyenv init -)"
-    export MAMBA_EXE="/home/weiss/.local/bin/micromamba";                                                                          
-    export MAMBA_ROOT_PREFIX="/home/weiss/micromamba";                                                                             
-    __mamba_setup="$("$MAMBA_EXE" shell hook --shell bash --prefix "$MAMBA_ROOT_PREFIX" 2> /dev/null)"                             
-    if [ $? -eq 0 ]; then                                                                                                          
-        eval "$__mamba_setup"                                                                                                      
-    else                                                                                                                           
-        if [ -f "/home/weiss/micromamba/etc/profile.d/micromamba.sh" ]; then                                                       
-            . "/home/weiss/micromamba/etc/profile.d/micromamba.sh"                                                                 
-        else                                                                                                                       
-            export  PATH="/home/weiss/micromamba/bin:$PATH"  # extra space after export prevents interference from conda init      
-        fi                                                                                                                         
-    fi                                                                                                                             
-    unset __mamba_setup                                                                                                            
-    # <<< mamba initialize <<< 
-
 fi
 
 if [[ $HOST = "tobi-yoga" ]]; then
 	export PATH=$PATH:$HOME/dotfiles/utils:/home/weiss/.gem/ruby/2.7.0/bin:/home/weiss/.local/bin:/home/weiss/.cargo/bin
     export PATH="/opt/zoom:${PATH}"
-    export PATH="/opt/cuda:${PATH}"
-    export PATH="/usr/local/src/pycharm-2021.3.2/bin:${PATH}"
     export PATH="/usr/local/bin:${PATH}"
+    #export PATH="/opt/cuda:${PATH}"
+    #export PATH="/usr/local/src/pycharm-2021.3.2/bin:${PATH}"
 	export VISUAL=/usr/bin/nvim
 	export EDITOR=/usr/bin/nvim
     export NVIM_LISTEN_ADDRESS=/tmp/nvimsocket

@@ -229,9 +229,6 @@
   "python.terminal.executeInFileDir": true,
   "vala.languageServerPath": "vala-language-server",
   "vala.debugMode": true,
-  "[python]": {
-    "editor.defaultFormatter": "ms-python.python"
-  },
   "lldb.suppressUpdateNotifications": true,
   "git.ignoreLegacyWarning": true,
   "jupyter.showVariableViewWhenDebugging": true,
