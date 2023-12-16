@@ -35,3 +35,4 @@ fi
 #fi
 
 source ~/dotfiles/zsh/zshrc.sh
+
