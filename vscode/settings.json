@@ -173,7 +173,6 @@
   "latex-workshop.view.pdf.external.synctex.command": "zathura",
   "latex-workshop.view.pdf.external.synctex.args": ["--synctex-forward=%LINE%:0:%TEX%", "%PDF%"],
 
-
   "diffEditor.ignoreTrimWhitespace": false,
   "notebook.consolidatedRunButton": true,
   "notebook.cellToolbarLocation": {
@@ -218,7 +217,7 @@
   // unity
   // "omnisharp.path": "latest",
   //"omnisharp.useGlobalMono": "always",
-   "omnisharp.useModernNet": false,
+  "omnisharp.useModernNet": false,
 
   "prettier.printWidth": 240,
   "git.confirmSync": false,
@@ -235,19 +234,17 @@
   "git.ignoreLegacyWarning": true,
   "jupyter.showVariableViewWhenDebugging": true,
   "jupyter.askForKernelRestart": false,
-  "jupyter.jupyterCommandLineArguments": [
-  
-  ],
+  "jupyter.jupyterCommandLineArguments": [],
   "jupyter.debugJustMyCode": false,
   "html.format.enable": false,
   "workbench.editor.empty.hint": "hidden",
   "notebook.output.textLineLimit": 300,
-  "window.zoomLevel": 1,
+  "window.zoomLevel": 3,
   "extensions.autoUpdate": false,
   "files.associations": {
     "*.rmd": "markdown"
   },
   "r.rpath.linux": "/usr/bin/R",
   "go.toolsManagement.autoUpdate": true,
-  "git.openRepositoryInParentFolders": "never",
+  "git.openRepositoryInParentFolders": "never"
 }
