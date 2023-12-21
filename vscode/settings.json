@@ -246,5 +246,6 @@
   },
   "r.rpath.linux": "/usr/bin/R",
   "go.toolsManagement.autoUpdate": true,
-  "git.openRepositoryInParentFolders": "never"
+  "git.openRepositoryInParentFolders": "never",
+  "hediet.vscode-drawio.resizeImages": null
 }

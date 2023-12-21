@@ -10,6 +10,11 @@ if [[ $HOST = "tobi-yoga"  || $HOST = "tobi-legion" ]]; then
     setxkbmap -option caps:escape # map esc to capslock
     # to reset
     # setxkbmap -layout de -option
+    #if [ ! -f $HOME/.Xmodmap ]; then
+    #    ln -s $HOME/dotfile/.Xmodmap $HOME/.Xmodmap
+    #fi
+    #xmodmap $HOME/.Xmodmap
+    
     # Aliases
 	alias vi="nvim"
 	alias vim="nvim"
