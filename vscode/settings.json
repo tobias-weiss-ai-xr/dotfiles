@@ -239,13 +239,13 @@
   "html.format.enable": false,
   "workbench.editor.empty.hint": "hidden",
   "notebook.output.textLineLimit": 300,
-  "window.zoomLevel": 3,
-  "extensions.autoUpdate": false,
+  "extensions.autoUpdate": "onlyEnabledExtensions",
   "files.associations": {
     "*.rmd": "markdown"
   },
   "r.rpath.linux": "/usr/bin/R",
   "go.toolsManagement.autoUpdate": true,
   "git.openRepositoryInParentFolders": "never",
-  "hediet.vscode-drawio.resizeImages": null
+  "hediet.vscode-drawio.resizeImages": null,
+  "window.zoomLevel": 2
 }
