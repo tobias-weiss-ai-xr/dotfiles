@@ -239,7 +239,12 @@
   "html.format.enable": false,
   "workbench.editor.empty.hint": "hidden",
   "notebook.output.textLineLimit": 300,
+<<<<<<< Updated upstream
   "extensions.autoUpdate": "onlyEnabledExtensions",
+=======
+  "window.zoomLevel": 5,
+  "extensions.autoUpdate": false,
+>>>>>>> Stashed changes
   "files.associations": {
     "*.rmd": "markdown"
   },
